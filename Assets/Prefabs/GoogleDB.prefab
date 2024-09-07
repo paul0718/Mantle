@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2876617289706545015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 584173693726548094}
+  - component: {fileID: 7260327424379955611}
+  - component: {fileID: 634691377786343429}
+  m_Layer: 0
+  m_Name: GoogleDB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &584173693726548094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2876617289706545015}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.075433, y: -0.89914525, z: 0.97434914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7260327424379955611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2876617289706545015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271fc14ea1eebc348a2c19dbc8aff60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOnlineMode: 1
+  googleSheetAddress: AKfycbz6AeAK4XyngnQIvFb61EwcEDB3qjUW2kSPGUr2LMCYpGThC9U2xW2t9aOTk2jwiDm-RA
+  saveRemoteData: 1
+  FolderName: GameData
+  DBPath: 
+  sheetTabNames:
+  - Sheet1
+--- !u!114 &634691377786343429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2876617289706545015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b067100dd200c2b4bb78731a3372b657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emotionText: {fileID: 0}
+  ei: {fileID: 0}
