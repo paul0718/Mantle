@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class DesktopInteractions : MonoBehaviour
 {
-    [SerializeField] private GameObject iconHighlight;
+    [SerializeField] private GameObject taskbarIcon;
+    private Vector3 startingPos;
+
+    void Start()
+    {
+        startingPos = GetComponent<RectTransform>().anchoredPosition;
+    }
 
     public void CloseWindow(bool minimize)
     {
         transform.GetChild(0).gameObject.SetActive(false);
-        iconHighlight.SetActive(minimize);
-        /*if (minimize)
+        taskbarIcon.transform.GetChild(0).gameObject.SetActive(minimize);
+        if (minimize)
         {
             //TODO: play animation
-        }*/
+        }
+        else
+        {
+            GetComponent<RectTransform>().anchoredPosition = startingPos; //reset position on close
+        }
 
         //TODO: pause dialogue
     }
@@ -21,7 +31,7 @@ public class DesktopInteractions : MonoBehaviour
     public void OpenWindow()
     {
         transform.GetChild(0).gameObject.SetActive(true);
-        transform.SetSiblingIndex(transform.parent.childCount); //bring window to front
+        BringToFront();
         /*if (iconHighlight.activeSelf) //if window minimized
         {
             //TODO: play animation
@@ -30,9 +40,15 @@ public class DesktopInteractions : MonoBehaviour
         {
             //TODO: play startup animation?
         }*/
-        iconHighlight.SetActive(true);
+        taskbarIcon.transform.GetChild(0).gameObject.SetActive(true);
+        taskbarIcon.GetComponent<Animator>().Play("TaskbarIconClick");
 
         //TODO: resume dialogue
         //TODO: button click anim
+    }
+
+    public void BringToFront()
+    {
+        transform.SetSiblingIndex(transform.parent.childCount);
     }
 }
