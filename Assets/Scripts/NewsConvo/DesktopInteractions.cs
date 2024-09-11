@@ -5,6 +5,7 @@ using UnityEngine;
 public class DesktopInteractions : MonoBehaviour
 {
     [SerializeField] private GameObject taskbarIcon;
+    public Vector3 minimizeTo; //TODO: replace with position of taskbarIcon?
     private Vector3 startingPos;
 
     private float startingScale;
@@ -14,24 +15,25 @@ public class DesktopInteractions : MonoBehaviour
     void Start()
     {
         startingPos = GetComponent<RectTransform>().anchoredPosition;
+        lastPos = startingPos;
         startingScale = transform.localScale.x;
     }
 
     public void CloseWindow(bool minimize)
     {
-        transform.GetChild(0).gameObject.SetActive(false);
         taskbarIcon.transform.GetChild(0).gameObject.SetActive(minimize);
         if (minimize)
         {
-            //TODO: play animation
+            lastPos = GetComponent<RectTransform>().anchoredPosition;
+            StartCoroutine(Resize(0, minimizeTo));
         }
         else
         {
-            //reset position on close
-            if (maximized)
-                GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 40); //to center if maximized
-            else
-                GetComponent<RectTransform>().anchoredPosition = startingPos; //to original pos if not maximized
+            transform.GetChild(0).gameObject.SetActive(false);
+            //reset position & scale on close
+            transform.localScale = new Vector3(1, 1, 1) * startingScale;
+            GetComponent<RectTransform>().anchoredPosition = startingPos;
+            maximized = false;
         }
 
         //TODO: pause dialogue
@@ -39,21 +41,23 @@ public class DesktopInteractions : MonoBehaviour
 
     public void OpenWindow()
     {
-        transform.GetChild(0).gameObject.SetActive(true);
         BringToFront();
-        /*if (iconHighlight.activeSelf) //if window minimized
+        if (taskbarIcon.transform.GetChild(0).gameObject.activeSelf) //if window minimized
         {
-            //TODO: play animation
+            if (maximized)
+                StartCoroutine(Resize(2, lastPos));
+            else
+                StartCoroutine(Resize(startingScale, lastPos));
         }
         else //if window closed
         {
+            transform.GetChild(0).gameObject.SetActive(true);
             //TODO: play startup animation?
-        }*/
+        }
         taskbarIcon.transform.GetChild(0).gameObject.SetActive(true);
         taskbarIcon.GetComponent<Animator>().Play("TaskbarIconClick");
 
         //TODO: resume dialogue
-        //TODO: button click anim
     }
 
     public void BringToFront()
@@ -71,7 +75,7 @@ public class DesktopInteractions : MonoBehaviour
         else
         {
             lastPos = GetComponent<RectTransform>().anchoredPosition;
-            StartCoroutine(Resize(2, new Vector2(0, 40)));
+            StartCoroutine(Resize(2, new Vector2(0, 40))); //TODO: don't hard code these?
         }
         maximized = !maximized;
     }
@@ -82,7 +86,7 @@ public class DesktopInteractions : MonoBehaviour
         Vector2 posChange = targetPos - GetComponent<RectTransform>().anchoredPosition;
         for (int i = 0; i < 10; i++)
         {
-            transform.localScale += new Vector3(scaleChange, scaleChange, scaleChange)/10;
+            transform.localScale += (new Vector3(1, 1, 1) * scaleChange)/10;
             GetComponent<RectTransform>().anchoredPosition += posChange/10;
             yield return new WaitForSeconds(0.005f);
         }

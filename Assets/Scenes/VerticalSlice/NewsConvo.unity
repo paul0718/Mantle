@@ -4513,6 +4513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskbarIcon: {fileID: 2058582427}
+  minimizeTo: {x: -860, y: -510, z: 0}
 --- !u!114 &1350908938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5592,6 +5593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskbarIcon: {fileID: 1708540155}
+  minimizeTo: {x: -800, y: -510, z: 0}
 --- !u!114 &1612772035
 MonoBehaviour:
   m_ObjectHideFlags: 0
