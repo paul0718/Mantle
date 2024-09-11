@@ -7941,7 +7941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   casterAnim: {fileID: 1654583404}
   newsText: {fileID: 353815091}
-  convoText: {fileID: 0}
+  convoText: {fileID: 89670530}
   playButton: {fileID: 1979301358}
   pauseButton: {fileID: 863333006}
   typingSpeed: 0.05
