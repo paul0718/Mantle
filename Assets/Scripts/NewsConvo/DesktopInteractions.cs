@@ -35,8 +35,6 @@ public class DesktopInteractions : MonoBehaviour
             GetComponent<RectTransform>().anchoredPosition = startingPos;
             maximized = false;
         }
-
-        //TODO: pause dialogue
     }
 
     public void OpenWindow()
@@ -56,8 +54,6 @@ public class DesktopInteractions : MonoBehaviour
         }
         taskbarIcon.transform.GetChild(0).gameObject.SetActive(true);
         taskbarIcon.GetComponent<Animator>().Play("TaskbarIconClick");
-
-        //TODO: resume dialogue
     }
 
     public void BringToFront()

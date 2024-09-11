@@ -13,6 +13,8 @@ public class NewsConvoManager : MonoBehaviour
 
     [SerializeField] private TMP_Text newsText;
     [SerializeField] private TMP_Text convoText;
+    [SerializeField] private GameObject newsWindow;
+    [SerializeField] private GameObject convoWindow;
 
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject pauseButton;
@@ -63,7 +65,6 @@ public class NewsConvoManager : MonoBehaviour
             playButton.SetActive(true);
             Debug.Log("done");
         }
-
         currRow++;
     }
 
@@ -94,6 +95,10 @@ public class NewsConvoManager : MonoBehaviour
     {
         foreach (char letter in fullText)
         {
+            if (news)
+                yield return new WaitUntil(() => newsWindow.activeSelf && newsWindow.transform.parent.localScale.x >= 1.3f);
+            else
+                yield return new WaitUntil(() => convoWindow.activeSelf && convoWindow.transform.parent.localScale.x >= 1);
             if (news)
             {
                 casterAnim.SetBool("isTalking", true);
