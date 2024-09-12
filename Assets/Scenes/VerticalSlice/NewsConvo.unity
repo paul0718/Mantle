@@ -2424,7 +2424,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 510}
+  m_SizeDelta: {x: 5000, y: 510}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &709680376
 MonoBehaviour:
@@ -2499,7 +2499,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -4.5}
-  m_SizeDelta: {x: 1500, y: 661.7}
+  m_SizeDelta: {x: 5000, y: 661.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &740954654
 MonoBehaviour:
@@ -4725,6 +4725,7 @@ MonoBehaviour:
   taskbarIcon: {fileID: 2058582427}
   minimizeTo: {x: -860, y: -510, z: 0}
   maximizeTo: {x: 0, y: 40}
+  maximized: 0
 --- !u!114 &1350908938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5838,6 +5839,7 @@ MonoBehaviour:
   taskbarIcon: {fileID: 1708540155}
   minimizeTo: {x: -800, y: -510, z: 0}
   maximizeTo: {x: 0, y: 30}
+  maximized: 0
 --- !u!114 &1612772035
 MonoBehaviour:
   m_ObjectHideFlags: 0

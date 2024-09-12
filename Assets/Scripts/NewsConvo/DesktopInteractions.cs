@@ -11,10 +11,10 @@ public class DesktopInteractions : MonoBehaviour
 
     private float startingScale;
     private Vector3 lastPos;
-    private bool maximized;
+    [HideInInspector] public bool maximized;
     
 
-    void Start()
+    private void Start()
     {
         startingPos = GetComponent<RectTransform>().anchoredPosition;
         lastPos = startingPos;
@@ -60,7 +60,7 @@ public class DesktopInteractions : MonoBehaviour
 
     public void BringToFront()
     {
-        transform.SetSiblingIndex(transform.parent.childCount);
+        transform.SetAsLastSibling();
     }
 
     public void Fullscreen()

@@ -26,8 +26,9 @@ public class NewsConvoManager : MonoBehaviour
     private int currRow = 1;
 
     private bool convoDone = false;
-    // Start is called before the first frame update
-    void Start()
+    
+
+    public void Start()
     {
         Cursor.visible = true;
         googleSheetsDB = gameObject.GetComponent<GoogleSheetsDB>();
@@ -131,14 +132,14 @@ public class NewsConvoManager : MonoBehaviour
         if (news)
         {
             casterAnim.SetBool("isTalking", false);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2.5f);
             UpdateText();
         }
         else
         {
             if (txtSheet.GetRowData(currRow.ToString(), "Name") == "NewsAnchor")
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(2.5f);
             }
             UpdateText();
         }
@@ -173,7 +174,7 @@ public class NewsConvoManager : MonoBehaviour
         convoText.text += finalText;
         if (txtSheet.GetRowData(currRow.ToString(), "Name") == "NewsAnchor")
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2.5f);
         }
         UpdateText();
     }
