@@ -15,6 +15,7 @@ public class NewsConvoManager : MonoBehaviour
     [SerializeField] private TMP_Text convoText;
     [SerializeField] private GameObject newsWindow;
     [SerializeField] private GameObject convoWindow;
+    [SerializeField] private GameObject scrollArea;
 
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject pauseButton;
@@ -78,7 +79,15 @@ public class NewsConvoManager : MonoBehaviour
     //display conversation dialogue, how to do it depends on if it's Mantle or Leo
     public void WriteConvoDialogue(string row, string column, bool Mantle)
     {
-        string temp = txtSheet.GetRowData(row, column) + "\n";
+        string temp = txtSheet.GetRowData(row, column) + "\n\n";
+
+        //Resize scroll area
+        float goalHeight = Mathf.Max(460, convoText.textBounds.extents.y*2.4f); //TODO: don't hard code this?
+        scrollArea.GetComponent<RectTransform>().sizeDelta = new Vector3(740, goalHeight, 1);
+        scrollArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, (goalHeight-460)/2);
+        //Auto scroll text as it hits bottom of screen
+        scrollArea.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(0, Mathf.Max(0, (goalHeight-460)/2) - 10);
+
         if (Mantle)
         {
             StartCoroutine(MantleText(convoText, temp));
@@ -122,14 +131,14 @@ public class NewsConvoManager : MonoBehaviour
         if (news)
         {
             casterAnim.SetBool("isTalking", false);
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(0.5f);
             UpdateText();
         }
         else
         {
             if (txtSheet.GetRowData(currRow.ToString(), "Name") == "NewsAnchor")
             {
-                yield return new WaitForSeconds(2.5f);
+                yield return new WaitForSeconds(0.5f);
             }
             UpdateText();
         }
@@ -164,7 +173,7 @@ public class NewsConvoManager : MonoBehaviour
         convoText.text += finalText;
         if (txtSheet.GetRowData(currRow.ToString(), "Name") == "NewsAnchor")
         {
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(0.5f);
         }
         UpdateText();
     }
