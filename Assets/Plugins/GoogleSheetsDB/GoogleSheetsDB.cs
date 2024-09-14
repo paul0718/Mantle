@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class GoogleSheetsDB : MonoBehaviour
 {
     public bool isOnlineMode = true;
-    public string googleSheetAddress = "";
+    public string googleSheetAddress;
     public bool saveRemoteData = true;
     public string FolderName = "GameData";
     public string DBPath;
@@ -62,10 +62,8 @@ public class GoogleSheetsDB : MonoBehaviour
             for (var i = 0; i < sheetTabNames.Count; i++)
             {
                 StartCoroutine(RequestSheet(sheetTabNames[i]));
+                yield return new WaitUntil(() => dataSheets.Count == i+1);
             }
-
-            yield return new WaitUntil(() => dataSheets.Count == sheetTabNames.Count);
-
             OnDownloadComplete();
         }
         else

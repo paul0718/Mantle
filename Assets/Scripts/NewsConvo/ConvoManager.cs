@@ -4,15 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class NewsConvoManager : MonoBehaviour
+public class ConvoManager : MonoBehaviour
 {
     GoogleSheetsDB googleSheetsDB;
     public GoogleSheet txtSheet;
+    public string currentConvo;
 
     [SerializeField] private Animator casterAnim;
 
     [SerializeField] private TMP_Text newsText;
     [SerializeField] private TMP_Text convoText;
+    [SerializeField] private GameObject newsWindow;
+    [SerializeField] private GameObject convoWindow;
+    [SerializeField] private GameObject scrollArea;
 
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject pauseButton;
@@ -23,8 +27,9 @@ public class NewsConvoManager : MonoBehaviour
     private int currRow = 1;
 
     private bool convoDone = false;
-    // Start is called before the first frame update
-    void Start()
+    
+
+    public void Start()
     {
         Cursor.visible = true;
         googleSheetsDB = gameObject.GetComponent<GoogleSheetsDB>();
@@ -39,7 +44,7 @@ public class NewsConvoManager : MonoBehaviour
     public void UpdateText()
     {
         //read from news conversation spreadsheet
-        int txtSheetIndex = googleSheetsDB.sheetTabNames.IndexOf("NewsConvo");
+        int txtSheetIndex = googleSheetsDB.sheetTabNames.IndexOf(currentConvo);
 
         txtSheet = googleSheetsDB.dataSheets[txtSheetIndex];
 
@@ -63,7 +68,6 @@ public class NewsConvoManager : MonoBehaviour
             playButton.SetActive(true);
             Debug.Log("done");
         }
-
         currRow++;
     }
 
@@ -77,7 +81,15 @@ public class NewsConvoManager : MonoBehaviour
     //display conversation dialogue, how to do it depends on if it's Mantle or Leo
     public void WriteConvoDialogue(string row, string column, bool Mantle)
     {
-        string temp = txtSheet.GetRowData(row, column) + "\n";
+        string temp = txtSheet.GetRowData(row, column) + "\n\n";
+
+        //Resize scroll area
+        float goalHeight = Mathf.Max(460, convoText.textBounds.extents.y*2f + 100);
+        scrollArea.GetComponent<RectTransform>().sizeDelta = new Vector3(740, goalHeight, 1);
+        scrollArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, (goalHeight-460)/2);
+        //Auto scroll text as it hits bottom of screen
+        scrollArea.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(0, Mathf.Max(0, (goalHeight-460)/2) - 10);
+
         if (Mantle)
         {
             StartCoroutine(MantleText(convoText, temp));
@@ -94,6 +106,10 @@ public class NewsConvoManager : MonoBehaviour
     {
         foreach (char letter in fullText)
         {
+            if (news)
+                yield return new WaitUntil(() => newsWindow.activeSelf && newsWindow.transform.parent.localScale.x >= 1.3f);
+            else
+                yield return new WaitUntil(() => convoWindow.activeSelf && convoWindow.transform.parent.localScale.x >= 1);
             if (news)
             {
                 casterAnim.SetBool("isTalking", true);
@@ -166,6 +182,7 @@ public class NewsConvoManager : MonoBehaviour
 
     public void StartNewsConvo()
     {
+        currentConvo = "NewsConvo";
         UpdateText();
         playButton.SetActive(false);
         pauseButton.SetActive(false);
