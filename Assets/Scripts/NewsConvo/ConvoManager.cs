@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class NewsConvoManager : MonoBehaviour
+public class ConvoManager : MonoBehaviour
 {
     GoogleSheetsDB googleSheetsDB;
     public GoogleSheet txtSheet;
+    public string currentConvo;
 
     [SerializeField] private Animator casterAnim;
 
@@ -43,7 +44,7 @@ public class NewsConvoManager : MonoBehaviour
     public void UpdateText()
     {
         //read from news conversation spreadsheet
-        int txtSheetIndex = googleSheetsDB.sheetTabNames.IndexOf("NewsConvo");
+        int txtSheetIndex = googleSheetsDB.sheetTabNames.IndexOf(currentConvo);
 
         txtSheet = googleSheetsDB.dataSheets[txtSheetIndex];
 
@@ -83,7 +84,7 @@ public class NewsConvoManager : MonoBehaviour
         string temp = txtSheet.GetRowData(row, column) + "\n\n";
 
         //Resize scroll area
-        float goalHeight = Mathf.Max(460, convoText.textBounds.extents.y*2.4f); //TODO: don't hard code this?
+        float goalHeight = Mathf.Max(460, convoText.textBounds.extents.y*2f + 100);
         scrollArea.GetComponent<RectTransform>().sizeDelta = new Vector3(740, goalHeight, 1);
         scrollArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, (goalHeight-460)/2);
         //Auto scroll text as it hits bottom of screen
@@ -181,6 +182,8 @@ public class NewsConvoManager : MonoBehaviour
 
     public void StartNewsConvo()
     {
+        Debug.Log("Starting News!");
+        currentConvo = "NewsConvo";
         UpdateText();
         playButton.SetActive(false);
         pauseButton.SetActive(false);

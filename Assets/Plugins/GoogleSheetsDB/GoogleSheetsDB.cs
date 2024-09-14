@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class GoogleSheetsDB : MonoBehaviour
 {
     public bool isOnlineMode = true;
-    public string googleSheetAddress = "";
+    public string googleSheetAddress;
     public bool saveRemoteData = true;
     public string FolderName = "GameData";
     public string DBPath;
