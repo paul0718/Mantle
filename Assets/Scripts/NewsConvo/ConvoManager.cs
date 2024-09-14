@@ -182,7 +182,6 @@ public class ConvoManager : MonoBehaviour
 
     public void StartNewsConvo()
     {
-        Debug.Log("Starting News!");
         currentConvo = "NewsConvo";
         UpdateText();
         playButton.SetActive(false);

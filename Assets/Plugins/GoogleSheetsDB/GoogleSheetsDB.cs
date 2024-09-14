@@ -62,10 +62,8 @@ public class GoogleSheetsDB : MonoBehaviour
             for (var i = 0; i < sheetTabNames.Count; i++)
             {
                 StartCoroutine(RequestSheet(sheetTabNames[i]));
+                yield return new WaitUntil(() => dataSheets.Count == i+1);
             }
-
-            yield return new WaitUntil(() => dataSheets.Count == sheetTabNames.Count);
-
             OnDownloadComplete();
         }
         else

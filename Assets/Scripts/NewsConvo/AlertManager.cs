@@ -9,21 +9,34 @@ public class AlertManager : MonoBehaviour
 {
     [SerializeField] private GameObject alertObj;
     [SerializeField] private TMP_Text alertTxt;
+    [SerializeField] private GameObject newsOffline;
+    [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject newsWindow;
+    [SerializeField] private GameObject newsTaskbar;
     
     [SerializeField] private ConvoManager dialogueScript;
-    [SerializeField] private GoogleSheetsDB sheetsScript;
 
     public bool alertActive;
     
 
     private void Start()
     {
+        newsOffline.SetActive(alertActive);
+        playButton.SetActive(!alertActive);
+        newsWindow.SetActive(!alertActive);
+        newsTaskbar.SetActive(!alertActive);
         if (alertActive)
         {
-            //TODO: could wait a few seconds
-            alertObj.SetActive(true);
-            alertTxt.DOFade(0, 0.5f).SetLoops(-1, LoopType.Yoyo);
+            StartCoroutine(ShowAlert());
         }
+    }
+
+    private IEnumerator ShowAlert()
+    {
+        yield return new WaitForSeconds(2);
+        //TODO: alert fade-in animation?
+        alertObj.SetActive(true);
+        alertTxt.DOFade(0, 0.5f).SetLoops(-1, LoopType.Yoyo);
     }
 
     public void AlertReceived()
