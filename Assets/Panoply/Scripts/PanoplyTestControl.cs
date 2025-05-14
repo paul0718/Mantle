@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Opertoon.Panoply;
+using UnityEngine.SceneManagement;
 
 public class PanoplyTestControl : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class PanoplyTestControl : MonoBehaviour
         else
         {
             _mouseInstruct.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene("NewsConvo");
         }
     }
 }

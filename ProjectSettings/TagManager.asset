@@ -4,29 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Circuit
-  - Mirror
-  - LaserGoal
-  - EnemyDot
-  - ToCircuit
-  - FromCircuit
-  - Tear
-  - StillMirror
-  - RightMirror
-  - EnemyProjectile
-  - Sword
   - Goal
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - WorldText
+  - Reticle
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Droplet
+  - Arm
+  - ChargeBox
+  - Crack
   - 
   - 
   - 

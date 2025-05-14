@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eca7da08449db4f80f03fb77548826, type: 3}
+  m_Name: DesktopSFX
+  m_EditorClassIdentifier: 
+  library:
+  - {fileID: 8300000, guid: df0d19d46d8d4b141a671d5005e8e764, type: 3}
+  - {fileID: 8300000, guid: ad0811f46ea167a4fa9d357c4293171d, type: 3}
+  - {fileID: 8300000, guid: 36f5f3eb784be3b4ea17a62d6cd6811e, type: 3}
+  - {fileID: 8300000, guid: f6c2527140452cf42ad6a2a7b7d98f68, type: 3}
+  - {fileID: 8300000, guid: 48fb9030e7a954a49910169529609120, type: 3}
+  - {fileID: 8300000, guid: cc8844a23d6aebb458cf3c15b185ee45, type: 3}
+  - {fileID: 8300000, guid: e60ebfe6d8fa6fd4d9eda6fdc51182ad, type: 3}
+  - {fileID: 8300000, guid: 8105a7a68cb87024d9c24c529c3d23a5, type: 3}
+  - {fileID: 8300000, guid: b83a5faae50b1fd42a7b0530265be16c, type: 3}
+  - {fileID: 8300000, guid: 1ed14dffad4e98d4285b4dff27ab0863, type: 3}
+  - {fileID: 8300000, guid: 5e3ff006ce445d544bb140dd305c570a, type: 3}
+  - {fileID: 8300000, guid: e90cf9bc2f055a54ca282b5b12684533, type: 3}

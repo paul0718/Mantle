@@ -1,64 +1,58 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems; 
+using UnityEngine.EventSystems;
 
-public class DragWindow : MonoBehaviour, IDragHandler
+public class DragWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
 {
-    private Vector2 mousePos = new Vector2();
-    private Vector2 startPos = new Vector2();
-    private Vector2 diffPoint = new Vector2();
+    private Vector2 diffPoint; // Stores the offset between the mouse click and the window position
+    private RectTransform rectTransform;
+    private Canvas canvas;
 
-    
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Confined;
+        rectTransform = GetComponent<RectTransform>();
+        canvas = GetComponentInParent<Canvas>();
+
+        Cursor.lockState = CursorLockMode.Confined; // Keeps the cursor within the application window
     }
 
-    private void Update()
+    // Called when the user presses down on the UI element
+    public void OnPointerDown(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0))
-        {
-            UpdateMousePos();
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            UpdateStartPos();
-            UpdateDiffPoint();
-        }
+        // Convert the mouse position to local space relative to the RectTransform
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            rectTransform,
+            eventData.position,
+            canvas.worldCamera,
+            out diffPoint
+        );
+        diffPoint *= rectTransform.localScale;
     }
 
-    void UpdateMousePos()
-    {
-        mousePos.x = Input.mousePosition.x;
-        mousePos.y = Input.mousePosition.y;
-    }
-
-    void UpdateStartPos()
-    {
-        startPos.x = GetComponent<RectTransform>().position.x;
-        startPos.y = GetComponent<RectTransform>().position.y;
-    }
-
-    void UpdateDiffPoint()
-    {
-        diffPoint = mousePos - startPos;
-    }
-    
+    // Called when the user drags the UI element
     public void OnDrag(PointerEventData eventData)
     {
-        transform.SetAsLastSibling();
-        //Debug.Log(GetComponent<RectTransform>().position);
+        // Bring the dragged window to the front
+        transform.SetSiblingIndex(transform.parent.childCount - 2);
+
+        Vector2 localMousePos;
+        // Convert the mouse position to local space relative to the canvas
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+            eventData.position,
+            canvas.worldCamera,
+            out localMousePos
+        );
+
         if (GetComponent<DesktopInteractions>().maximized)
         {
-            GetComponent<RectTransform>().position = new Vector2((mousePos - diffPoint).x, GetComponent<RectTransform>().position.y); //lock y-position when maximized
+            // If the window is maximized, only allow movement along the X-axis
+            rectTransform.anchoredPosition = new Vector2(localMousePos.x - diffPoint.x, rectTransform.anchoredPosition.y);
         }
         else
         {
-            GetComponent<RectTransform>().position = mousePos - diffPoint;
+            // Move the window while maintaining the initial offset from the cursor
+            rectTransform.anchoredPosition = new Vector2(localMousePos.x - diffPoint.x, Mathf.Max(localMousePos.y-diffPoint.y, -400 - rectTransform.sizeDelta.y*rectTransform.localScale.y/2));
         }
     }
 }

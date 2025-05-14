@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 2000000}
   - component: {fileID: 11400000}
-  - component: {fileID: -4950875407895754262}
+  - component: {fileID: 8256507287369781942}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -61,13 +61,13 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0.99999994
-    height: 1
+    x: 0.13242188
+    y: 0.013194445
+    width: 0.73515624
+    height: 0.9736111
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 58.385044
+  field of view: 58.416668
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -135,23 +135,23 @@ MonoBehaviour:
     heightUnits: 1
     minAspectRatioVal: 0
     maxAspectRatioVal: 0
-    marginTopVal: 0
-    marginRightVal: 0
-    marginBottomVal: 0
-    marginLeftVal: 0
+    marginTopVal: 10
+    marginRightVal: 10
+    marginBottomVal: 10
+    marginLeftVal: 10
     matteColor: {r: 0, g: 0, b: 0, a: 0}
     borderSize: 0
-    borderColor: {r: 0, g: 0, b: 0, a: 0}
+    borderColor: {r: 0, g: 0, b: 0, a: 1}
     widthCalcMethod: 2
     heightCalcMethod: 2
-    pxTop: 592
-    pxRight: 833
+    pxTop: 1440
+    pxRight: 1920
     pxBottom: 0
     pxLeft: 0
-    pxWidth: 833
-    pxHeight: 592
-    pxCenterH: 416.5
-    pxCenterV: 296
+    pxWidth: 1920
+    pxHeight: 1440
+    pxCenterH: 960
+    pxCenterV: 720
     isEditing: 0
   frameStateB:
     id: State 1
@@ -181,23 +181,23 @@ MonoBehaviour:
     heightUnits: 1
     minAspectRatioVal: 0
     maxAspectRatioVal: 0
-    marginTopVal: 0
-    marginRightVal: 0
-    marginBottomVal: 0
-    marginLeftVal: 0
+    marginTopVal: 10
+    marginRightVal: 10
+    marginBottomVal: 10
+    marginLeftVal: 10
     matteColor: {r: 0, g: 0, b: 0, a: 0}
     borderSize: 0
-    borderColor: {r: 0, g: 0, b: 0, a: 0}
+    borderColor: {r: 0, g: 0, b: 0, a: 1}
     widthCalcMethod: 2
     heightCalcMethod: 2
-    pxTop: 592
-    pxRight: 833
+    pxTop: 1440
+    pxRight: 1920
     pxBottom: 0
     pxLeft: 0
-    pxWidth: 833
-    pxHeight: 592
-    pxCenterH: 416.5
-    pxCenterV: 296
+    pxWidth: 1920
+    pxHeight: 1440
+    pxCenterH: 960
+    pxCenterV: 720
     isEditing: 0
   cameraStateA:
     id: State 1
@@ -278,7 +278,7 @@ MonoBehaviour:
     multiplierVal: 0
     isEditing: 0
   startIndex: 0
-  scriptIndex: 0
+  scriptIndex: 5
   crossfade: 0
   progress: 0
   frameStates:
@@ -318,14 +318,14 @@ MonoBehaviour:
     borderColor: {r: 0, g: 0, b: 0, a: 1}
     widthCalcMethod: 2
     heightCalcMethod: 2
-    pxTop: 592
-    pxRight: 833
+    pxTop: 1440
+    pxRight: 1920
     pxBottom: 0
     pxLeft: 0
-    pxWidth: 833
-    pxHeight: 592
-    pxCenterH: 416.5
-    pxCenterV: 296
+    pxWidth: 1920
+    pxHeight: 1440
+    pxCenterH: 960
+    pxCenterV: 720
     isEditing: 0
   frameStateScript:
   - (1) State 1
@@ -635,14 +635,14 @@ MonoBehaviour:
   disableCameraControl: 0
   frameRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 833
-    height: 592
+    x: 339
+    y: 19
+    width: 1882
+    height: 1402
   borderSize: 0
-  borderColor: {r: 0, g: 0, b: 0, a: 0}
+  borderColor: {r: 0, g: 0, b: 0, a: 1}
   matteColor: {r: 0, g: 0, b: 0, a: 0}
-  camera: {fileID: 0}
+  camera: {fileID: 2000000}
   homePosition: {x: 0, y: 0, z: 0}
   lookAtEnabled: 0
   frameStateCounter: 0
@@ -683,7 +683,7 @@ MonoBehaviour:
     marginLeftVal: 0
     matteColor: {r: 0, g: 0, b: 0, a: 0}
     borderSize: 0
-    borderColor: {r: 0, g: 0, b: 0, a: 0}
+    borderColor: {r: 0, g: 0, b: 0, a: 1}
     widthCalcMethod: 0
     heightCalcMethod: 0
     pxTop: -1
@@ -729,7 +729,7 @@ MonoBehaviour:
     marginLeftVal: 0
     matteColor: {r: 0, g: 0, b: 0, a: 0}
     borderSize: 0
-    borderColor: {r: 0, g: 0, b: 0, a: 0}
+    borderColor: {r: 0, g: 0, b: 0, a: 1}
     widthCalcMethod: 0
     heightCalcMethod: 0
     pxTop: -1
@@ -775,7 +775,7 @@ MonoBehaviour:
     marginLeftVal: 0
     matteColor: {r: 0, g: 0, b: 0, a: 0}
     borderSize: 0
-    borderColor: {r: 0, g: 0, b: 0, a: 0}
+    borderColor: {r: 0, g: 0, b: 0, a: 1}
     widthCalcMethod: 0
     heightCalcMethod: 0
     pxTop: -1
@@ -793,7 +793,7 @@ MonoBehaviour:
   passiveMotionRotationH: {x: 0, y: 0, z: 0}
   passiveMotionTranslationV: {x: 0, y: 0, z: 0}
   passiveMotionRotationV: {x: 0, y: 0, z: 0}
---- !u!114 &-4950875407895754262
+--- !u!114 &8256507287369781942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -802,38 +802,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c0e9df6672db4a3c8def8d85d28df68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+  matteColor: {r: 0, g: 0, b: 0, a: 0}
+  borderColor: {r: 0, g: 0, b: 0, a: 1}
+  border:
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0

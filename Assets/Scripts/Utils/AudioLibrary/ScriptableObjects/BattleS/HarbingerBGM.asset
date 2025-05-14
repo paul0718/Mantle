@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eca7da08449db4f80f03fb77548826, type: 3}
+  m_Name: HarbingerBGM
+  m_EditorClassIdentifier: 
+  library:
+  - {fileID: 8300000, guid: cfa5744ab7ceed1429f783cf6f01f69f, type: 3}
+  - {fileID: 8300000, guid: 21ac55b1fc20cc747875857ae300bc8c, type: 3}
+  - {fileID: 8300000, guid: a22932ed1afd6f745a76432460608e15, type: 3}

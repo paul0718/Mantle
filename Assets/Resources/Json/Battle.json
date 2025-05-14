@@ -1,0 +1,763 @@
+{
+    "3": {
+        "Enemy": "Enaga",
+        "Background": "Zoo",
+        "Minigames": {
+            "0": {
+                "WinEffect": {
+                    "x": -40,
+                    "y": 40
+                },
+                "LoseEffect": {
+                    "x": 0,
+                    "y": -40
+                }
+            },
+            "1": {
+                "WinEffect": {
+                    "x": 40,
+                    "y": -40
+                },
+                "LoseEffect": {
+                    "x": 0,
+                    "y": 40
+                }
+            },
+            "2": {
+                "WinEffect": {
+                    "x": 40,
+                    "y": 0
+                },
+                "LoseEffect": {
+                    "x": -40,
+                    "y": 0
+                }
+            }
+        },
+        "EnemyMinigames": {
+            "0": {
+                "LoseEffect": {
+                    "x": 30,
+                    "y": 0
+                }
+            },
+            "1": {
+                "LoseEffect": {
+                    "x": 0,
+                    "y": 30
+                }
+            },
+            "2": {
+                "LoseEffect": {
+                    "x": -20,
+                    "y": 0
+                }
+            },
+            "3": {
+                "LoseEffect": {
+                    "x": 0,
+                    "y": -30
+                }
+            }
+        },
+        "StartPos": {
+            "x": 0,
+            "y": -40
+        },
+        "DisarmPos": {
+            "x": -0.72,
+            "y": 2.52
+        },
+        "EndStates": {
+            "0": {
+                "Pos": {
+                    "x": -170,
+                    "y": 170
+                }
+            },
+            "1": {
+                "Pos": {
+                    "x": 170,
+                    "y": -170
+                }
+            }
+        },
+        "IntroDialoguePath": "Dialog/Battle/Enaga/Intro Dialogue",
+        "BarkDialoguePath": "Dialog/Battle/Enaga/Barks",
+        "OutroDialoguePath": "Dialog/Battle/Enaga/Outro Dialogue",
+        "LoseSceneDialoguePath": "Dialog/Battle/Enaga/Loss Dialogue",
+        "BGM": "Lily",
+        "RepairParameters": {
+            "KnockOffPerAttack": 1,
+            "AttackInterval": 3
+        }
+    },
+    "6": {
+        "Enemy": "Quincy",
+        "Background": "Prison",
+        "Minigames": {
+            "0": {
+                "WinEffect": {
+                    "x": 60,
+                    "y": 40
+                },
+                "LoseEffect": {
+                    "x": -60,
+                    "y": 40
+                }
+            },
+            "1": {
+                "WinEffect": {
+                    "x": 80,
+                    "y": 0
+                },
+                "LoseEffect": {
+                    "x": 0,
+                    "y": -50
+                }
+            },
+            "2": {
+                "WinEffect": {
+                    "x": 0,
+                    "y": 60
+                },
+                "LoseEffect": {
+                    "x": 50,
+                    "y": 50
+                }
+            },
+            "3": {
+                "WinEffect": {
+                    "x": -80,
+                    "y": 60
+                },
+                "LoseEffect": {
+                    "x": 60,
+                    "y": 0
+                }
+            }
+        },
+        "EnemyMinigames": {
+            "0": {
+                "LoseEffect": {
+                    "x": -60,
+                    "y": 0
+                }
+            },
+            "1": {
+                "LoseEffect": {
+                    "x": -20,
+                    "y": -50
+                }
+            },
+            "2": {
+                "LoseEffect": {
+                    "x": 40,
+                    "y": -40
+                }
+            },
+            "3": {
+                "LoseEffect": {
+                    "x": -40,
+                    "y": 40
+                }
+            }
+        },
+        "StartPos": {
+            "x": 80,
+            "y": -80
+        },
+        "DisarmPos": {
+            "x": 1.45,
+            "y": 2.52
+        },
+        "EndStates": {
+            "0": {
+                "Pos": {
+                    "x": -170,
+                    "y": 170
+                }
+            },
+            "1": {
+                "Pos": {
+                    "x": 170,
+                    "y": 170
+                }
+            }
+        },
+        "IntroDialoguePath": "Dialog/Battle/Quincy/Intro Dialogue",
+        "BarkDialoguePath": "Dialog/Battle/Quincy/Barks",
+        "OutroDialoguePath": "Dialog/Battle/Quincy/Outro Dialogue",
+        "LoseSceneDialoguePath": "Dialog/Battle/Quincy/Loss Dialogue",
+        "BGM": "Lily",
+        "RepairParameters": {
+            "KnockOffPerAttack": 2,
+            "AttackInterval": 3
+        }
+    },
+    "9": {
+        "Enemy": "Vyzzar",
+        "Background": "Hospital",
+        "Minigames": {
+            "0": {
+                "WinEffect": {
+                    "x": -50,
+                    "y": 50
+                },
+                "LoseEffect": {
+                    "x": 30,
+                    "y": 0
+                }
+            },
+            "1": {
+                "WinEffect": {
+                    "x": -10,
+                    "y": -40
+                },
+                "LoseEffect": {
+                    "x": -10,
+                    "y": 30
+                }
+            },
+            "2": {
+                "WinEffect": {
+                    "x": -50,
+                    "y": -50
+                },
+                "LoseEffect": {
+                    "x": 30,
+                    "y": 10
+                }
+            },
+            "3": {
+                "WinEffect": {
+                    "x": -30,
+                    "y": 0
+                },
+                "LoseEffect": {
+                    "x": 30,
+                    "y": -30
+                }
+            },
+            "4": {
+                "WinEffect": {
+                    "x": -50,
+                    "y": 20
+                },
+                "LoseEffect": {
+                    "x": -10,
+                    "y": 30
+                }
+            }
+        },
+        "EnemyMinigames": {
+            "0": {
+                "LoseEffect": {
+                    "x": 30,
+                    "y": 30
+                }
+            },
+            "1": {
+                "LoseEffect": {
+                    "x": 10,
+                    "y": -30
+                }
+            },
+            "2": {
+                "LoseEffect": {
+                    "x": 30,
+                    "y": 0
+                }
+            },
+            "3": {
+                "LoseEffect": {
+                    "x": 10,
+                    "y": 30
+                }
+            }
+        },
+        "StartPos": {
+            "x": 130,
+            "y": 50
+        },
+        "DisarmPos": {
+            "x": -0.72,
+            "y": 2.52
+        },
+        "EndStates": {
+            "0": {
+                "Pos": {
+                    "x": -100,
+                    "y": 100
+                }
+            },
+            "1": {
+                "Pos": {
+                    "x": 0,
+                    "y": -170
+                }
+            }
+        },
+        "IntroDialoguePath": "Dialog/Battle/Vyzzar/Intro Dialogue",
+        "BarkDialoguePath": "Dialog/Battle/Vyzzar/Barks",
+        "OutroDialoguePath": "Dialog/Battle/Vyzzar/Outro Dialogue",
+        "LoseSceneDialoguePath": "Dialog/Battle/Vyzzar/Loss Dialogue",
+        "BGM": "Lily",
+        "RepairParameters": {
+            "KnockOffPerAttack": 3,
+            "AttackInterval": 4
+        }
+    },
+    "12": {
+        "Enemy": "Cecil",
+        "Background": "Factory",
+        "Minigames": {
+            "0": {
+                "WinEffect": {
+                    "x": 10,
+                    "y": 40
+                },
+                "LoseEffect": {
+                    "x": 20,
+                    "y": 0
+                }
+            },
+            "1": {
+                "WinEffect": {
+                    "x": -30,
+                    "y": 0
+                },
+                "LoseEffect": {
+                    "x": 0,
+                    "y": -20
+                }
+            },
+            "2": {
+                "WinEffect": {
+                    "x": -10,
+                    "y": 50
+                },
+                "LoseEffect": {
+                    "x": 20,
+                    "y": 10
+                }
+            },
+            "3": {
+                "WinEffect": {
+                    "x": 0,
+                    "y": 40
+                },
+                "LoseEffect": {
+                    "x": 30,
+                    "y": 0
+                }
+            },
+            "4": {
+                "WinEffect": {
+                    "x": 30,
+                    "y": 30
+                },
+                "LoseEffect": {
+                    "x": 0,
+                    "y": -30
+                }
+            }
+        },
+        "EnemyMinigames": {
+            "0": {
+                "LoseEffect": {
+                    "x": 20,
+                    "y": 0
+                }
+            },
+            "1": {
+                "LoseEffect": {
+                    "x": 20,
+                    "y": 5
+                }
+            },
+            "2": {
+                "LoseEffect": {
+                    "x": 30,
+                    "y": -30
+                }
+            },
+            "3": {
+                "LoseEffect": {
+                    "x": 0,
+                    "y": -20
+                }
+            }
+        },
+        "StartPos": {
+            "x": -150,
+            "y": -130
+        },
+        "DisarmPos": {
+            "x": -0.3,
+            "y": 1.9
+        },
+        "EndStates": {
+            "0": {
+                "Pos": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "1": {
+                "Pos": {
+                    "x": -200,
+                    "y": 200
+                }
+            }
+        },
+        "IntroDialoguePath": "Dialog/Battle/Cecil/Intro Dialogue",
+        "BarkDialoguePath": "Dialog/Battle/Cecil/Barks",
+        "OutroDialoguePath": "Dialog/Battle/Cecil/Outro Dialogue",
+        "LoseSceneDialoguePath": "Dialog/Battle/Cecil/Loss Dialogue",
+        "BGM": "Lily",
+        "RepairParameters": {
+            "KnockOffPerAttack": 1,
+            "AttackInterval": 2
+        }
+    },
+    "14": {
+        "Enemy": "Harbinger",
+        "Background": "LeoRoom",
+        "Minigames": {
+            "0": {
+                "WinEffect": {
+                    "x": -50,
+                    "y": -30
+                },
+                "LoseEffect": {
+                    "x": 20,
+                    "y": -40
+                }
+            },
+            "1": {
+                "WinEffect": {
+                    "x": 30,
+                    "y": -10
+                },
+                "LoseEffect": {
+                    "x": -40,
+                    "y": -30
+                }
+            },
+            "2": {
+                "WinEffect": {
+                    "x": 20,
+                    "y": -50
+                },
+                "LoseEffect": {
+                    "x": -40,
+                    "y": 0
+                }
+            },
+            "3": {
+                "WinEffect": {
+                    "x": -60,
+                    "y": -35
+                },
+                "LoseEffect": {
+                    "x": 20,
+                    "y": 20
+                }
+            },
+            "4": {
+                "WinEffect": {
+                    "x": -30,
+                    "y": 10
+                },
+                "LoseEffect": {
+                    "x": -10,
+                    "y": -40
+                }
+            }
+        },
+        "EnemyMinigames": {
+            "0": {
+                "LoseEffect": {
+                    "x": 30,
+                    "y": 15
+                }
+            },
+            "1": {
+                "LoseEffect": {
+                    "x": 0,
+                    "y": 20
+                }
+            },
+            "2": {
+                "LoseEffect": {
+                    "x": 20,
+                    "y": 0
+                }
+            },
+            "3": {
+                "LoseEffect": {
+                    "x": 15,
+                    "y": 30
+                }
+            }
+        },
+        "StartPos": {
+            "x": 170,
+            "y": 170
+        },
+        "DisarmPos": {
+            "x": 0.24,
+            "y": 2.25
+        },
+        "EndStates": {
+            "0": {
+                "Pos": {
+                    "x": 70,
+                    "y": -110
+                }
+            },
+            "1": {
+                "Pos": {
+                    "x": -200,
+                    "y": 200
+                }
+            }
+        },
+        "IntroDialoguePath": "Dialog/Battle/Harbinger/Intro Dialogue",
+        "BarkDialoguePath": "Dialog/Battle/Harbinger/Barks",
+        "OutroDialoguePath": "Dialog/Battle/Harbinger/Outro Dialogue",
+        "LoseSceneDialoguePath": "Dialog/Battle/Harbinger/Loss Dialogue",
+        "BGM": "Lily",
+        "RepairParameters": {
+            "KnockOffPerAttack": 4,
+            "AttackInterval": 5
+        }
+    },
+    "17": {
+        "Enemy": "Ace",
+        "Background": "NewsStationFight",
+        "Minigames": {
+            "0": {
+                "WinEffect": {
+                    "x": 40,
+                    "y": 40
+                },
+                "LoseEffect": {
+                    "x": -20,
+                    "y": -10
+                }
+            },
+            "1": {
+                "WinEffect": {
+                    "x": -50,
+                    "y": 40
+                },
+                "LoseEffect": {
+                    "x": 20,
+                    "y": 10
+                }
+            },
+            "2": {
+                "WinEffect": {
+                    "x": 50,
+                    "y": 0
+                },
+                "LoseEffect": {
+                    "x": 0,
+                    "y": -20
+                }
+            },
+            "3": {
+                "WinEffect": {
+                    "x": 0,
+                    "y": 45
+                },
+                "LoseEffect": {
+                    "x": 20,
+                    "y": -20
+                }
+            },
+            "4": {
+                "WinEffect": {
+                    "x": -30,
+                    "y": 40
+                },
+                "LoseEffect": {
+                    "x": -20,
+                    "y": 0
+                }
+            }
+        },
+        "EnemyMinigames": {
+            "0": {
+                "LoseEffect": {
+                    "x": 0,
+                    "y": -15
+                }
+            },
+            "1": {
+                "LoseEffect": {
+                    "x": 10,
+                    "y": 20
+                }
+            },
+            "2": {
+                "LoseEffect": {
+                    "x": -20,
+                    "y": 0
+                }
+            },
+            "3": {
+                "LoseEffect": {
+                    "x": -5,
+                    "y": -10
+                }
+            }
+        },
+        "StartPos": {
+            "x": -90,
+            "y": -130
+        },
+        "DisarmPos": {
+            "x": 0.25,
+            "y": 2.6
+        },
+        "EndStates": {
+            "0": {
+                "Pos": {
+                    "x": -170,
+                    "y": 0
+                }
+            },
+            "1": {
+                "Pos": {
+                    "x": 170,
+                    "y": 170
+                }
+            }
+        },
+        "IntroDialoguePath": "Dialog/Battle/Ace/Intro Dialogue",
+        "BarkDialoguePath": "Dialog/Battle/Ace/Barks",
+        "OutroDialoguePath": "Dialog/Battle/Ace/Outro Dialogue",
+        "LoseSceneDialoguePath": "Dialog/Battle/Ace/Loss Dialogue",
+        "BGM": "Lily",
+        "RepairParameters": {
+            "KnockOffPerAttack": 4,
+            "AttackInterval": 5
+        }
+    },
+    "100": {
+        "Enemy": "Enaga",
+        "Background": "Hospital Construction",
+        "Minigames": {
+            "0": {
+                "WinEffect": {
+                    "x": 60,
+                    "y": 40
+                },
+                "LoseEffect": {
+                    "x": -60,
+                    "y": 40
+                }
+            },
+            "1": {
+                "WinEffect": {
+                    "x": 80,
+                    "y": 0
+                },
+                "LoseEffect": {
+                    "x": 0,
+                    "y": -50
+                }
+            },
+            "2": {
+                "WinEffect": {
+                    "x": 0,
+                    "y": 60
+                },
+                "LoseEffect": {
+                    "x": 50,
+                    "y": 50
+                }
+            },
+            "3": {
+                "WinEffect": {
+                    "x": -80,
+                    "y": 60
+                },
+                "LoseEffect": {
+                    "x": 60,
+                    "y": 0
+                }
+            },
+            "4": {
+                "WinEffect": {
+                    "x": -80,
+                    "y": 60
+                },
+                "LoseEffect": {
+                    "x": 60,
+                    "y": 0
+                }
+            }
+        },
+        "EnemyMinigames": {
+            "0": {
+                "LoseEffect": {
+                    "x": -60,
+                    "y": 0
+                }
+            },
+            "1": {
+                "LoseEffect": {
+                    "x": -20,
+                    "y": -50
+                }
+            },
+            "2": {
+                "LoseEffect": {
+                    "x": 40,
+                    "y": -40
+                }
+            },
+            "3": {
+                "LoseEffect": {
+                    "x": -40,
+                    "y": 40
+                }
+            }
+        },
+        "StartPos": {
+            "x": 80,
+            "y": -80
+        },
+        "DisarmPos": {
+            "x": -0.72,
+            "y": 2.52
+        },
+        "EndStates": {
+            "0": {
+                "Pos": {
+                    "x": -170,
+                    "y": 170
+                }
+            },
+            "1": {
+                "Pos": {
+                    "x": 170,
+                    "y": 170
+                }
+            }
+        },
+        "IntroDialoguePath": "Dialog/Battle/Quincy/Intro Dialogue",
+        "BarkDialoguePath": "Dialog/Battle/Quincy/Barks",
+        "OutroDialoguePath": "Dialog/Battle/Quincy/Outro Dialogue",
+        "LoseSceneDialoguePath": "Dialog/Battle/Quincy/Loss Dialogue",
+        "BGM": "Lily",
+        "RepairParameters": {
+            "KnockOffPerAttack": 1,
+            "AttackInterval": 3
+        }
+    }
+}

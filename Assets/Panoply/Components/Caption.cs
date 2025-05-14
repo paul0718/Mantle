@@ -76,7 +76,7 @@ namespace Opertoon.Panoply
 			if (PanoplyCore.panoplyRenderer != null) {
 				PanoplyCore.panoplyRenderer.UpdateInventory();
 			}
-
+			
             /*int i;
 			int n = states.Count;
 			CaptionState state;
@@ -404,7 +404,7 @@ namespace Opertoon.Panoply
 	    		if (( panel != null ) && (PanoplyCore.resolutionScale != 0) /*|| ( scriptablePanel != null )*/) {
 	    			
 	    			GUI.depth = 1;
-	    		
+	    			
 	    			float guiScale = PanoplyCore.resolutionScale;
 	    			Matrix4x4 scaledMatrix = Matrix4x4.Scale( new Vector3( guiScale, guiScale, guiScale ));
 	        		GUI.matrix = scaledMatrix;
@@ -632,7 +632,6 @@ namespace Opertoon.Panoply
 	    		}
 	    		
 	    	}
-
         }
 
         private void CreateUICaption()

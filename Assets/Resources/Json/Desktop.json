@@ -1,0 +1,53 @@
+{
+    "2": {
+        "IsAlertScene": true,
+        "EmailProgress": 0,
+        "GoogleSheetPath": "Dialog/Seq2-4/Alert"
+    },
+    "4": {
+        "IsAlertScene": false,
+        "EmailProgress": 1,
+        "GoogleSheetPath": "Dialog/Seq2-4/NewsConvo",
+        "NewsDetailsPath": "Dialog/Seq2-4/NewsDetails"
+    },
+    "5": {
+        "IsAlertScene": true,
+        "EmailProgress": 1,
+        "GoogleSheetPath": "Dialog/Seq5-7/Alert"
+    },
+    "7": {
+        "IsAlertScene": false,
+        "EmailProgress": 2,
+        "GoogleSheetPath": "Dialog/Seq5-7/NewsConvo",
+        "NewsDetailsPath": "Dialog/Seq5-7/NewsDetails"
+    },
+    "8": {
+        "IsAlertScene": true,
+        "EmailProgress": 2,
+        "GoogleSheetPath": "Dialog/Seq8-10/Alert"
+    },
+    "10": {
+        "IsAlertScene": false,
+        "EmailProgress": 3,
+        "GoogleSheetPath": "Dialog/Seq8-10/NewsConvo",
+        "NewsDetailsPath": "Dialog/Seq8-10/NewsDetails"
+    },
+    "11": {
+        "IsAlertScene": true,
+        "EmailProgress": 3,
+        "GoogleSheetPath": "Dialog/Seq11-16/Alert"
+    },
+    "16": {
+        "IsAlertScene": false,
+        "EmailProgress": 3,
+        "GoogleSheetPath": "Dialog/Seq11-16/NewsConvo",
+        "NewsDetailsPath": "Dialog/Seq11-16/NewsDetails"
+    },
+    "19": {
+        "IsAlertScene": false,
+        "EmailProgress": 3,
+        "GoogleSheetPath": "Dialog/Seq19/NewsConvo",
+        "NewsDetailsPath": "Dialog/Seq19/NewsDetails",
+        "AceKillMantlePath": "Dialog/Seq19/Alert"
+    }
+}

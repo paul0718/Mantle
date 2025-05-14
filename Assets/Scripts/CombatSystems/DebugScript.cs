@@ -1,47 +1,122 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using PixelCrushers.DialogueSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class DebugScript : MonoBehaviour
 {
-    [SerializeField] private BarkManager ts;
-    [SerializeField] private EnemyInfo ei;
+    public static DebugScript DebugInstance;
+    
+    [SerializeField] private GameObject chargeUpGame;
+    [SerializeField] private GameObject interceptGame;
+    [SerializeField] private GameObject repairGame;
+    [SerializeField] private GameObject blockGame;
 
-    [SerializeField] private StateManager sm;
+    [SerializeField] private EndFightCutscene endFightCutscene;
 
-    [SerializeField] private GridManager gm;
+    [SerializeField] private bool battleBuild;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject destruct;
+
+    private GameObject tempCharge;
+    private GameObject tempIntercept;
+    private void Awake()
     {
-        
+        // if (DebugInstance != null)
+        // {
+        //     Destroy(gameObject);
+        //     return;
+        // }
+        // DebugInstance = this;
+        //DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))//activate explosion sequence end game
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            EndFightCutscene temp = GameObject.Find("ExplosionSequence").GetComponent<EndFightCutscene>();
-            StartCoroutine(temp.PlayEndSequence());
+            StateManager.Instance.currentState = StateManager.BattleState.Win;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha9))//transition to next scene
+
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            GameObject.Find("ExplosionSequence").GetComponent<EndFightCutscene>().TransitionToNewsConvo();
+            destruct.SetActive(true);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha8))//Move dot
+        
+        if (battleBuild)
         {
-            gm.UpdateDotPosition(-120, 160);
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SequenceManager.Instance.SequenceID = 3;
+                SceneManager.LoadScene("BattleScene");
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SequenceManager.Instance.SequenceID = 6;
+                SceneManager.LoadScene("BattleScene");
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SequenceManager.Instance.SequenceID = 9;
+                SceneManager.LoadScene("BattleScene");
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                SequenceManager.Instance.SequenceID = 12;
+                SceneManager.LoadScene("BattleScene");
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                SequenceManager.Instance.SequenceID = 14;
+                SceneManager.LoadScene("BattleScene");
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                SequenceManager.Instance.SequenceID = 17;
+                SceneManager.LoadScene("BattleScene");
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha7))//end game in kill state
+        
+        
+        //debug to call enemy games
+        if (Input.GetKey(KeyCode.LeftControl))
         {
-            sm.EndBattle(true);
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                MasterMinigames.Instance.currentMinigame = MasterMinigames.Instance.defendMinigames[0];
+                CoverManager.Instance.Switch(true, true, false);
+            }
+            else if (Input.GetKeyDown(KeyCode.W))
+            {
+                MasterMinigames.Instance.currentMinigame = MasterMinigames.Instance.defendMinigames[1];
+                CoverManager.Instance.Switch(true, true, false);
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                MasterMinigames.Instance.currentMinigame = MasterMinigames.Instance.defendMinigames[2];
+                CoverManager.Instance.Switch(true, false, false);
+            }
+            else if (Input.GetKeyDown(KeyCode.R))
+            {
+                MasterMinigames.Instance.currentMinigame = MasterMinigames.Instance.defendMinigames[3];
+                CoverManager.Instance.Switch(true, true, true);
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha6))//end game in capture state
+        
+        //go back to main menu keys
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            sm.EndBattle(false);
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                SceneManager.LoadScene("MainMenu");
+                SequenceManager.Instance.SequenceID = 1;
+                SequenceManager.Instance.dateNum = 0;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha0))//play ending cutscene for seq 9
+        {
+            endFightCutscene.StartCoroutine(endFightCutscene.PlayEndSequence());
         }
     }
 }

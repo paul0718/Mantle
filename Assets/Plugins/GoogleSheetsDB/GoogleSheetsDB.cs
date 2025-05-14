@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.IO;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ public class GoogleSheetsDB : MonoBehaviour
     private int _numDataSheetsAdded = 0;
 
     public event System.Action OnDownloadComplete;
+    public event System.Action FirstDownloadComplete;
 
 
     public void Awake()
@@ -64,7 +66,6 @@ public class GoogleSheetsDB : MonoBehaviour
                 StartCoroutine(RequestSheet(sheetTabNames[i]));
                 yield return new WaitUntil(() => dataSheets.Count == i+1);
             }
-            OnDownloadComplete();
         }
         else
         {

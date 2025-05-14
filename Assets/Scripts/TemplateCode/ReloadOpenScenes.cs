@@ -67,6 +67,7 @@ namespace USCG.Core
         {
             Debug.Log("Reloading scenes...");
 
+            SequenceManager.Instance.steamPageOn = false;
             // Only one scene can be the active scene. Remember that scene, and record
             // the other scenes that are open.
             string activeScenePath = SceneManager.GetActiveScene().path;

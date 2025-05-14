@@ -7,35 +7,54 @@ using UnityEngine;
 public class CheckDisarmEnd : MonoBehaviour
 {
     [SerializeField] private Disarm disarmScript;
+    [SerializeField] private StateManager stateScript;
 
-    [HideInInspector] private bool win = false;
+    [SerializeField] private GameObject reticle;
+    [SerializeField] private GameObject enemyWeapon;
+
+    [SerializeField] private Color winColor;
 
     public void Update()
     {
         if (disarmScript.gameDone)
         {
             disarmScript.scannerBG.transform.DOMove(new Vector3(0, -2.5f, 0), 1f);
-            if (win)
+            var battle = SequenceManager.Instance.CurrentBattle;
+            if (Physics2D.OverlapCircle(transform.position, GetComponent<CircleCollider2D>().radius, LayerMask.GetMask("Reticle"))) //on hit
             {
+                if (MetricManagerScript.instance != null)
+                { 
+                    MetricManagerScript.instance.LogString("Disarm", "Win");
+                }
                 disarmScript.gameDone = false;
-                GameObject.Find("BattleManagers").GetComponent<GridManager>().UpdateDotPosition(-50, 50);
-                //GameObject.Find("BattleManagers").GetComponent<GridManager>().UpdateDotPosition(-100, 100);
-                GameObject.Find("Enemy").GetComponent<EnemyInfo>().UpdateBark("Disarm", "W");
+                GridManager.Instance.UpdateDotPosition(battle.Minigames[0].WinEffect, GridManager.MiniGame.Disarm, true);
+                GameObject.Find("Enemy").transform.GetChild(0).GetComponent<EnemyInfo>().ChangePose(true);
+                BarkManager.Instance.ShowGameBark("Disarm", true);
+                reticle.GetComponent<SpriteRenderer>().color = winColor;
             }
             else
             {
+                if (MetricManagerScript.instance != null)
+                { 
+                    MetricManagerScript.instance.LogString("Disarm", "Lose");
+                }
                 disarmScript.gameDone = false;
-                GameObject.Find("BattleManagers").GetComponent<GridManager>().UpdateDotPosition(0, -50);
-                GameObject.Find("Enemy").GetComponent<EnemyInfo>().UpdateBark("Disarm", "L");
+                GridManager.Instance.UpdateDotPosition(battle.Minigames[0].LoseEffect, GridManager.MiniGame.Disarm,false); //on miss
+                GameObject.Find("Enemy").transform.GetChild(0).GetComponent<EnemyInfo>().ChangePose(false);
+                BarkManager.Instance.ShowGameBark("Disarm", false);
+                reticle.GetComponent<Animator>().Play("ReticleBlink");
             }
+            StartCoroutine(HideReticle());
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private IEnumerator HideReticle()
     {
-        if (other.gameObject.name == "PlayerRetical")
-        {
-            win = true;
-        }
+        if (Physics2D.OverlapCircle(transform.position, GetComponent<CircleCollider2D>().radius, LayerMask.GetMask("Reticle")))
+            yield return new WaitForSeconds(1);
+        else
+            yield return new WaitForSeconds(2);
+        reticle.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

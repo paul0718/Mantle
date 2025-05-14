@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab5c385ed9921d40b2362fcdba932b5, type: 3}
+  m_Name: NewsAlert
+  m_EditorClassIdentifier: 
+  dialogConfigs:
+  - name: Seq2-4
+    sheetID: AKfycbyQVFsni2TkRf96soTd57uG2eefd3oz4_sgGBRCeDHtKAk2AiUbkYv0Kou5OMnSr66A
+    sheetNames:
+    - Alert
+    - NewsConvo
+    - BattleLoss
+    - NewsDetails
+  - name: Seq8-10
+    sheetID: AKfycbw3rS4AGgVF1WiMdjcd0AaCfFM2iQY8gH2PMeZria3iWJoZYOVEF25R_LxhLS4xmOZQ
+    sheetNames:
+    - Alert
+    - NewsConvo
+    - BattleLoss
+    - NewsDetails
+  - name: Seq5-7
+    sheetID: AKfycbyDvQEJ1kLa3Q4-t3mbr0a_uVJkka0nTTbSYCQomP4HVYHalUPCuFbU2jWXbgtTsN0y
+    sheetNames:
+    - Alert
+    - NewsConvo
+    - BattleLoss
+    - NewsDetails

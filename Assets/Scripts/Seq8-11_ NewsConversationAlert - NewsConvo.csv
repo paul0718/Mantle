@@ -1,0 +1,22 @@
+,Name,Dialogue
+1,NewsAnchor,We begin tonight with tragic news coming from Amourtia Hospital. Viewer discretion is advised.
+2,NewsAnchor,"The attack, leaving many critically injured civilians, occurred a mere hour ago. Witnesses state that the fight between Mantle and Vyzzar ended with the destruction of our beloved Hospital."
+3,Mantle,So many people. So much destruction.
+4,Leo,Be quiet.
+5,Leo,"They don’t understand. The police, the reporters, everyone. I saved them from Vyzzar. All the destruction was his fault, not mine! "
+6,Mantle,Maybe there are those who believe we were not at fault.
+7,Leo,You’re right. This can't be what everyone is saying. They should be able to see the truth. They have to.
+8,NewsAnchor,The police state that both Vyzzar and Mantle are the perpetrators.
+9,Leo,Perpetrator? But I’m the hero! Me! Why can’t they see that?
+10,NewsAnchor,"With Vyzzar found dead, Police are holding Mantle fully accountable and a search warrant has been put out for the robot."
+11,NewsAnchor,"There is one hero on the scene: Ace Guardian. Ace is assisting in the evacuation. She has rejected requests for comments, though that is to be expected given the severity of the situation."
+12,Leo,How can she not defend me?
+13,Mantle,I’m sure Ace is focused on the evacuation.
+14,NewsAnchor,"With Ace here, there is a reminder that heroes do exist. There are those who take the responsibility to care for and protect others. It is clear that Harbinger was right about this robot. Mantle is not a hero of Amourtia, but Ace is."
+15,Leo,Ace? Harbinger? What about me?! Ace didn’t stop Vyzzar. I did!
+16,NewsAnchor,"When asked about her thoughts about Mantle and their actions tonight, she shook her head and said ‘no comment’."
+17,Leo,"Why is she covering up the truth? My heroism? Come on, Ace!"
+18,Mantle,"I am sorry, but she is doing the right thing by helping the evacuation. This does not look good. What does Ace think of us?"
+19,Leo,I don’t care what she thinks anymore. It can’t affect me.
+20,Email,
+21,END,

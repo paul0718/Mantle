@@ -8,22 +8,24 @@ using UnityEngine.UI;
 public class Disarm : MonoBehaviour
 {
     [HideInInspector] public bool gameDone = false;
-    private bool moving = true;
+    private bool moving;
     private bool isHorizontal = true;
     
-    [SerializeField] private Transform reticalTransform;
-    [SerializeField] private float reticalSpeed;
-    
-    [SerializeField] Vector3 initalPos;
-    [SerializeField] Vector3 initalEndPos;
-    private Vector3 startPos;
-    private Vector3 endPos;
+    [SerializeField] private GameObject reticle;
+    [SerializeField] private GameObject goalReticle;
+    [SerializeField] private float horizontalSpeed;
+    [SerializeField] private float verticalSpeed;
+    private float reticleSpeed;
+    [SerializeField] private Color initialColor;
+
+    [SerializeField] Transform topLeft;
+    [SerializeField] Transform topRight;
+    [SerializeField] Transform bottomLeft;
     private Vector3 targetPos;
     private Vector3 currentPos;
     
     [SerializeField] private Image lockInButton;
     public GameObject scannerBG;
-    [SerializeField] private float verticalLimit;
 
     [SerializeField] private AudioSource shootAudio;
     [SerializeField] private AudioSource reloadAudio;
@@ -33,46 +35,60 @@ public class Disarm : MonoBehaviour
         SetMinigame();
     }
 
-    // Update is called once per frame
+    private void SetMinigame()
+    {
+        reticle.SetActive(false);
+        goalReticle.SetActive(false);
+        isHorizontal = true;
+        scannerBG.transform.position = new Vector3(0, -2.5f, 0);
+        scannerBG.transform.DOMove(new Vector3(0, 2.4f, 0), 1.5f).onComplete = SetReticles;
+    }
+
     void Update()
     {
-        currentPos = reticalTransform.position;
+        currentPos = reticle.transform.position;
  
-        if(currentPos == startPos) {
-            targetPos = endPos;
+        if (isHorizontal)
+        {
+            if (currentPos.x <= topLeft.position.x) {
+                targetPos = topRight.position;
+            }
+            else if (currentPos.x >= topRight.position.x) {
+                targetPos = topLeft.position;
+            }
         }
-        else if (currentPos == endPos) {
-            targetPos = startPos;
+        else
+        {
+            if(currentPos.y <= bottomLeft.position.y) {
+                targetPos = new Vector3(currentPos.x, topLeft.position.y, currentPos.z);
+            }
+            else if (currentPos.y >= topLeft.position.y) {
+                targetPos = new Vector3(currentPos.x, bottomLeft.position.y, currentPos.z);
+            }
         }
 
         if (moving)
         {
-            reticalTransform.position = Vector3.MoveTowards(reticalTransform.position, targetPos,
-                reticalSpeed * Time.deltaTime);
+            reticle.transform.position = Vector3.MoveTowards(reticle.transform.position, targetPos,
+                reticleSpeed * Time.deltaTime);
         }
-        
     }
 
     public void LockIn()
     {
+        lockInButton.GetComponent<Button>().interactable = false;
         if (isHorizontal)
         {
             isHorizontal = false;
-            reloadAudio.Play();
-            moving = false;
-        
-            startPos = currentPos;
-            endPos = new Vector3(startPos.x, startPos.y + verticalLimit, 0);
-            targetPos = endPos;
-        
-            lockInButton.color = Color.gray;
-            reticalSpeed -= 2;
-
+            AudioManager.Instance.PlayOneShot(SFXNAME.LockOnH, 0.8f);
+            moving = false;        
+            reticleSpeed = verticalSpeed;
             StartCoroutine(StartVerticalMode());
         }
         else
         {
-            shootAudio.Play();
+            AudioManager.Instance.PlayOneShot(SFXNAME.LockOnVver2, 0.8f);
+            //TODO: play different audio on hit vs miss
             moving = false;
             gameDone = true;
         }
@@ -81,27 +97,20 @@ public class Disarm : MonoBehaviour
     IEnumerator StartVerticalMode()
     {
         yield return new WaitForSeconds(1.0f);
-        lockInButton.color = Color.white;
+        lockInButton.GetComponent<Button>().interactable = true;
         moving = true;
     }
 
-    private void SetMinigame()
+    void SetReticles()
     {
-        reticalTransform.gameObject.SetActive(false);
-        isHorizontal = true;
-        scannerBG.transform.position = new Vector3(0, -2.5f, 0);
-        scannerBG.transform.DOMove(new Vector3(0, 2.5f, 0), 1.5f).onComplete = SetReticals;
-    }
-
-    void SetReticals()
-    {
-        reticalSpeed += 2;
-        reticalTransform.position = initalPos;
-        reticalTransform.gameObject.SetActive(true);
-        endPos = initalEndPos;
-        startPos = initalPos;
-        targetPos = endPos;
-        lockInButton.color = Color.white;
+        goalReticle.transform.position = BattleSequenceManager.Instance.disarmPos;
+        reticleSpeed = horizontalSpeed;
+        reticle.transform.position = topLeft.position;
+        reticle.GetComponent<SpriteRenderer>().color = initialColor;
+        reticle.SetActive(true);
+        goalReticle.SetActive(true);
+        reticle.GetComponent<Animator>().Play("ReticleOn");
+        lockInButton.GetComponent<Button>().interactable = true;
         moving = true;
     }
 }

@@ -1,139 +1,282 @@
-using System;
+using DG.Tweening;
 using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using Sequence = DG.Tweening.Sequence;
 
 public class StateManager : MonoBehaviour
 {
-    [SerializeField] private ChatLogManager _chatManager;
-    [SerializeField] private UITransitionManager _uiManager;
+    [SerializeField] private GameObject endReticle;
+    [SerializeField] private GameObject lowBatteryText;
+    //intro dialogue
+    //[SerializeField] private GoogleSheetsDB googleSheetsDB;
+    [HideInInspector] public bool playingDialogue;
 
-    //objects for when the battle is won, player is choosing to kill or capture
-    [SerializeField] private GameObject _endReticle;
-    [SerializeField] private GameObject _actionBlocker;
-    [SerializeField] private GameObject[] _endWeapons;
-    [SerializeField] private GameObject[] _enemyButtons;
-    [SerializeField] private AudioSource _gunSound;
-    [SerializeField] private AudioSource _taserSound;
-    [SerializeField] private EndFightCutscene _endSequenceManager;
+    [SerializeField] private EndFightCutscene endSequenceManager;
 
+    public bool debugGame = false;
+    [SerializeField] private int gameChoice;
+    
+
+
+    //disarm vars
     [HideInInspector] public int enemyChoice;
+    
+    //temp fix for volume set to 0 for battle
+    //fixed! ;)
 
     //bools for when ending battle to know if killing or capturing
-    private bool _endingBattle = false;
-    private bool _killing = false;
-    private bool _capturing = false;
-    private bool _canEndBattle = false;
+    private bool killWeapon = true;
+    public static StateManager Instance { get; private set; }
     public enum BattleState
     {
+        BeforeStart,
+        Start,
         Player,
         Enemy,
-        End
+        Win,
+        Lose,
+        AfterEnd,
     };
 
-    [HideInInspector] public BattleState currState = BattleState.Player;
+    [HideInInspector] public BattleState currentState = BattleState.BeforeStart;
 
-    [HideInInspector] public bool battleStarted = false;
+    [SerializeField] private bool playIntro = true;
 
+
+    public Animator coverAnimator;
+    private float bgmTime;
     private void Start()
     {
-        battleStarted = true;
-        _chatManager.UpdateState();
+        Instance = this;
+        bgmTime = SequenceManager.Instance.SequenceID == 14 ? 3 : 1;
+        GridManager.Instance.dot.gameObject.transform.localPosition = BattleSequenceManager.Instance.startPos;
+        
+        if (playIntro && !debugGame)
+        {
+            playingDialogue = true;
+            StartCoroutine(BarkManager.Instance.ShowIntroOutroBark(BarkManager.MultipleBarkType.Intro));
+        }
+        else
+        {
+            coverAnimator.enabled = true;
+            AudioManager.Instance.PlayNextBGM();
+            Sequence s = DOTween.Sequence();
+            s.AppendInterval(bgmTime);
+            s.AppendCallback(() =>
+            {
+                AudioManager.Instance.PlayNextBGM();
+            });
+            s.SetUpdate(true);
+        }
+    }
+
+    public void DoneIntroDialogue()
+    {
+        //uiElements.GetComponent<CanvasGroup>().alpha = 1;
+        playingDialogue = false;
+        coverAnimator.enabled = true;
+        AudioManager.Instance.PlayNextBGM();
+        Debug.Log("next bgm");
+        Sequence s = DOTween.Sequence();
+        s.AppendInterval(bgmTime);//important
+        s.AppendCallback(() =>
+        {
+            Debug.Log("next bgm 2");
+            AudioManager.Instance.PlayNextBGM();
+        });
+        s.SetUpdate(true);
+    }
+    private bool[] gamePlayed = new bool[4]; // Array to track if each game has been played
+
+    private void ChooseGame()
+    {
+        // If all games have been played, reset the gamePlayed array
+        if (gamePlayed.All(played => played))
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                gamePlayed[i] = false; // Reset all games to not played
+            }
+        }
+
+        do
+        {
+            enemyChoice = Random.Range(0, 4); // Randomly select a game
+        }
+        while (gamePlayed[enemyChoice]); // Repeat until an unplayed game is selected
+
+        gamePlayed[enemyChoice] = true; // Mark the selected game as played
+    }
+
+    public void LoseDialogue()
+    {
+        playingDialogue = true;
+        //EnemyInfo.Instance.ChangePose(false);
+        StartCoroutine(BarkManager.Instance.ShowIntroOutroBark(BarkManager.MultipleBarkType.Lose));
     }
 
     //change turn state
     public void UpdateState()
     {
-        if (currState == StateManager.BattleState.Enemy)
+        if (currentState == BattleState.Start)
         {
-            _actionBlocker.SetActive(false);
-            currState = StateManager.BattleState.Player;
+            currentState = BattleState.Enemy;
         }
-        else if(currState == BattleState.Player)
+        else if (currentState == BattleState.Enemy )
         {
-            _actionBlocker.SetActive(true);
-            currState = StateManager.BattleState.Enemy;
+            //disarmButton.GetComponent<Button>().interactable = (enemyDisarmed == 0); //disable disarm button if enemy already disarmed
+            //actionBlocker.SetActive(false);
+            currentState = BattleState.Player;
+            CoreButton.Instance.SetCoreButton(CoreButton.FunctionType.LockIn);
         }
-        Debug.Log(currState);
+        else if(currentState == BattleState.Player)
+        {
+            //enemyDisarmed = Mathf.Max(0, enemyDisarmed-1);
+            // if (enemyDisarmed == 0)
+            //     enemyWeapon.SetActive(true);
+            currentState = BattleState.Enemy;
+        }
 
-        if (currState == BattleState.Enemy)//if its now enemy turn, randomly choose an enemy minigame to play
+        if (currentState == BattleState.Enemy) //randomly choose an enemy minigame to play
         {
-            enemyChoice = Random.Range(0, 2);//when we have more minigames, switch statement be better
-            if (enemyChoice == 0)
-            {
-                _uiManager.OpenRightPanels(true); 
-            }
-            else if (enemyChoice == 1)
-            {
-                _uiManager.OpenRightPanels(false);
-            }
+            if (!debugGame)
+                ChooseGame();
+            else
+                enemyChoice = gameChoice;
+            //enemyChoice = 0;
+            CoverManager.Instance.SetDefendButton(true);
+            CoreButton.Instance.SetCoreButton(CoreButton.FunctionType.Respond);
+
+            var choice = StateManager.Instance.enemyChoice;
+            var battle = SequenceManager.Instance.CurrentBattle.EnemyMinigames;
+            GridManager.Instance.StartDotAnimation(choice, true);
         }
-        _chatManager.UpdateState();
     }
 
-    void Update()
+    private void Update()
     {
         //display the targeting reticle at mouse position when ending the game
-        if (_endingBattle)
+        if (currentState == BattleState.Win) 
         {
-            Vector2 mouseCursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            _endReticle.transform.position = mouseCursorPos;
-            if (Input.GetMouseButton(0) && _canEndBattle)
-            {
-                if (_killing)
-                {
-                    _gunSound.Play();
-                    _endSequenceManager.StartCoroutine(_endSequenceManager.PlayEndSequence());
-                }
-                else if (_capturing)
-                {
-                    _taserSound.Play();
-                    _endSequenceManager.StartCoroutine(_endSequenceManager.PlayEndSequence());
-                }
+            Vector3 mousePosition = Input.mousePosition;
+            Vector3 worldPosition;
+            RectTransform endRect = endReticle.GetComponent<RectTransform>();
+            RectTransformUtility.ScreenPointToWorldPointInRectangle(
+                endRect.parent as RectTransform, 
+                mousePosition,                     
+                endRect.parent.GetComponent<Canvas>().worldCamera,     
+                out worldPosition 
+            );
+            endRect.position = worldPosition;
+        }
 
-                _canEndBattle = false;
+        if (Input.GetKeyDown(KeyCode.Semicolon))
+        {
+            WinBattle(false);
+        }
+    }
+
+    public void CheckEndBattle()
+    {
+        if (Input.GetMouseButton(0) && currentState == BattleState.Win) 
+        {
+            endReticle.gameObject.SetActive(false);
+            Cursor.visible = true;
+            if (killWeapon)
+            {
+                AudioManager.Instance.PlayOneShot(SFXNAME.swordstabpushmeleeweapon236206);
+                EnemyInfo.Instance.ChangePose(true);
+                if (SequenceManager.Instance.SequenceID != 9)
+                {
+                    if (SequenceManager.Instance.SequenceID == 17)
+                    {
+                        SequenceManager.Instance.aceIsDead = true;
+                    }
+                    CoverManager.Instance.EndGameAnimaton();
+                    StartCoroutine(BarkManager.Instance.ShowIntroOutroBark(BarkManager.MultipleBarkType.Win, true));
+                }
+                else
+                {
+                    CoverManager.Instance.EndGameAnimaton();
+                    endSequenceManager.StartCoroutine(endSequenceManager.PlayEndSequence());
+                }
+                //endSequenceManager.StartCoroutine(endSequenceManager.PlayEndSequence());
             }
+            else 
+            {
+                AudioManager.Instance.PlayOneShot(SFXNAME.TaserGunSFX);
+                EnemyInfo.Instance.ChangePose(true);
+                if (SequenceManager.Instance.SequenceID != 9)
+                {
+                    if (SequenceManager.Instance.SequenceID == 17)
+                    {
+                        SequenceManager.Instance.aceIsDead = false;
+                    }
+                    CoverManager.Instance.EndGameAnimaton();
+                    StartCoroutine(BarkManager.Instance.ShowIntroOutroBark(BarkManager.MultipleBarkType.Win, false));
+                }
+                else
+                {
+                    CoverManager.Instance.EndGameAnimaton();
+                    endSequenceManager.StartCoroutine(endSequenceManager.PlayEndSequence());
+                }
+                //endSequenceManager.StartCoroutine(endSequenceManager.PlayEndSequence());
+            }
+            currentState = BattleState.AfterEnd;
+        }
+    }
+    public IEnumerator PlayerLose()
+    {
+        if (MetricManagerScript.instance != null)
+        { 
+            MetricManagerScript.instance.LogString("Player Lost", SequenceManager.Instance.SequenceID.ToString());
+        }
+        
+        MasterMinigames.Instance.DisableAllButtons();
+        currentState = BattleState.Lose;
+        yield return new WaitForSeconds(1);
+        //lowBatteryText.SetActive(true);
+        yield return new WaitUntil(() => !playingDialogue);
+        Debug.Log("To restart scene!");
+        if (SequenceManager.Instance.SequenceID == 17)
+        {
+            SceneTransition.Instance.FadeToBlack();
+        }
+        else
+        {
+            SceneTransition.Instance.SwitchScene("LoseBattle");
         }
     }
 
     //Battle is in end state. Open the panels on the right and show either the gun or taser
-    public void EndBattle(bool kill)
+    public void WinBattle(bool kill)
     {
-        _canEndBattle = true;
-        currState = BattleState.End;
-        foreach (var b in _enemyButtons)
-        {
-            b.SetActive(false);
+        if (MetricManagerScript.instance != null)
+        { 
+            MetricManagerScript.instance.LogString("Player Win", SequenceManager.Instance.SequenceID.ToString());
         }
-        foreach (var e in _endWeapons)
-        {
-            e.SetActive(true);
-        }
+        
+        currentState = BattleState.Win;
 
-        _uiManager.OpenRightPanels(kill);
+        CoverManager.Instance.SetDefendButton(false);
+        CoverManager.Instance.SetEndButton(kill);
     }
 
-    //setting current end action to kill
-    public void KillWeapon()
+    public void LoseBattle()
     {
-        SetEndAction();
-        _killing = true;
+        LoseDialogue();
+        StartCoroutine(PlayerLose());
     }
 
-    //settting current end action to capture
-    public void CaptureWeapon()
+    public void WeaponBattle(bool kill)
     {
-        SetEndAction();
-        _capturing = true;
-    }
-
-    //activate targeting reticle and block minigame actions
-    void SetEndAction()
-    {
+        EnemyInfo.Instance.SetCollider(true);
         Cursor.visible = false;
-        _endingBattle = true;
-        _endReticle.SetActive(true);
-        _actionBlocker.SetActive(true);
+        endReticle.SetActive(true);
+        killWeapon = kill;
     }
 }

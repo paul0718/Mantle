@@ -1,0 +1,131 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
+
+public class MainMenuManager : MonoBehaviour
+{
+    public static MainMenuManager Instance {  get; private set; }
+    [SerializeField] private RectTransform headlineTxt1;
+    [SerializeField] private RectTransform headlineTxt2;
+    public RectTransform logo;
+    [SerializeField] private float headlineSpeed;
+    
+    //temp audio fix
+    [SerializeField] private AudioSource bgmSource;
+    private bool bgmStarted = false;
+
+    public Button newGameButton;
+    public Button continueButton;
+    public Button quitButton;
+    public Button optionButton;
+
+    public Transform creditTransform;
+
+    public GameObject steamPage;
+
+    private readonly int logoNormalY = -25;
+    private readonly int logoHideY = -1025;
+    private void Awake()
+    {
+        Instance = this;
+    }
+    private void Start()
+    {
+        if (steamPage != null)
+        {
+            if (SequenceManager.Instance.steamPageOn)
+            {
+                steamPage.SetActive(true);
+            }
+            else
+            {
+                steamPage.SetActive(false);
+            }
+        }
+        
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            int savedID = PlayerPrefs.GetInt("SequenceID");
+            int savedDateNum = PlayerPrefs.GetInt("DateNum");
+            continueButton.gameObject.SetActive(savedID != 0);
+            newGameButton.onClick.AddListener(() => NewGame());
+            continueButton.onClick.AddListener(() =>
+            {
+                SequenceManager.Instance.dateNum = savedDateNum;
+                if (savedID > 17)
+                {
+                    savedID = 17;
+                }
+                SceneTransition.Instance.SwitchScene(savedID);
+            });
+            quitButton.onClick.AddListener(() => Application.Quit());
+            optionButton.onClick.AddListener(() =>
+            {
+                if (!PauseManager.Instance.paused)
+                {
+                    PauseManager.Instance.Pause();
+                    newGameButton.interactable = false;
+                    continueButton.interactable = false;
+                }
+            });
+        }
+    }
+
+    private void Update()
+    {
+        //Scrolling headlines
+        headlineTxt1.anchoredPosition += new Vector2(-headlineSpeed*Time.deltaTime, 0);
+        headlineTxt2.anchoredPosition += new Vector2(-headlineSpeed*Time.deltaTime, 0);
+        if (headlineTxt1.anchoredPosition.x < -(headlineTxt1.GetComponent<TextMeshProUGUI>().preferredWidth-200))
+        {
+            float newX = headlineTxt2.anchoredPosition.x + headlineTxt2.GetComponent<TextMeshProUGUI>().preferredWidth/2 + headlineTxt1.GetComponent<TextMeshProUGUI>().preferredWidth/2;
+            headlineTxt1.anchoredPosition = new Vector2(newX+17, headlineTxt1.anchoredPosition.y);
+        }
+        if (headlineTxt2.anchoredPosition.x < -(headlineTxt2.GetComponent<TextMeshProUGUI>().preferredWidth-200))
+        {
+            float newX = headlineTxt1.anchoredPosition.x + headlineTxt1.GetComponent<TextMeshProUGUI>().preferredWidth/2 + headlineTxt2.GetComponent<TextMeshProUGUI>().preferredWidth/2;
+            headlineTxt2.anchoredPosition = new Vector2(newX+17, headlineTxt2.anchoredPosition.y);
+        }
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            if (!bgmStarted && bgmSource.clip!=null)
+            {
+                StartCoroutine(GoToBodyBGM());
+                bgmStarted = true;
+            }
+        }
+    }
+
+    private void NewGame()
+    {
+        SequenceManager.Instance.dateNum = 0;
+        AudioManager.Instance.FadeOut();
+        SceneTransition.Instance.FadeToBlack();
+    }
+    public void ShowLogo()
+    {
+        logo.DOAnchorPosY(logoNormalY, 0.2f);
+    }
+    public void HideLogo()
+    {
+        logo.DOAnchorPosY(logoHideY, 0.2f);
+    }
+
+    IEnumerator GoToBodyBGM()
+    {
+        yield return new WaitForSeconds(bgmSource.clip.length);
+        AudioManager.Instance.PlayNextBGM();
+    }
+
+    public void ActivateOtherButtons()
+    {
+        newGameButton.interactable = true;
+        continueButton.interactable = true;
+    }
+}

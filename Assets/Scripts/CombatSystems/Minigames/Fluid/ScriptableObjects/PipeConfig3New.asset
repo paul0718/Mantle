@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 771bee9e4e4d8b940add5d458208fc35, type: 3}
+  m_Name: PipeConfig3New
+  m_EditorClassIdentifier: 
+  sections:
+  - startPoint: {x: 0.8, y: 2.63}
+    endPoint: {x: 3.97, y: 1.83}
+  - startPoint: {x: 0.8, y: -0.46}
+    endPoint: {x: 5.54, y: -0.21}
+  - startPoint: {x: 3.97, y: 1.83}
+    endPoint: {x: 4.46, y: 1.21}
+  - startPoint: {x: 3.97, y: 1.83}
+    endPoint: {x: 7.23, y: 2.54}
+  - startPoint: {x: 5.54, y: -0.21}
+    endPoint: {x: 7.55, y: 0.53}
+  - startPoint: {x: 7.23, y: 2.54}
+    endPoint: {x: 9.4, y: 3.06}
+  - startPoint: {x: 7.55, y: 0.53}
+    endPoint: {x: 9.15, y: 1.15}
+  - startPoint: {x: 7.55, y: 0.53}
+    endPoint: {x: 10.16, y: -1.17}
+  - startPoint: {x: 9.4, y: 3.06}
+    endPoint: {x: 10.36, y: 3.99}
+  - startPoint: {x: 4.46, y: 1.21}
+    endPoint: {x: 7.55, y: 0.53}
+  - startPoint: {x: 9.15, y: 1.15}
+    endPoint: {x: 11.65, y: 1.64}
+  - startPoint: {x: 10.36, y: 3.99}
+    endPoint: {x: 11.48, y: 3}
+  - startPoint: {x: 11.48, y: 3}
+    endPoint: {x: 13.77, y: 2.17}
+  - startPoint: {x: 11.65, y: 1.64}
+    endPoint: {x: 13.77, y: 2.17}
+  - startPoint: {x: 10.16, y: -1.17}
+    endPoint: {x: 13.25, y: 0.59}
+  - startPoint: {x: 13.25, y: 0.59}
+    endPoint: {x: 15.8, y: 0.06}
+  - startPoint: {x: 13.77, y: 2.17}
+    endPoint: {x: 15.7, y: 1.9}
+  - startPoint: {x: 14.46, y: 3.99}
+    endPoint: {x: 15.7, y: 1.9}
+  - startPoint: {x: 15.8, y: 0.06}
+    endPoint: {x: 18.39, y: -0.24}
+  - startPoint: {x: 18.39, y: -0.24}
+    endPoint: {x: 20, y: -0.09}
+  - startPoint: {x: 10.16, y: -1.17}
+    endPoint: {x: 10.16, y: -4.17}
+  - startPoint: {x: 15.7, y: 1.9}
+    endPoint: {x: 15.8, y: 0.06}
+  - startPoint: {x: 15.7, y: 1.9}
+    endPoint: {x: 20, y: 2.69}
+  - startPoint: {x: 7.23, y: 2.54}
+    endPoint: {x: 9.15, y: 1.15}
+  valves:
+  - point: {x: 3.17, y: -0.335}
+    open: 0
+  - point: {x: 6.005, y: 0.87}
+    open: 0
+  - point: {x: 5.6, y: 2.185}
+    open: 0
+  - point: {x: 8.532, y: 2.852}
+    open: 0
+  - point: {x: 17.095, y: -0.09}
+    open: 0
+  - point: {x: 15.08, y: 2.945}
+    open: 0
+  - point: {x: 15.75, y: 0.98}
+    open: 0
+  - point: {x: 17.85, y: 2.295}
+    open: 0
+  - point: {x: 11.938, y: 2.834}
+    open: 0
+  sourcePoint: {x: 10.16, y: -4.17}
+  targetPoint: {x: 10.36, y: 3.99}
+  sinkPoints:
+  - {x: 0.8, y: 2.63}
+  - {x: 0.8, y: -0.46}
+  - {x: 14.46, y: 3.99}
+  - {x: 20, y: 2.69}
+  - {x: 20, y: -0.09}

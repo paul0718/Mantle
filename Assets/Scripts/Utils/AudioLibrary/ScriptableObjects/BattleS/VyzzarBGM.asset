@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eca7da08449db4f80f03fb77548826, type: 3}
+  m_Name: VyzzarBGM
+  m_EditorClassIdentifier: 
+  library:
+  - {fileID: 8300000, guid: ab86caaa2df829d4281d923b2685df1f, type: 3}
+  - {fileID: 8300000, guid: 45020f9cca45a8d4e956cf6c990d0511, type: 3}
+  - {fileID: 8300000, guid: 03c663b7a38461447943b3e16ec3ede3, type: 3}

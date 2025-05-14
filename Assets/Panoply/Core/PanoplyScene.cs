@@ -156,25 +156,25 @@ namespace Opertoon.Panoply {
 	    	}
 
 			if (controller != null) {
+				Debug.Log("controller not null");
 				if ((Time.timeSinceLevelLoad > 3) && hasLeftInitialTargetStep && !controller.ignoreStepCount) {
-
-					if (previousSceneName != "") {
-						if (PanoplyCore.targetStep == 0) {
-							if (((PanoplyCore.interpolatedStep - PanoplyCore.targetStep) < .01f) && !nextSceneCalled) {
-								PlayerPrefs.SetString ("SceneChangeDirection", "Backward");
-								nextSceneCalled = true;
-								if (previousSceneIsURL) {
-									Application.OpenURL (previousSceneName);
-								} else {
-#if UNITY_5_3_OR_NEWER
-									SceneManager.LoadScene (previousSceneName);
-#else
-								Application.LoadLevel( previousSceneName );
-#endif
-								}
-							}
-						}
-					}
+// 					if (previousSceneName != "") {
+// 						if (PanoplyCore.targetStep == 0) {
+// 							if (((PanoplyCore.interpolatedStep - PanoplyCore.targetStep) < .01f) && !nextSceneCalled) {
+// 								PlayerPrefs.SetString ("SceneChangeDirection", "Backward");
+// 								nextSceneCalled = true;
+// 								if (previousSceneIsURL) {
+// 									Application.OpenURL (previousSceneName);
+// 								} else {
+// #if UNITY_5_3_OR_NEWER
+// 									SceneManager.LoadScene (previousSceneName);
+// #else
+// 								Application.LoadLevel( previousSceneName );
+// #endif
+// 								}
+// 							}
+// 						}
+// 					}
 
 					if (nextSceneName != "") {
 						if (PanoplyCore.targetStep == (stepCount - 1)) {
@@ -185,7 +185,9 @@ namespace Opertoon.Panoply {
 									Application.OpenURL (nextSceneName);
 								} else {
 #if UNITY_5_3_OR_NEWER
-									SceneManager.LoadScene (nextSceneName);
+									//Debug.Log(nextSceneName.ToString());
+									SceneTransition.Instance.FadeToBlack();
+									//SceneManager.LoadScene (nextSceneName);
 #else
 								Application.LoadLevel( nextSceneName );
 #endif

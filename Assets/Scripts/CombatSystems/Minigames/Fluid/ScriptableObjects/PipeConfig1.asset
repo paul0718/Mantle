@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 771bee9e4e4d8b940add5d458208fc35, type: 3}
+  m_Name: PipeConfig1
+  m_EditorClassIdentifier: 
+  sections:
+  - startPoint: {x: 0, y: 0}
+    endPoint: {x: 4, y: 2}
+  - startPoint: {x: 4, y: 2}
+    endPoint: {x: 6, y: -0.5}
+  - startPoint: {x: 5, y: 0.75}
+    endPoint: {x: 2.5, y: -1.75}
+  - startPoint: {x: 9, y: -0.5}
+    endPoint: {x: 10, y: 2}
+  - startPoint: {x: 10, y: 2}
+    endPoint: {x: 12.31, y: 4.31}
+  - startPoint: {x: 6.54, y: 4.4}
+    endPoint: {x: 7.5, y: 2}
+  - startPoint: {x: 7.5, y: 2}
+    endPoint: {x: 11, y: 0}
+  - startPoint: {x: 11, y: 0}
+    endPoint: {x: 15, y: 1}
+  - startPoint: {x: 15, y: 1}
+    endPoint: {x: 20, y: 4}
+  - startPoint: {x: 6, y: -0.5}
+    endPoint: {x: 9, y: -0.5}
+  - startPoint: {x: 11.68, y: -1.63}
+    endPoint: {x: 13, y: 3}
+  - startPoint: {x: 13, y: 3}
+    endPoint: {x: 15.5, y: 3}
+  - startPoint: {x: 15.5, y: 3}
+    endPoint: {x: 19.74, y: -0.74}
+  valves:
+  - point: {x: 7.5, y: -0.5}
+    open: 0
+  - point: {x: 3.75, y: -0.5}
+    open: 1
+  - point: {x: 11.1, y: 3.1}
+    open: 1
+  - point: {x: 8.52, y: 1.42}
+    open: 0
+  - point: {x: 10.46, y: 0.31}
+    open: 0
+  - point: {x: 12.67, y: 1.86}
+    open: 1
+  - point: {x: 11.99, y: -0.53}
+    open: 1
+  - point: {x: 13.78, y: 0.69}
+    open: 0
+  - point: {x: 18.5, y: 0.354}
+    open: 0
+  sourcePoint: {x: 0, y: 0}
+  targetPoint: {x: 20, y: 4}
+  sinkPoints:
+  - {x: 2.5, y: -1.75}
+  - {x: 12.31, y: 4.31}
+  - {x: 6.54, y: 4.4}
+  - {x: 11.68, y: -1.63}
+  - {x: 19.74, y: -0.74}

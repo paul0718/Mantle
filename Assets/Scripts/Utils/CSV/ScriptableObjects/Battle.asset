@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab5c385ed9921d40b2362fcdba932b5, type: 3}
+  m_Name: Battle
+  m_EditorClassIdentifier: 
+  dialogConfigs:
+  - name: Battle/Ace
+    sheetID: AKfycbzkABN2dHoQ-DnXGV9ksfeS4DPejZy0Pcfij7iCeQHzVDcg88G4jZuoTnSn2-dHq6DMmQ
+    sheetNames:
+    - Intro Dialogue
+    - Barks
+    - Outro Dialogue
+    - Loss Dialogue
+  - name: Battle/Cecil
+    sheetID: AKfycbwdvsKZfvjNWhM14qshmiTv4Ls6Rt5_0VFsXTW8WhPwcsEsljAM48iAhFXhNWGssbQ
+    sheetNames:
+    - Intro Dialogue
+    - Barks
+    - Outro Dialogue
+    - Loss Dialogue
+  - name: Battle/Enaga
+    sheetID: AKfycbzb2-YUHj8YMuhlTrNtr_zd8XvKtJ6mucTxeyAmd5fN5L41Omw1mCtSnaRkaiMEPaP9
+    sheetNames:
+    - Intro Dialogue
+    - Barks
+    - Outro Dialogue
+    - Loss Dialogue
+  - name: Battle/Harbinger
+    sheetID: AKfycbzTkCZ26GVGhDj7zNYDzudyAlH7q8pvo9GNNujXNmLHq-0nkeLEBCDfoqHCtaILl6Jn
+    sheetNames:
+    - Intro Dialogue
+    - Barks
+    - Outro Dialogue
+    - Loss Dialogue
+  - name: Battle/Quincy
+    sheetID: AKfycbzs1fZKamsZ06Pcrvac1_SNBueY7TrYiQPJSt8vATM7Rm1mukRPylv4DeUKoqviYdC4
+    sheetNames:
+    - Intro Dialogue
+    - Barks
+    - Outro Dialogue
+    - Loss Dialogue
+  - name: Battle/Vyzzar
+    sheetID: AKfycbyo3Grwzeo8c77Nwu0lHV-UTTjDSZW6R0EGatBuompyHaNnNQE3YEyS7o28PJYUGr7Mpw
+    sheetNames:
+    - Intro Dialogue
+    - Barks
+    - Outro Dialogue
+    - Loss Dialogue

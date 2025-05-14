@@ -7,20 +7,38 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
-    path: Assets/Scenes/SystemsPrototype.unity
-    guid: 61ace8160e81ac44680990a9e5ce7185
-  - enabled: 0
-    path: Assets/Scenes/EnemyMinigames.unity
-    guid: ad464e55687ea09408ebac7302b9d92e
-  - enabled: 0
-    path: Assets/Scenes/VerticalSlice/MantlePrototype.unity
-    guid: 5d89d3610f9564741a1349984e3606d3
-  - enabled: 0
-    path: Assets/Scenes/VerticalSlice/NewsConvo.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/SplashScreens.unity
+    guid: 05d567a6196927747ac49bb8783e834a
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/MainMenu.unity
+    guid: 89bcc00bd6ba5004ab8acd5e27cd5cb2
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/NewsConvo.unity
     guid: 49c746ab0de97904d8cda94f7fe66395
   - enabled: 1
-    path: Assets/Scenes/VerticalSlice/CutsceneBuild.unity
+    path: Assets/Scenes/MainScenes/BattleScene.unity
+    guid: 5d89d3610f9564741a1349984e3606d3
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/LoseBattle.unity
+    guid: b24a5e782ca4f5d49aefd0015ad84a3e
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/CutsceneBuild.unity
     guid: e9ea66919c87c404eac51364b632fcb7
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/DateScene.unity
+    guid: 465c046a38b73ae4cb4fac8d3b5788eb
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/S13Comic.unity
+    guid: cde8e6f304ddf524f80f36a020ce0b81
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/S15Comic.unity
+    guid: 961363b7e2b8fdf4daab40c9716ffd57
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/S16NewsConvo.unity
+    guid: 151b730ade0036941ad6f889ed178d8e
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/S18Comic.unity
+    guid: 47b782e6b3fdfd04ca9fdd0e98541b28
   m_configObjects: {}
