@@ -72,7 +72,8 @@ public class SceneTransition : MonoBehaviour
 
     public void FadeToBlack()
     {
-        AudioManager.Instance.FadeOut();
+        if(AudioManager.Instance != null)
+            AudioManager.Instance.FadeOut();
         panelImg.DOFade(1, 1.5f).onComplete = GoToNextScene;
     }
 
