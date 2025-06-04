@@ -99,15 +99,15 @@ public class SceneTransition : MonoBehaviour
     }
     private void GoToNextScene()
     {
-        if (SceneManager.GetActiveScene().name == "NewsConvo")
-        {
-            if (SequenceManager.Instance.SequenceID >= 4)
-            {
-                seqMan.steamPageOn = true;
-                SceneManager.LoadScene("MainMenu");
-                return;
-            } 
-        }
+        // if (SceneManager.GetActiveScene().name == "NewsConvo")
+        // {
+        //     if (SequenceManager.Instance.SequenceID >= 4)
+        //     {
+        //         seqMan.steamPageOn = true;
+        //         SceneManager.LoadScene("MainMenu");
+        //         return;
+        //     } 
+        // }
         if (SceneManager.GetActiveScene().name == "LoseBattle")
         {
             SceneManager.LoadScene("BattleScene");

@@ -36,6 +36,7 @@ public class MainMenuManager : MonoBehaviour
     }
     private void Start()
     {
+        Debug.Log("hi");
         if (steamPage != null)
         {
             if (SequenceManager.Instance.steamPageOn)
