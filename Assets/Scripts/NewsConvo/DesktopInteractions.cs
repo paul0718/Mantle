@@ -42,11 +42,11 @@ public class DesktopInteractions : MonoBehaviour
     {
         lastPos = GetComponent<RectTransform>().anchoredPosition;
         StartCoroutine(Resize(0, minimizeTo));
-        if (AudioManager.Instance.typing && name == "Cmd Prompt")
-        {
-            AudioManager.Instance.StopLoop(SFXNAME.Typing);
-            AudioManager.Instance.typing = true;
-        }
+        // if (AudioManager.Instance.typing && name == "Cmd Prompt")
+        // {
+        //     AudioManager.Instance.StopLoop(SFXNAME.Typing);
+        //     AudioManager.Instance.typing = true;
+        // }
     }
 
     public void CloseWindow()

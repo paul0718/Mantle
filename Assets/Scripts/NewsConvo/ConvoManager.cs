@@ -432,7 +432,7 @@ public class ConvoManager : MonoBehaviour
     {
         yield return new WaitUntil(() => !connecting);
         yield return new WaitForSeconds(2f);
-        yield return new WaitUntil(() => convoWindow.activeSelf && convoWindow.transform.parent.localScale.x > 0.5f);
+        //yield return new WaitUntil(() => convoWindow.activeSelf && convoWindow.transform.parent.localScale.x > 0.5f);
         if (firstLine)
             convoTextRight.text += "<color=#202E37>";
         else
@@ -447,7 +447,7 @@ public class ConvoManager : MonoBehaviour
         foreach (char letter in fullText)
         {
             //pause conversation when window minimized or closed
-            yield return new WaitUntil(() => convoWindow.activeSelf && convoWindow.transform.parent.localScale.x >= 1);
+            // yield return new WaitUntil(() => convoWindow.activeSelf && convoWindow.transform.parent.localScale.x >= 1);
             
             if (letter == '<' || isAddingTag)
             {
@@ -514,7 +514,7 @@ public class ConvoManager : MonoBehaviour
     IEnumerator MantleText(string spacing, string finalText, bool simultaneous)
     {
         yield return new WaitUntil(() => !connecting);
-        yield return new WaitUntil(() => convoWindow.activeSelf && convoWindow.transform.parent.localScale.x > 0.5f);
+        //yield return new WaitUntil(() => convoWindow.activeSelf && convoWindow.transform.parent.localScale.x > 0.5f);
         convoTextRight.text += spacing;
         string waitText = "<align=right>...";
         scrollPadding = 100;
