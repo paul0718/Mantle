@@ -59,11 +59,11 @@ public class DesktopInteractions : MonoBehaviour
         GetComponent<RectTransform>().anchoredPosition = startingPos;
         transform.GetChild(0).gameObject.SetActive(false);
         maximized = false;
-        if (AudioManager.Instance.typing && name == "Cmd Prompt")
-        {
-            AudioManager.Instance.StopLoop(SFXNAME.Typing);
-            AudioManager.Instance.typing = true;
-        }
+        // if (AudioManager.Instance.typing && name == "Cmd Prompt")
+        // {
+        //     AudioManager.Instance.StopLoop(SFXNAME.Typing);
+        //     AudioManager.Instance.typing = true;
+        // }
     }
 
     public void OpenWindow()
