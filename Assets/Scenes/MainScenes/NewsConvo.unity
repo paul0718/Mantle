@@ -21669,7 +21669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: SequenceID
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8701857117213652670, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29719,6 +29719,6 @@ SceneRoots:
   - {fileID: 2024931976}
   - {fileID: 679464141}
   - {fileID: 245348868}
-  - {fileID: 606323634}
   - {fileID: 2091237463}
+  - {fileID: 606323634}
   - {fileID: 1710142139}

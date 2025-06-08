@@ -649,7 +649,7 @@ public class ConvoManager : MonoBehaviour
         else
             yield return null;
         if (SequenceManager.Instance.SequenceID == 7 && notif)
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(9);
 
         if (emailIndex >= aceEmails.Length)
         {
