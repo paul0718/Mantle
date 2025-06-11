@@ -94,6 +94,7 @@ public class Fluid : MonoBehaviour
         {
             if (failCount > 2000)
             {
+                AudioManager.Instance.StopLoop(SFXNAME.StickyGoo);
                 foreach (var g in goopPos)
                 {
                     GameObject tempGoop;
@@ -121,6 +122,7 @@ public class Fluid : MonoBehaviour
             }
             if (successCount > 500)
             {
+                AudioManager.Instance.StopLoop(SFXNAME.StickyGoo);
                 if (MetricManagerScript.instance != null)
                 { 
                     MetricManagerScript.instance.LogString("Sticky Goo", "Win");

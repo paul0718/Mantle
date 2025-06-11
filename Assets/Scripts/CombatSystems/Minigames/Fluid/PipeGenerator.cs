@@ -83,7 +83,8 @@ public class PipeGenerator : MonoBehaviour
         InstantiateSink();
         transform.parent.position = new Vector3(-10.39f, -3.79f, 0);
         inited = true;
-        
+
+        AudioManager.Instance.PlayLoop(SFXNAME.StickyGoo);
     }
     private void OnEnable()
     {
