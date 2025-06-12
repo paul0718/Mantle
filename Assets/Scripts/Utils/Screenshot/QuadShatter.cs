@@ -45,14 +45,18 @@ public class QuadShatter : MonoBehaviour
         int cnt = 0;
         for (int i = 0; i < splashCount.Length; i ++) 
         {
-            
+            var p = i;
             for (int j = 0; j < splashCount[i]; j++) 
             {
                 sequence.AppendCallback(() =>
                 {
                     CreateTriangle(quad, points[cnt]);
-                    //AudioManager.Instance.PlayOneShot(SFXNAME.Sword);
-                    AudioManager.Instance.PlayOneShot(SFXNAME.ScreenShatter);
+                    if (p == 0)
+                        AudioManager.Instance.PlayOneShot(SFXNAME.Sword);
+                    else if (p == 1)
+                        AudioManager.Instance.PlayOneShot(SFXNAME.Sword2);
+                    else if (p == 2)
+                        AudioManager.Instance.PlayOneShot(SFXNAME.Sword3);
                     cnt++;
                 });
                 
@@ -63,7 +67,7 @@ public class QuadShatter : MonoBehaviour
         sequence.AppendInterval(1f);
         sequence.AppendCallback(() =>
         {
-            AudioManager.Instance.PlayOneShot(SFXNAME.GlassShatter);
+            AudioManager.Instance.PlayOneShot(SFXNAME.ScreenShatter);
             quad.gameObject.SetActive(false);
             foreach (var r in rbs)
             {

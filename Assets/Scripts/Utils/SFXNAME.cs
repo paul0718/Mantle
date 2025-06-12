@@ -62,6 +62,8 @@ public enum SFXNAME
 	mumble,
 	SciFiTakeOff,
 	ScreenShatter,
+	Sword2,
+	Sword3,
 	Sword,
 	Typing,
 	ChoosingMinigame,
