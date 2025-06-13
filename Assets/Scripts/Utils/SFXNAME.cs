@@ -71,6 +71,7 @@ public enum SFXNAME
 	EndAnimStab,
 	EndAnimTaser,
 	GridDotMoving,
+	MainMenu,
 	PanelClose,
 	PanelOpen,
 	PauseMenu,

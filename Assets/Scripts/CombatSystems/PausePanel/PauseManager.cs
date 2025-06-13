@@ -79,14 +79,14 @@ public class PauseManager : MonoBehaviour
             creditBackButton.onClick.AddListener(() =>
             {
                 pauseGameObject.DOAnchorPosY(endY, 0.2f).SetUpdate(true);
-                MainMenuManager.Instance.creditTransform.DOMoveY(1540, 0.2f).SetUpdate(true);
+                MainMenuManager.Instance.creditTransform.DOAnchorPosY(1000, 0.2f).SetUpdate(true);
                 AudioManager.Instance.PlayOneShot(SFXNAME.PauseMenu);
             });
             creditButton.onClick.AddListener(() =>
             {
                 AudioManager.Instance.PlayOneShot(SFXNAME.PauseMenu);
                 pauseGameObject.DOMoveY(-1000, 0.2f).SetUpdate(true);
-                MainMenuManager.Instance.creditTransform.DOMoveY(540, 0.2f).SetUpdate(true);
+                MainMenuManager.Instance.creditTransform.DOAnchorPosY(0, 0.2f).SetUpdate(true);
 
             });
         }

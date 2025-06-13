@@ -24,7 +24,7 @@ public class MainMenuManager : MonoBehaviour
     public Button quitButton;
     public Button optionButton;
 
-    public Transform creditTransform;
+    public RectTransform creditTransform;
 
     public GameObject steamPage;
 
@@ -54,19 +54,30 @@ public class MainMenuManager : MonoBehaviour
             int savedID = PlayerPrefs.GetInt("SequenceID");
             int savedDateNum = PlayerPrefs.GetInt("DateNum");
             continueButton.gameObject.SetActive(savedID != 0);
-            newGameButton.onClick.AddListener(() => NewGame());
+            newGameButton.onClick.AddListener(() =>
+            {
+                NewGame();
+                AudioManager.Instance.PlayOneShot(SFXNAME.MainMenu);
+            });
             continueButton.onClick.AddListener(() =>
             {
+                AudioManager.Instance.PlayOneShot(SFXNAME.MainMenu);
                 SequenceManager.Instance.dateNum = savedDateNum;
                 if (savedID > 17)
                 {
                     savedID = 17;
                 }
                 SceneTransition.Instance.SwitchScene(savedID);
+
             });
-            quitButton.onClick.AddListener(() => Application.Quit());
+            quitButton.onClick.AddListener(() =>
+            {
+                AudioManager.Instance.PlayOneShot(SFXNAME.MainMenu);
+                Application.Quit();
+            });
             optionButton.onClick.AddListener(() =>
             {
+                AudioManager.Instance.PlayOneShot(SFXNAME.MainMenu);
                 if (!PauseManager.Instance.paused)
                 {
                     PauseManager.Instance.Pause();
