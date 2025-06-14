@@ -20,13 +20,13 @@ public class Valve : MonoBehaviour
         {
             leftValve.DOLocalMoveX(-0.22f, 0.5f);
             rightValve.DOLocalMoveX(0.22f, 0.5f);
-            AudioManager.Instance.PlayOneShot(SFXNAME.Stickygooclose);
+            AudioManager.Instance.PlayOneShot(SFXNAME.CloseValve, 0.5f);
         }
         else
         {
             leftValve.DOLocalMoveX(-0.5f, 0.5f);
             rightValve.DOLocalMoveX(0.5f, 0.5f);
-            AudioManager.Instance.PlayOneShot(SFXNAME.Stickygooopen);
+            AudioManager.Instance.PlayOneShot(SFXNAME.ChoosingMinigame, 0.5f);
         }
         open = !open;
         pipeNode.open = open;
