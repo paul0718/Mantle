@@ -68,8 +68,8 @@ public class DesktopInteractions : MonoBehaviour
 
     public void OpenWindow()
     {   
-        if (AudioManager.Instance.typing && name == "Cmd Prompt" && (!transform.GetChild(1).gameObject.activeSelf || transform.GetChild(1).localScale.x == 0))
-            AudioManager.Instance.PlayLoop(SFXNAME.Typing);
+        // if (AudioManager.Instance.typing && name == "Cmd Prompt" && (!transform.GetChild(1).gameObject.activeSelf || transform.GetChild(1).localScale.x == 0))
+        //     AudioManager.Instance.PlayLoop(SFXNAME.Typing);
             
         BringToFront();
         if (taskbarIcon.transform.GetChild(0).gameObject.activeSelf && transform.localScale.x <= 0) //if window minimized
