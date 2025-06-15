@@ -5,9 +5,17 @@ using UnityEngine;
 
 public class SteamIntegration : MonoBehaviour
 {
+    public static SteamIntegration Instance { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
         try
         {
             Steamworks.SteamClient.Init(3714810);

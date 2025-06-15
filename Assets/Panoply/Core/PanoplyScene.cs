@@ -186,6 +186,10 @@ namespace Opertoon.Panoply {
 								} else {
 #if UNITY_5_3_OR_NEWER
 									//Debug.Log(nextSceneName.ToString());
+									if (SceneManager.GetActiveScene().name == "CutsceneBuild")
+									{
+										SteamIntegration.Instance.UnlockAchievement("ACH_FINISH_COMIC1");
+									}
 									SceneTransition.Instance.FadeToBlack();
 									//SceneManager.LoadScene (nextSceneName);
 #else
