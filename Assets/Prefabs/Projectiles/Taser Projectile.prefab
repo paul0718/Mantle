@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyParent: 0
-  sfx: 93
+  sfx: 97
 --- !u!58 &274495729723781513
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyParent: 0
-  sfx: 93
+  sfx: 97
 --- !u!58 &1668194892069592044
 CircleCollider2D:
   m_ObjectHideFlags: 0

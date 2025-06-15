@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyParent: 1
-  sfx: 93
+  sfx: 97
 --- !u!95 &1969346908349244224
 Animator:
   serializedVersion: 5
