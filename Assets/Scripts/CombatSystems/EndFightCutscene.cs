@@ -35,6 +35,7 @@ public class EndFightCutscene : MonoBehaviour
         AudioManager.Instance.PlayOneShot(SFXNAME.HospitalDestroyed);
         
         yield return new WaitForSeconds(4.0f);
+        SteamIntegration.Instance.UnlockAchievement("ACH_BLOW_HOSPITAL");
         barkBubble.SetActive(false);
         explodeAnims[0].gameObject.SetActive(true);
         explodeAnims[0].SetTrigger("StartExplosion");

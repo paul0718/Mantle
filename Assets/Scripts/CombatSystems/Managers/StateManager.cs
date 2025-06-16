@@ -188,6 +188,7 @@ public class StateManager : MonoBehaviour
             Cursor.visible = true;
             if (killWeapon)
             {
+                CallAchievement(true);
                 AudioManager.Instance.PlayOneShot(SFXNAME.swordstabpushmeleeweapon236206);
                 EnemyInfo.Instance.ChangePose(true);
                 if (SequenceManager.Instance.SequenceID != 9)
@@ -208,6 +209,7 @@ public class StateManager : MonoBehaviour
             }
             else 
             {
+                CallAchievement(false);
                 AudioManager.Instance.PlayOneShot(SFXNAME.TaserGunSFX);
                 EnemyInfo.Instance.ChangePose(true);
                 if (SequenceManager.Instance.SequenceID != 9)
@@ -278,5 +280,36 @@ public class StateManager : MonoBehaviour
         Cursor.visible = false;
         endReticle.SetActive(true);
         killWeapon = kill;
+    }
+
+    public void CallAchievement(bool kill)
+    {
+        if (kill)
+        {
+            switch (SequenceManager.Instance.SequenceID)
+            {
+                case 3:
+                    SteamIntegration.Instance.UnlockAchievement("ACH_KILL_ENAGA");
+                    break;
+                case 6:
+                    SteamIntegration.Instance.UnlockAchievement("ACH_KILL_QUINCY");
+                    break;
+                case 12:
+                    SteamIntegration.Instance.UnlockAchievement("ACH_KILL_CECIL");
+                    break;
+            }
+        }
+        else
+        {
+            switch (SequenceManager.Instance.SequenceID)
+            {
+                case 3:
+                    SteamIntegration.Instance.UnlockAchievement("ACH_CAPTURE_ENAGA");
+                    break;
+                case 6:
+                    SteamIntegration.Instance.UnlockAchievement("ACH_CAPTURE_QUINCY");
+                    break;
+            }
+        }
     }
 }
