@@ -246,6 +246,7 @@ public class StateManager : MonoBehaviour
         Debug.Log("To restart scene!");
         if (SequenceManager.Instance.SequenceID == 17)
         {
+            SteamIntegration.Instance.UnlockAchievement("ACH_LOSE_ACE");
             SceneTransition.Instance.FadeToBlack();
         }
         else
@@ -296,6 +297,9 @@ public class StateManager : MonoBehaviour
                     break;
                 case 12:
                     SteamIntegration.Instance.UnlockAchievement("ACH_KILL_CECIL");
+                    break;
+                case 17:
+                    SteamIntegration.Instance.UnlockAchievement("ACH_KILL_ACE");
                     break;
             }
         }

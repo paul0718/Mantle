@@ -190,6 +190,10 @@ namespace Opertoon.Panoply {
 									{
 										SteamIntegration.Instance.UnlockAchievement("ACH_FINISH_COMIC1");
 									}
+									else if (SceneManager.GetActiveScene().name == "S15Comic")
+									{
+										SteamIntegration.Instance.UnlockAchievement("ACH_HARBY_LEO");
+									}
 									SceneTransition.Instance.FadeToBlack();
 									//SceneManager.LoadScene (nextSceneName);
 #else
