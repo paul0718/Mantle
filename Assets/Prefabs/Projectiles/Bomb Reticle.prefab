@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyParent: 1
-  sfx: 93
+  sfx: 97
 --- !u!60 &1776458685582293897
 PolygonCollider2D:
   m_ObjectHideFlags: 0
