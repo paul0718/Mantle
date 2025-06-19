@@ -46,7 +46,6 @@ public class SceneTransition : MonoBehaviour
         panelImg = GetComponent<Image>();
         if (startOfScene)
         {
-            panelImg.color = new Color(0, 0, 0, 1);
             FadeOutOfBlack();
         }
     }
@@ -79,7 +78,8 @@ public class SceneTransition : MonoBehaviour
 
     public void FadeOutOfBlack()
     {
-        panelImg.DOFade(0, 1.5f);
+        panelImg.color = new Color(0, 0, 0, 1);
+        panelImg.DOFade(0, 2f);
     }
     public void SwitchScene(string name)
     {

@@ -6248,7 +6248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sender: NSFWComics@amourtia.com
-  subject: Checking In
+  subject: HELP SAVE NSFW
   body: "To anybody who cares,\r\n\r\nCitizens of Amourtia, our right to freedom
     of expression is under attack. And I don\u2019t say this lightly. \r\n\r\nAs
     you may have seen, there have been petitions demanding the removal of NSFW comics
@@ -6256,7 +6256,7 @@ MonoBehaviour:
     Sexy Supers, will not sit idly by while Amourtia attempts to censor our carefully
     and tastefully hand-drawn illustrations of Ace Guardian!\r\n\r\nThis is not the
     Amourtia that we grew up in. Please sign the below petition and spread the word
-    to your friends. \r\n\r\nKindly,\r\nThe #Guardian Guild \r"
+    to your friends. \r\n\r\nKindly,\n\r\nThe #Guardian Guild \r"
   currentEmail: {fileID: 1541986071}
   read: 0
   readColor: {r: 0.7294118, g: 0.7294118, b: 0.7294118, a: 1}
@@ -12157,7 +12157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Help Save NSFW
+  m_text: HELP SAVE NSFW
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
   m_sharedMaterial: {fileID: -7326807290831907832, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
@@ -14486,7 +14486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: URGENT! PETITION
+  m_text: NSFW IS RUIN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
   m_sharedMaterial: {fileID: -7326807290831907832, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
@@ -22012,7 +22012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sender: parentsofamourtia@amourtia.com
-  subject: Checking In
+  subject: NSFW IS RUIN
   body: "To all Concerned Citizens of Amourtia,\r\n\r\nFor the sake of our young,
     growing, innocent children, the Parents of Amourtia urge you to sign the below
     petition. For too long, our children\u2019s developing minds have been ruined
@@ -22493,6 +22493,18 @@ MonoBehaviour:
     IconTexture: {fileID: 0}
     IsIconRecursive: 0
     BackgroundType: 1000
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 0
+    Name: 
+    GameObject: {fileID: 801122256}
+    Ordinal: 1
+    Priority: 0
+    IconType: 105000
+    IconTexture: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 4000
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
     IsHidden: 0
@@ -28038,7 +28050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sender: ace@securemail.com
-  subject: I want to be a hero
+  subject: Becoming a hero
   body: "Leo,\r\n\r\nI\u2019m really set on doing this hero path. There\u2019s a
     lot of value in helping other people and I can\u2019t imagine dedicating myself
     to anything else. Being able to save that elderly woman last week put everything

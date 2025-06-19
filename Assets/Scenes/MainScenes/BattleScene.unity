@@ -12152,6 +12152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063484109}
   - component: {fileID: 1063484108}
+  - component: {fileID: 1063484110}
   m_Layer: 0
   m_Name: DebugTest
   m_TagString: Untagged
@@ -12193,6 +12194,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1063484110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063484107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9344b99d9604d43ab5a3cc4c655be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1065465326
 GameObject:
   m_ObjectHideFlags: 0
@@ -31372,7 +31385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: SequenceID
-      value: 14
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: cutsceneSeq.Array.size
