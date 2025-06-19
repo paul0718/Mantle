@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PauseBrightnessPanel : PausePanel
 {
     public Slider brightnessSlider;
-    public override void Init()
+    public override void Show()
     {
-        base.Init();
+        base.Show();
     }
 }

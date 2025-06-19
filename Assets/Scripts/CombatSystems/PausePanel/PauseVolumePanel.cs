@@ -7,9 +7,9 @@ public class PauseVolumePanel : PausePanel
 {
     public Slider BGMSlider;
     public Slider SFXSlider;
-    public override void Init()
+    public override void Show()
     {
-        base.Init();
+        base.Show();
         var audioMixer = AudioManager.Instance.audioMixer;
 
         if (audioMixer.GetFloat("BGM", out float bgmValue))
@@ -37,6 +37,7 @@ public class PauseVolumePanel : PausePanel
         base.Hide();
         PlayerPrefs.SetFloat("BGM",BGMSlider.value);
         PlayerPrefs.SetFloat("SFX", SFXSlider.value);
+        PauseManager.Instance.ShowPanel<PauseMainPanel>();
     }
 
 }

@@ -122,11 +122,11 @@ public class MainMenuManager : MonoBehaviour
     }
     public void ShowLogo()
     {
-        logo.DOAnchorPosY(logoNormalY, 0.2f);
+        logo.DOAnchorPosY(logoNormalY, 0.2f).SetUpdate(true);
     }
     public void HideLogo()
     {
-        logo.DOAnchorPosY(logoHideY, 0.2f);
+        logo.DOAnchorPosY(logoHideY, 0.2f).SetUpdate(true);
     }
 
     IEnumerator GoToBodyBGM()

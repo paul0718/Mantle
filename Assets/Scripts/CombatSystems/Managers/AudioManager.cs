@@ -165,6 +165,7 @@ public class AudioManager : MonoBehaviour
             Sequence sequence = DOTween.Sequence();
             sequence.AppendInterval(realTime);
             sequence.AppendCallback(() => BGMAudioSource.Stop());
+            sequence.SetUpdate(true);
         }
         nextFlag = true;
     }
