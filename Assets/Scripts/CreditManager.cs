@@ -25,7 +25,10 @@ public class CreditManager : MonoBehaviour
     void Start()
     {
         if (SequenceManager.Instance.SequenceID == 19)
+        {
             ShowLogo();
+            AudioManager.Instance.SetBGMLibrary("CreditsBGM");
+        }
     }
 
     private void Update()

@@ -4542,6 +4542,14 @@ PrefabInstance:
       propertyPath: SFXLibrary
       value: 
       objectReference: {fileID: 11400000, guid: 1f1f3230ab0add0459138caac9c09b97, type: 2}
+    - target: {fileID: 3075075016852499805, guid: 40a3e7254a9c21c4d83596edff8c79d8, type: 3}
+      propertyPath: battleBGM.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075075016852499805, guid: 40a3e7254a9c21c4d83596edff8c79d8, type: 3}
+      propertyPath: battleBGM.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 91910a02b40f2d24db5e8a9e92a6ad72, type: 2}
     - target: {fileID: 5705176645897427597, guid: 40a3e7254a9c21c4d83596edff8c79d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 789.8703
@@ -21580,12 +21588,16 @@ PrefabInstance:
       value: SequenceManager
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
+      propertyPath: dateNum
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: aceIsDead
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: SequenceID
-      value: 4
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8701857117213652670, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27435,7 +27447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.0071025, y: -2.6998901}
+  m_AnchoredPosition: {x: 0.0071025, y: -2.6999512}
   m_SizeDelta: {x: 1948.2, y: 45.3601}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2066075361

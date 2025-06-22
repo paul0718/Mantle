@@ -22,10 +22,8 @@ public class AudioManager : MonoBehaviour
 
     private int BGMIndex = 0;
     private bool nextFlag = false;
-    [HideInInspector] public bool typing;
     
-    private AudioSource AvailableAudioSource 
-    { get => SFXAudioSources.Find(a => !a.isPlaying); }
+    private AudioSource AvailableSFXAudioSource { get => SFXAudioSources.Find(a => !a.isPlaying); }
     private void Awake()
     {
         Instance = this;
@@ -49,6 +47,16 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+    public static bool IsEnumMember<T>(string value, out T enumValue) where T : struct, Enum
+    {
+        if (Enum.TryParse<T>(value, out enumValue))
+        {
+            return true;
+        }
+
+        enumValue = default;
+        return false;
+    }
     private void Start()
     {
         var bgm = PlayerPrefs.GetFloat("BGM", -1);
@@ -60,16 +68,7 @@ public class AudioManager : MonoBehaviour
 
         FadeIn();
     }
-    public static bool IsEnumMember<T>(string value, out T enumValue) where T : struct, Enum
-    {
-        if (Enum.TryParse<T>(value, out enumValue))
-        {
-            return true; 
-        }
-
-        enumValue = default;
-        return false;
-    }
+   
     public void PlayOneShot(SFXNAME name, float volume = -1)
     {
         var audioSource = SFXAudioSources[0];
@@ -92,9 +91,7 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayLoop(SFXNAME name)
     {
-        if (name == SFXNAME.Typing)
-            typing = true;
-        var audioSource = AvailableAudioSource;
+        var audioSource = AvailableSFXAudioSource;
         if (audioSource == null)
         {
             Debug.LogWarning("Audio Source Not Available");
@@ -106,20 +103,17 @@ public class AudioManager : MonoBehaviour
     }
     public void StopLoop(SFXNAME name)
     {
-        if (name == SFXNAME.Typing)
-            typing = false;
         var audioSource = SFXAudioSources.Find(a => a.clip == sfxs[name]);
         if (audioSource != null)
         {
             audioSource.Stop();
             audioSource.loop = false;
         }
-
     }
     private Dictionary<AudioSource, Func<bool>> stopFunctions = new Dictionary<AudioSource, Func<bool>>();
     public void PlayLoop(SFXNAME name, Func<bool> stopCondition)
     {
-        var audioSource = AvailableAudioSource;
+        var audioSource = AvailableSFXAudioSource;
         audioSource.clip = sfxs[name];
         audioSource.loop = true;
         audioSource.Play();
@@ -138,25 +132,21 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+    public void SetBGMLibrary(string name)
+    {
+        AudioLibrary newBGM = battleBGM.FirstOrDefault(s => s.name == name);
+        if (newBGM == null)
+            Debug.LogWarning("No BGM matching name " + name + ". Use Vyzzar's BGM.");
+        else
+            BGMLibrary = newBGM;
+    }
     public void SetMasterVolumn(string type, float volume)
     {
         float dB = Mathf.Log10(Mathf.Max(volume, 0.0001f)) * 20;
         audioMixer.SetFloat(type, dB);
     }
-    public void SetBGMLibrary(string name)
-    {
-        AudioLibrary newBGM = battleBGM.FirstOrDefault(s => s.name == name);
-        if (newBGM == null)
-            Debug.LogWarning("No BGM matching name " + name+". Use Vyzzar's BGM.");
-        else 
-            BGMLibrary = newBGM;
-    }
-
-
-
     public void PlayNextBGM()
     {
-        //BGMAudioSource.Stop();
         if (SequenceManager.Instance.SequenceID == 14 && BGMIndex == 0)  
         {
             int currentTime = (int)(BGMAudioSource.time * 10000.0f);
@@ -169,9 +159,25 @@ public class AudioManager : MonoBehaviour
         }
         nextFlag = true;
     }
+    public void PlayNextPhase()
+    {
+        if (SequenceManager.Instance.SequenceID == 19)
+        {
+            int currentTime = (int)(BGMAudioSource.time * 10000.0f);
+            int waitTime = 23760 - currentTime % 23760;
+            float realTime = waitTime / 10000.0f;
+            Sequence sequence = DOTween.Sequence();
+            sequence.AppendInterval(realTime);
+            sequence.AppendCallback(() =>
+            {
+                BGMIndex = 5;
+                BGMAudioSource.Stop();
+            });
+            sequence.SetUpdate(true);
+        }
+    }
     public void FadeIn()
     {
-        //BGMAudioSource.DOFade(1, 1.5f);
         audioMixer.DOSetFloat("Master", 0, 1.5f);
         float startVolume = 0.001f; 
         float targetVolume = 1.0f;  
@@ -185,7 +191,6 @@ public class AudioManager : MonoBehaviour
     public void FadeOut()
     {
         //BGMAudioSource.DOFade(0, 1.5f);
-
         float startVolume = 1f;
         float targetVolume = 0.001f; 
         DOTween.To(() => startVolume, x => {
@@ -196,11 +201,24 @@ public class AudioManager : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log(BGMIndex);
         if (BGMLibrary != null && !BGMAudioSource.isPlaying) 
         {
             if (nextFlag)
             {
-                BGMIndex++;
+                if (SequenceManager.Instance.SequenceID == 19 && BGMIndex == 4)
+                {
+                    BGMIndex = 1;
+                }
+                else if(SequenceManager.Instance.SequenceID == 19 && BGMIndex == 5)
+                        {
+
+                }
+                else
+                {
+                    BGMIndex++;
+                }
+                    
                 nextFlag = false;
             }
             BGMAudioSource.clip = BGMLibrary.library[BGMIndex];
@@ -208,7 +226,11 @@ public class AudioManager : MonoBehaviour
             {
                 BGMAudioSource.Play();
             }
-            
+            if (SequenceManager.Instance.SequenceID == 19 && BGMIndex <= 4) 
+            {
+                PlayNextBGM();
+            }
+
         }
         if (stopFunctions != null)
         {

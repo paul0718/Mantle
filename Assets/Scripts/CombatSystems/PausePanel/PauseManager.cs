@@ -82,6 +82,7 @@ public class PauseManager : MonoBehaviour
     }
     private void Update()
     {
+        if (SequenceManager.Instance.SequenceID == 19) return;
         if (Input.GetKeyDown(KeyCode.Escape) && !paused && SceneManager.GetActiveScene().name != "MainMenu") 
         {
             Pause();
