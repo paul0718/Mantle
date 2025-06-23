@@ -22133,16 +22133,16 @@ MonoBehaviour:
     role: header
     heroName: 
   - name: Darcy Bergestein
-    role: Writer/Narrative Design
+    role: Writer
     heroName: The Kiwi Warrior
   - name: Jana Mae Rubio
-    role: Writer/Narrative Design
+    role: Writer
     heroName: 
   - name: Matthew Kassorla
-    role: Writer/Narrative Design
+    role: Writer
     heroName: Harbinger Fanboy
   - name: Shannon Kilbride
-    role: Writer/Narrative Design
+    role: Writer
     heroName: SuperSpike
   - name: ENGINEERING
     role: header
