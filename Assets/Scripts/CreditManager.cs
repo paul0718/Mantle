@@ -19,6 +19,9 @@ public class CreditManager : MonoBehaviour
     [SerializeField] private Image logoBG;
     [SerializeField] private Image logo;
 
+    [SerializeField] private GameObject skipText;
+    private bool skipCredits = false;
+    
     private bool playingCredits;
 
 
@@ -36,6 +39,19 @@ public class CreditManager : MonoBehaviour
         if (playingCredits)
         {
             scrollParent.anchoredPosition += new Vector2(0, spacing/timing * Time.deltaTime);
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (skipCredits)
+                {
+                    SceneTransition.Instance.FadeToBlack();
+                }
+                else
+                {
+                    skipText.SetActive(true);
+                    skipCredits = true;
+                    StartCoroutine(SkipCredits()); 
+                }
+            }
             /*if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
             {
                 Time.timeScale = 3;
@@ -100,8 +116,14 @@ public class CreditManager : MonoBehaviour
 
         yield return new WaitUntil(() => scrollParent.localPosition.y > 6000);
             //GetChild(scrollParent.childCount-1).GetComponent<RectTransform>().position.y > 600);
-        Debug.Log("Credits over!");
         SceneTransition.Instance.FadeToBlack();
+    }
+
+    IEnumerator SkipCredits()
+    {
+        yield return new WaitForSeconds(4f);
+        skipText.SetActive(false);
+        skipCredits = false;
     }
 }
 
