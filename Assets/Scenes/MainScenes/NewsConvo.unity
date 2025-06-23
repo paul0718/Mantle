@@ -3343,7 +3343,7 @@ MonoBehaviour:
   m_text: ace@securemail.com
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7326807290831907832, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3406,7 +3406,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -92.1265, w: 26.513374}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &252420145
@@ -5497,7 +5497,7 @@ MonoBehaviour:
   m_text: Goodbye
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7326807290831907832, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5560,7 +5560,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 1.8019257, w: -1.5035381}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &441004419
@@ -22641,7 +22641,7 @@ MonoBehaviour:
   m_text: Leo... So this is it.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7326807290831907832, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22704,7 +22704,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 2.1857529, w: 0.03167606}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1719749964
@@ -23377,9 +23377,10 @@ MonoBehaviour:
   subject: Goodbye
   body: "Leo\u2026\r\n\r\nSo this is it. This\u2026 carnage is what your life\u2019s
     work amounts to? Part of me is angry \u2013 why did you ever take it this far?
-    I kept warning you about how dangerous Mantle is. And now you\u2019re gone. You've
-    left Mantle behind, and I\u2019m supposed to take care of your mess. This is
-    the last thing I\u2019ll do for you. \r\n\r\nI\u2019ll miss you. \r\n\nGoodbye"
+    \n\nI kept warning you about how dangerous Mantle is. And now you\u2019re gone.
+    \n\nYou've left Mantle behind, and I\u2019m supposed to take care of your mess.
+    I will take him down. This is the last thing I\u2019ll do for you.\r\n\r\nI\u2019ll
+    miss you. \r\n\nGoodbye"
   currentEmail: {fileID: 1541986071}
   read: 0
   readColor: {r: 0.7294118, g: 0.7294118, b: 0.7294118, a: 1}
