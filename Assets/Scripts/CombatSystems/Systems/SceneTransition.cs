@@ -62,7 +62,7 @@ public class SceneTransition : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.N))
             {
                 FadeToBlack();
             }
