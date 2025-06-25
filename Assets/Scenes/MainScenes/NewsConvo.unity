@@ -21460,6 +21460,7 @@ RectTransform:
   - {fileID: 1099816512}
   - {fileID: 687185631}
   - {fileID: 1969146958}
+  - {fileID: 2030461881}
   - {fileID: 2025122391}
   - {fileID: 849463031}
   m_Father: {fileID: 1596043614}
@@ -21837,7 +21838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: SequenceID
-      value: 19
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8701857117213652670, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26883,6 +26884,81 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5242801517340107546, guid: 53056050a831aaf469272e8a928fb70c, type: 3}
   m_PrefabInstance: {fileID: 2383118337205762443}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2030461880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030461881}
+  - component: {fileID: 2030461883}
+  - component: {fileID: 2030461882}
+  m_Layer: 5
+  m_Name: HospImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2030461881
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030461880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1654583401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -103.8, y: 20.5}
+  m_SizeDelta: {x: 357, y: 183.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2030461882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030461880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a28f569983b6e864a939d2a1134d6e17, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2030461883
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030461880}
+  m_CullTransparentMesh: 1
 --- !u!1 &2035586010
 GameObject:
   m_ObjectHideFlags: 0
@@ -29805,6 +29881,7 @@ MonoBehaviour:
   acePic: {fileID: 687185630}
   harbPic: {fileID: 1969146957}
   breakNewsPic: {fileID: 1099816511}
+  hospitalPic: {fileID: 2030461880}
   newsCaptions:
   - {fileID: 353815091}
   - {fileID: 195340009}

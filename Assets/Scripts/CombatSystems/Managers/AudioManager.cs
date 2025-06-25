@@ -201,7 +201,7 @@ public class AudioManager : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(BGMIndex);
+        //Debug.Log(BGMIndex);
         if (BGMLibrary != null && !BGMAudioSource.isPlaying) 
         {
             if (nextFlag)
