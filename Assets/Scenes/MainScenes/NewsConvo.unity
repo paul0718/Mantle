@@ -29882,6 +29882,7 @@ MonoBehaviour:
   harbPic: {fileID: 1969146957}
   breakNewsPic: {fileID: 1099816511}
   hospitalPic: {fileID: 2030461880}
+  newsFrame: {fileID: 89615745}
   newsCaptions:
   - {fileID: 353815091}
   - {fileID: 195340009}

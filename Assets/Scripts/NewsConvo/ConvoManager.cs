@@ -36,6 +36,7 @@ public class ConvoManager : MonoBehaviour
     [SerializeField] private GameObject harbPic;
     [SerializeField] private GameObject breakNewsPic;
     [SerializeField] private GameObject hospitalPic;
+    [SerializeField] private GameObject newsFrame;
     
     [Header("Captions")]
     [SerializeField] private List<TMP_Text> newsCaptions;
@@ -797,10 +798,12 @@ public class ConvoManager : MonoBehaviour
         }
         else if(c == '~')
         {
+            newsFrame.SetActive(false);
             hospitalPic.SetActive(true);
         }
         else if (c == '@')
         {
+            newsFrame.SetActive(true);
             hospitalPic.SetActive(false);
         }
 
