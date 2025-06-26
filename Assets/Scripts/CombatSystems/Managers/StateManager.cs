@@ -11,6 +11,8 @@ public class StateManager : MonoBehaviour
 {
     [SerializeField] private GameObject endReticle;
     [SerializeField] private GameObject lowBatteryText;
+
+    [SerializeField] private GameObject destructButton;
     //intro dialogue
     //[SerializeField] private GoogleSheetsDB googleSheetsDB;
     [HideInInspector] public bool playingDialogue;
@@ -128,16 +130,18 @@ public class StateManager : MonoBehaviour
         }
         else if (currentState == BattleState.Enemy )
         {
-            //disarmButton.GetComponent<Button>().interactable = (enemyDisarmed == 0); //disable disarm button if enemy already disarmed
             //actionBlocker.SetActive(false);
             currentState = BattleState.Player;
             CoreButton.Instance.SetCoreButton(CoreButton.FunctionType.LockIn);
+            if (GridManager.Instance.selfDestruct)
+            {
+                Sequence s = DOTween.Sequence();
+                s.AppendInterval(2.5f);
+                s.Append(destructButton.transform.DOLocalMoveY(-39, 1f, true));
+            }
         }
         else if(currentState == BattleState.Player)
         {
-            //enemyDisarmed = Mathf.Max(0, enemyDisarmed-1);
-            // if (enemyDisarmed == 0)
-            //     enemyWeapon.SetActive(true);
             currentState = BattleState.Enemy;
         }
 
