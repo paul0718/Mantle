@@ -19,6 +19,7 @@ public class BarkManager : MonoBehaviour
         Win,
         Lose,
         Special,
+        Destruct
     }
     public static BarkManager Instance { get; private set; }
 
@@ -57,6 +58,7 @@ public class BarkManager : MonoBehaviour
         {
             MultipleBarkType.Win => BattleSequenceManager.Instance.outroData,
             MultipleBarkType.Lose => BattleSequenceManager.Instance.outroData,
+            MultipleBarkType.Destruct => BattleSequenceManager.Instance.destructData,
             MultipleBarkType.Special => BattleSequenceManager.Instance.specialData,
             _ => BattleSequenceManager.Instance.introData
         };
@@ -106,6 +108,8 @@ public class BarkManager : MonoBehaviour
                 StateManager.Instance.playingDialogue = false;
                 break;
             case MultipleBarkType.Special:
+                break;
+            case MultipleBarkType.Destruct:
                 break;
         }
 

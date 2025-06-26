@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class DestructButton : MonoBehaviour
@@ -20,6 +21,8 @@ public class DestructButton : MonoBehaviour
     {
         CoreButton.Instance.RegisterFunction(CoreButton.FunctionType.Destruct, () =>
         {
+            StartCoroutine(BarkManager.Instance.ShowIntroOutroBark(BarkManager.MultipleBarkType.Destruct, false,
+                () => { }));
             Debug.Log("self destructed good bye");
         });
         CoreButton.Instance.SetCoreButton(CoreButton.FunctionType.Destruct);

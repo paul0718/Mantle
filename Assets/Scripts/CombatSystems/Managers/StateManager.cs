@@ -137,7 +137,7 @@ public class StateManager : MonoBehaviour
             {
                 Sequence s = DOTween.Sequence();
                 s.AppendInterval(2.5f);
-                s.Append(destructButton.transform.DOLocalMoveY(-92, 1f, true));
+                s.Append(destructButton.transform.DOLocalMoveY(-88, 1f, true));
             }
         }
         else if(currentState == BattleState.Player)
