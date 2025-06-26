@@ -16,7 +16,8 @@ public class CoreButton : MonoBehaviour
         LockIn,
         Respond,
         Kill,
-        Capture
+        Capture,
+        Destruct
     };
 
     private Dictionary<FunctionType, Action> functions = new Dictionary<FunctionType, Action>();
