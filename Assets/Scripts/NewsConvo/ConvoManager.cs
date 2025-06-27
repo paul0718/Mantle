@@ -35,6 +35,8 @@ public class ConvoManager : MonoBehaviour
     [SerializeField] private GameObject acePic;
     [SerializeField] private GameObject harbPic;
     [SerializeField] private GameObject breakNewsPic;
+    [SerializeField] private GameObject hospitalPic;
+    [SerializeField] private GameObject newsFrame;
     
     [Header("Captions")]
     [SerializeField] private List<TMP_Text> newsCaptions;
@@ -87,7 +89,7 @@ public class ConvoManager : MonoBehaviour
     [HideInInspector] public bool newsWait;
     private bool ignoreHover;
 
-    private char[] picMarkers = new[] { '(', ')', '{', '}' };
+    private char[] picMarkers = new[] { '(', ')', '{', '}', '~', '@' };
 
     [SerializeField] private ScreenshotToQuad screenCrack;
 
@@ -775,6 +777,7 @@ public class ConvoManager : MonoBehaviour
 
     private void SetPictures(char c)
     {
+        Debug.Log("in set pictures");
         if (c == '(')
         {
             acePic.SetActive(true);
@@ -792,6 +795,16 @@ public class ConvoManager : MonoBehaviour
         else if(c == '}')
         {
             harbPic.SetActive(false);
+        }
+        else if(c == '~')
+        {
+            newsFrame.SetActive(false);
+            hospitalPic.SetActive(true);
+        }
+        else if (c == '@')
+        {
+            newsFrame.SetActive(true);
+            hospitalPic.SetActive(false);
         }
 
         if (!acePic.activeSelf && !harbPic.activeSelf)

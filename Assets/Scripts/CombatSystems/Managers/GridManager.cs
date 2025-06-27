@@ -11,6 +11,7 @@ public class GridManager : MonoBehaviour
     public Transform killState;
     public Transform captureState;
     public GameObject specialBlocker;
+    [HideInInspector] public bool selfDestruct = false;
 
     [SerializeField] private RectTransform _grid;
     [SerializeField] private Vector3 _gridBasePos;
@@ -257,7 +258,7 @@ public class GridManager : MonoBehaviour
                 Sequence s = DOTween.Sequence();
                 s.AppendInterval(1.5f);
                 s.AppendCallback(MasterMinigames.Instance.SetGame);
-                
+                selfDestruct = true;
             }
             else
             {

@@ -4717,7 +4717,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.984541, g: 1, b: 0.7877358, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -8953,6 +8953,154 @@ Transform:
   - {fileID: 802825560}
   m_Father: {fileID: 991557582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &699851928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699851929}
+  - component: {fileID: 699851931}
+  - component: {fileID: 699851930}
+  - component: {fileID: 699851932}
+  - component: {fileID: 699851933}
+  m_Layer: 5
+  m_Name: DestructButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &699851929
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699851928}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1227949752}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 813.6, y: -214}
+  m_SizeDelta: {x: 120, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &699851930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699851928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b7c698aef10fa3349a35ac99c3a9a7e5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &699851931
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699851928}
+  m_CullTransparentMesh: 1
+--- !u!114 &699851932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699851928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.7056604, g: 0.7056604, b: 0.7056604, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 699851930}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 699851933}
+        m_TargetAssemblyTypeName: DestructButton, Assembly-CSharp
+        m_MethodName: SetSelfDestruct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &699851933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699851928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5bb1cb0aa797944addcbdaf2a3c0ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 340997951}
+  endCutscene: {fileID: 1816332007}
+  shake: 0
 --- !u!1 &704308856
 GameObject:
   m_ObjectHideFlags: 0
@@ -9038,6 +9186,8 @@ MonoBehaviour:
   flashObject: {fileID: 1110405598}
   flashDuration: 0.5
   startAlpha: 0.8
+  winSound: {fileID: 8300000, guid: 5215c3b4ececfd3489a2c3e33ac3c974, type: 3}
+  loseSound: {fileID: 8300000, guid: 3e0da174d03c2c140aed76a502cb3a4e, type: 3}
 --- !u!4 &705241163
 Transform:
   m_ObjectHideFlags: 0
@@ -9336,53 +9486,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6626192591736370383, guid: 1b1f9ef8c4c1967409e8f49b78d9517c, type: 3}
   m_PrefabInstance: {fileID: 733785959}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &736385654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 736385656}
-  - component: {fileID: 736385655}
-  m_Layer: 0
-  m_Name: MetricManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &736385655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736385654}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4e2964f0c1ba9649b9b24e3769f5745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _intervalBetweenTimedVariables: 5
-  _intervalBetweenWritingToFile: 60
-  _collectDataOnEditor: 0
---- !u!4 &736385656
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736385654}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.201013, y: -3.1055257, z: 955.5323}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &746519003
 GameObject:
   m_ObjectHideFlags: 0
@@ -13880,7 +13983,7 @@ MonoBehaviour:
   holdTime: 2
   indicator: {fileID: 1224028625}
   winEffectAnimator: {fileID: 1734879527}
-  winSound: {fileID: 8300000, guid: d11959a5dc2dc8142a82833ceadd3638, type: 3}
+  winSound: {fileID: 8300000, guid: a663cacd8c6d2cf409a31c3400ba09c8, type: 3}
   loseSound: {fileID: 8300000, guid: 5d6bf19410093404aa09d8b1e1776e23, type: 3}
   spinSound: {fileID: 8300000, guid: 7ddc33f8e5f7a68459b8d5df10253659, type: 3}
   alarmSound: {fileID: 8300000, guid: 36682c763661f414faab5a1521178225, type: 3}
@@ -14654,6 +14757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endReticle: {fileID: 1300556212}
   lowBatteryText: {fileID: 428269820}
+  destructButton: {fileID: 699851928}
   playingDialogue: 0
   endSequenceManager: {fileID: 1816332007}
   debugGame: 0
@@ -14692,6 +14796,7 @@ MonoBehaviour:
   killState: {fileID: 1998121699}
   captureState: {fileID: 1527516098}
   specialBlocker: {fileID: 1561121354}
+  selfDestruct: 0
   _grid: {fileID: 207713625}
   _gridBasePos: {x: 330, y: 170, z: 0}
   dot: {fileID: 1914803779}
@@ -15107,6 +15212,7 @@ RectTransform:
   - {fileID: 462844206}
   - {fileID: 1989708019}
   - {fileID: 1465768454}
+  - {fileID: 699851929}
   m_Father: {fileID: 1308249803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -16899,7 +17005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -33106,17 +33212,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Check
+  m_text: Calibrate
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
+  m_sharedMaterial: {fileID: -7326807290831907832, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280887593
-  m_fontColor: {r: 0.16037709, g: 0.16037709, b: 0.16037709, a: 1}
+    rgba: 4292532954
+  m_fontColor: {r: 0.85660374, g: 0.85660374, b: 0.85660374, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -33133,8 +33239,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -33391,15 +33497,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tune
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
+  m_sharedMaterial: {fileID: -7326807290831907832, guid: a666ffe2cd0666d4eb7a8ba7ebfe4a19, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280887593
-  m_fontColor: {r: 0.16037709, g: 0.16037709, b: 0.16037709, a: 1}
+    rgba: 4278241749
+  m_fontColor: {r: 0.83396226, g: 0.7881761, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -35199,7 +35305,6 @@ SceneRoots:
   - {fileID: 999249205}
   - {fileID: 1816332006}
   - {fileID: 83486982}
-  - {fileID: 736385656}
   - {fileID: 276501522}
   - {fileID: 1220746877}
   - {fileID: 704308857}

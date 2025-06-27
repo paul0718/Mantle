@@ -22,6 +22,8 @@ public class BattleSequenceManager : MonoBehaviour
     public Dictionary<string, Dictionary<string, string>> barkData = new Dictionary<string, Dictionary<string, string>>();
     [HideInInspector]
     public Dictionary<string, Dictionary<string, string>> outroData = new Dictionary<string, Dictionary<string, string>>();
+    [HideInInspector]
+    public Dictionary<string, Dictionary<string, string>> destructData= new Dictionary<string, Dictionary<string, string>>();
     private void Awake()
     {
         Instance = this;
@@ -54,6 +56,9 @@ public class BattleSequenceManager : MonoBehaviour
         {
             var special = Resources.Load<TextAsset>("Dialog/Special").text;
             specialData = DialogUtils.ParseJsonToDictionary(special);
+            
+            var destruct = Resources.Load<TextAsset>("Dialog/SpecialDestruct").text;
+            destructData = DialogUtils.ParseJsonToDictionary(destruct);
         }
     }
 }

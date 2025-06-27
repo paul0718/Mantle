@@ -61,6 +61,7 @@ public class BlockManager : MonoBehaviour
     private float[] spawnArea; // float[4]
     private float[] indicatorExtents; // float[2]
     
+    [SerializeField] private AudioClip winSound, loseSound;
     private AudioSource endSoundAudioSource;
     
     void OnEnable() // Reset everything
@@ -104,6 +105,9 @@ public class BlockManager : MonoBehaviour
     {
         const float RotationAngle = 180f;
         const float EndBuffer = 0.1f;
+        
+        var clip = isWinning ? winSound : loseSound;
+        if (isWinning) endSoundAudioSource.PlayOneShot(clip);
 
         if (enemy == Enemies.Ace && !isWinning)
         {
@@ -300,9 +304,6 @@ public class BlockManager : MonoBehaviour
     private void EndsGame(bool playerWins)
     {
         var battle = BattleSequenceManager.Instance.enemyMinigames;
-        
-        /*endSound.clip = playerWins ? windSound : loseSound;
-        endSound.Play();*/
 
         if (playerWins)
         {

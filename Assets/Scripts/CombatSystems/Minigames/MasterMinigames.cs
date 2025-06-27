@@ -35,6 +35,7 @@ public class MasterMinigames : MonoBehaviour
                 minigameButtons[p].image.raycastTarget = true;
                 minigameButtons[p].onClick.AddListener(() =>
                 {
+                    CoreButton.Instance.SetCoreButton(CoreButton.FunctionType.LockIn);
                     currentMinigame = minigames[p];
                     
                     // gridImage.DOFade(0, 0.25f).SetLoops(2, LoopType.Yoyo);
@@ -86,7 +87,6 @@ public class MasterMinigames : MonoBehaviour
     {
         if (!currentMinigame.activeSelf)
         {
-            Debug.Log(currentMinigame.name);
             energySlider.transform.parent.DOLocalMove(new Vector3(-146.1f, 196, 1), 1, false);
             currentMinigame.SetActive(true);
             energySlider.energyBlink = false;

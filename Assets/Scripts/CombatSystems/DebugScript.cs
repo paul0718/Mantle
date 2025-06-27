@@ -44,7 +44,7 @@ public class DebugScript : MonoBehaviour
             destruct.SetActive(true);
         }
         
-        if (battleBuild)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
