@@ -74,4 +74,27 @@ public class EndFightCutscene : MonoBehaviour
         barkBubble.transform.GetChild(0).localPosition = new Vector3(0.6f + barkBubble.GetComponent<SpriteRenderer>().size.x * 0.5f, 0, 0);
         barkBubble.SetActive(true);
     }
+    
+    public IEnumerator PlaySelfDestructSequence()
+    {
+        barkBubble.SetActive(false);
+        explodeAnims[0].gameObject.SetActive(true);
+        explodeAnims[0].SetTrigger("StartExplosion");
+        AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarExplosion);
+        
+        
+        yield return new WaitForSeconds(1.0f);
+        explodeAnims[1].gameObject.SetActive(true);
+        explodeAnims[1].SetTrigger("StartExplosion");
+        AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarExplosion);
+        
+        yield return new WaitForSeconds(1.0f);
+        explodeAnims[2].gameObject.SetActive(true);
+        explodeAnims[2].SetTrigger("StartExplosion");
+        AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarExplosion);
+        yield return new WaitForSeconds(6f);
+        SequenceManager.Instance.aceIsDead = false;
+        SteamIntegration.Instance.UnlockAchievement("ACH_LOSE_ACE");
+        SceneTransition.Instance.FadeToBlack(5f);
+    }
 }

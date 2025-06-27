@@ -237,19 +237,14 @@ public class StateManager : MonoBehaviour
     }
     public IEnumerator PlayerLose()
     {
-        if (MetricManagerScript.instance != null)
-        { 
-            MetricManagerScript.instance.LogString("Player Lost", SequenceManager.Instance.SequenceID.ToString());
-        }
-        
         MasterMinigames.Instance.DisableAllButtons();
         currentState = BattleState.Lose;
         yield return new WaitForSeconds(1);
         //lowBatteryText.SetActive(true);
         yield return new WaitUntil(() => !playingDialogue);
-        Debug.Log("To restart scene!");
         if (SequenceManager.Instance.SequenceID == 17)
         {
+            SequenceManager.Instance.aceIsDead = false;
             SteamIntegration.Instance.UnlockAchievement("ACH_LOSE_ACE");
             SceneTransition.Instance.FadeToBlack();
         }
