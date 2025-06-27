@@ -9186,6 +9186,8 @@ MonoBehaviour:
   flashObject: {fileID: 1110405598}
   flashDuration: 0.5
   startAlpha: 0.8
+  winSound: {fileID: 8300000, guid: 5215c3b4ececfd3489a2c3e33ac3c974, type: 3}
+  loseSound: {fileID: 8300000, guid: 3e0da174d03c2c140aed76a502cb3a4e, type: 3}
 --- !u!4 &705241163
 Transform:
   m_ObjectHideFlags: 0
@@ -13981,7 +13983,7 @@ MonoBehaviour:
   holdTime: 2
   indicator: {fileID: 1224028625}
   winEffectAnimator: {fileID: 1734879527}
-  winSound: {fileID: 8300000, guid: d11959a5dc2dc8142a82833ceadd3638, type: 3}
+  winSound: {fileID: 8300000, guid: a663cacd8c6d2cf409a31c3400ba09c8, type: 3}
   loseSound: {fileID: 8300000, guid: 5d6bf19410093404aa09d8b1e1776e23, type: 3}
   spinSound: {fileID: 8300000, guid: 7ddc33f8e5f7a68459b8d5df10253659, type: 3}
   alarmSound: {fileID: 8300000, guid: 36682c763661f414faab5a1521178225, type: 3}
