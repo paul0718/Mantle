@@ -71,6 +71,8 @@ public class StateManager : MonoBehaviour
                 AudioManager.Instance.PlayNextBGM();
             });
             s.SetUpdate(true);
+            if (SequenceManager.Instance.SequenceID == 17)
+                AceMusicManager.Instance.OnFightStart();
         }
     }
 
@@ -89,6 +91,8 @@ public class StateManager : MonoBehaviour
             AudioManager.Instance.PlayNextBGM();
         });
         s.SetUpdate(true);
+        if (SequenceManager.Instance.SequenceID == 17)
+            AceMusicManager.Instance.OnFightStart();
     }
     private bool[] gamePlayed = new bool[4]; // Array to track if each game has been played
 
@@ -196,6 +200,7 @@ public class StateManager : MonoBehaviour
                     if (SequenceManager.Instance.SequenceID == 17)
                     {
                         SequenceManager.Instance.aceIsDead = true;
+                        AceMusicManager.Instance.OnPostBattleDialogueStart();
                     }
                     CoverManager.Instance.EndGameAnimaton();
                     StartCoroutine(BarkManager.Instance.ShowIntroOutroBark(BarkManager.MultipleBarkType.Win, true));
@@ -217,6 +222,7 @@ public class StateManager : MonoBehaviour
                     if (SequenceManager.Instance.SequenceID == 17)
                     {
                         SequenceManager.Instance.aceIsDead = false;
+                        AceMusicManager.Instance.OnPostBattleDialogueStart();
                     }
                     CoverManager.Instance.EndGameAnimaton();
                     StartCoroutine(BarkManager.Instance.ShowIntroOutroBark(BarkManager.MultipleBarkType.Win, false));

@@ -20,9 +20,9 @@ public class AudioManager : MonoBehaviour
     public AudioLibrary BGMLibrary;
     public List<AudioLibrary> battleBGM;
 
+    public AceMusicManager aceMusicManager;
     private int BGMIndex = 0;
     private bool nextFlag = false;
-    
     private AudioSource AvailableSFXAudioSource { get => SFXAudioSources.Find(a => !a.isPlaying); }
     private void Awake()
     {
@@ -201,7 +201,8 @@ public class AudioManager : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(BGMIndex);
+        if (SequenceManager.Instance.SequenceID == 17)
+            return;
         if (BGMLibrary != null && !BGMAudioSource.isPlaying) 
         {
             if (nextFlag)

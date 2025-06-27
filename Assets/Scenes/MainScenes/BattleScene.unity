@@ -18485,6 +18485,55 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1572671632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1572671634}
+  - component: {fileID: 1572671633}
+  m_Layer: 0
+  m_Name: AceAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1572671633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572671632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cea595d5456844cb11826a7bb21771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixerGroup: {fileID: -2887524295474471917, guid: b79c500e39c732f49860c9e207a69a81, type: 2}
+  IntroClip: {fileID: 8300000, guid: 37332d259bcd6424da34f7445815c3c5, type: 3}
+  HeadClip: {fileID: 8300000, guid: ff10cc48317b7d2429323c2e56760aae, type: 3}
+  BodyClip: {fileID: 8300000, guid: 2c62faab36bf6444dbd1a90a2bc80e3d, type: 3}
+  BodyAltClip: {fileID: 8300000, guid: 5cd649a1a47bc7840be7408e1f0470d3, type: 3}
+--- !u!4 &1572671634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572671632}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1573456279
 GameObject:
   m_ObjectHideFlags: 0
@@ -35154,3 +35203,4 @@ SceneRoots:
   - {fileID: 276501522}
   - {fileID: 1220746877}
   - {fileID: 704308857}
+  - {fileID: 1572671634}
