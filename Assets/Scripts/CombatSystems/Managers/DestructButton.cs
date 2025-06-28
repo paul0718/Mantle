@@ -44,8 +44,10 @@ public class DestructButton : MonoBehaviour
             StartCoroutine(BarkManager.Instance.ShowIntroOutroBark(BarkManager.MultipleBarkType.Destruct, false,
                 () => { }));
             StartCoroutine(SelfDestructSequence());
-            Debug.Log("self destructed good bye");
+            AudioManager.Instance.PlayLoop(SFXNAME.Glitch);
+            AudioManager.Instance.SetSFXVolume(SFXNAME.Glitch, 0.5f);
         });
+        AudioManager.Instance.PlayOneShot(SFXNAME.ChoosingMinigame);
         CoreButton.Instance.SetCoreButton(CoreButton.FunctionType.Destruct);
         ChatLogManager.Instance.ShowText("<color=orange>Self-Destruct?");
     }
@@ -65,6 +67,7 @@ public class DestructButton : MonoBehaviour
         shakeAmount = 0.3f;
         glitchEffect.glitch = 1f;
         yield return new WaitForSeconds(4f);
+        AudioManager.Instance.SetSFXVolume(SFXNAME.Glitch, 0.1f);
         endCutscene.StartCoroutine(endCutscene.PlaySelfDestructSequence());
     }
 }
