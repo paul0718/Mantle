@@ -250,6 +250,7 @@ public class StateManager : MonoBehaviour
         yield return new WaitUntil(() => !playingDialogue);
         if (SequenceManager.Instance.SequenceID == 17)
         {
+            AceMusicManager.Instance.OnPostBattleDialogueStart();
             SequenceManager.Instance.aceIsDead = false;
             SteamIntegration.Instance.UnlockAchievement("ACH_LOSE_ACE");
             SceneTransition.Instance.FadeToBlack();

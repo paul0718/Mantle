@@ -77,6 +77,7 @@ public class EndFightCutscene : MonoBehaviour
     
     public IEnumerator PlaySelfDestructSequence()
     {
+        AceMusicManager.Instance.OnPostBattleDialogueStart();
         barkBubble.SetActive(false);
         explodeAnims[0].gameObject.SetActive(true);
         explodeAnims[0].SetTrigger("StartExplosion");

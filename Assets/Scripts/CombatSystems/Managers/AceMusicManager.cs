@@ -56,8 +56,8 @@ public class AceMusicManager : MonoBehaviour
 
         if (postBattleStarted)
         {
-            bodySource.volume = Mathf.MoveTowards(bodySource.volume, 0f, Time.deltaTime * 1.5f);
-            bodyAltSource.volume = Mathf.MoveTowards(bodyAltSource.volume, 1f, Time.deltaTime * 1.5f);
+            bodySource.volume = Mathf.MoveTowards(bodySource.volume, 0f, Time.deltaTime * 0.5f);
+            bodyAltSource.volume = Mathf.MoveTowards(bodyAltSource.volume, 1f, Time.deltaTime * 0.5f);
         }
     }
     private AudioSource CreateAudioSource(string name, AudioClip clip, bool loop)
