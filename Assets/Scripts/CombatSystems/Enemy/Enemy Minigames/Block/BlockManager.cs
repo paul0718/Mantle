@@ -103,7 +103,7 @@ public class BlockManager : MonoBehaviour
     
     private IEnumerator ShowEffect(bool isWinning)
     {
-        const float RotationAngle = 180f;
+        const float RotationAngle = 0f;
         const float EndBuffer = 0.1f;
         
         var clip = isWinning ? winSound : loseSound;
@@ -113,6 +113,7 @@ public class BlockManager : MonoBehaviour
         {
             for (int i = 0; i < 2; i++)
             {
+                effectPrefab.GetComponent<SpriteRenderer>().sprite = indicators[i].GetMainSprite();
                 Transform indicatorTrans = indicators[i].transform;
                 Transform effectTransform = CreateEffectTransform(indicatorTrans);
                 
@@ -277,10 +278,10 @@ public class BlockManager : MonoBehaviour
                 break;
 
             case Enemies.Ace:
-                var left = SpawnIndicator(prefab, leftPos, Quaternion.Euler(0, 0, 135));
-                left.transform.localScale = new Vector3(-1 * left.transform.localScale.x, left.transform.localScale.y, left.transform.localScale.z);
+                var left = SpawnIndicator(IndicatorPrefabs[(int)enemy], leftPos, Quaternion.Euler(0, 0, -45));
+                // left.transform.localScale = new Vector3(-1 * left.transform.localScale.x, left.transform.localScale.y, left.transform.localScale.z);
                 indicators.Add(left);
-                indicators.Add(SpawnIndicator(prefab, rightPos, Quaternion.Euler(0, 0, -135)));
+                indicators.Add(SpawnIndicator(IndicatorPrefabs[(int)enemy + 1], rightPos, Quaternion.Euler(0, 0, 45)));
                 break;
 
             default:

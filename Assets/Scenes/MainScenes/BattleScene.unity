@@ -9174,6 +9174,7 @@ MonoBehaviour:
   - {fileID: 7405925319179362369, guid: 8beaab8e9cc35304eb89cc13cd8d8fa4, type: 3}
   - {fileID: 593983224757582362, guid: d9b1109a58f75834cb8076623320d923, type: 3}
   - {fileID: 5232026988306207174, guid: 770527a5520c5d844a24334c73f32595, type: 3}
+  - {fileID: 5232026988306207174, guid: 6dc06cca9874eab4a8f9718941ec770e, type: 3}
   IndicatorSpawnPositions:
   - {fileID: 83018890}
   - {fileID: 1619099939}
