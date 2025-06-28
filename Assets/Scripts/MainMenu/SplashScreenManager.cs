@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class SplashScreenManager : MonoBehaviour
 {
     private Animator splashAnim;
+
+    [SerializeField] private GameObject warningText;
     // Start is called before the first frame update
     void Start()
     {
         splashAnim = GetComponent<Animator>();
-        splashAnim.SetTrigger("PlaySplashAnim");
-        
+        StartCoroutine(EndWarning());
     }
 
     // Update is called once per frame
@@ -21,6 +22,14 @@ public class SplashScreenManager : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
+    }
+
+    IEnumerator EndWarning()
+    {
+        yield return new WaitForSeconds(4f);
+        warningText.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        splashAnim.SetTrigger("PlaySplashAnim");
     }
 
     public void PlaySplashAudio()

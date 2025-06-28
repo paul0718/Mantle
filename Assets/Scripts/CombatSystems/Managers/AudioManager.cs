@@ -201,7 +201,7 @@ public class AudioManager : MonoBehaviour
     }
     private void Update()
     {
-        if (SequenceManager.Instance.SequenceID == 17)
+        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 17)
             return;
         if (BGMLibrary != null && !BGMAudioSource.isPlaying) 
         {
