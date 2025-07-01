@@ -36,18 +36,7 @@ public class MainMenuManager : MonoBehaviour
     }
     private void Start()
     {
-        Debug.Log("hi");
-        if (steamPage != null)
-        {
-            if (SequenceManager.Instance.steamPageOn)
-            {
-                steamPage.SetActive(true);
-            }
-            else
-            {
-                steamPage.SetActive(false);
-            }
-        }
+        bgmStarted = false;
         
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
@@ -131,7 +120,7 @@ public class MainMenuManager : MonoBehaviour
 
     IEnumerator GoToBodyBGM()
     {
-        yield return new WaitForSeconds(bgmSource.clip.length);
+        yield return new WaitForSeconds(bgmSource.clip.length/2);
         AudioManager.Instance.PlayNextBGM();
     }
 
