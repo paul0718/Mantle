@@ -20,7 +20,6 @@ public class AudioManager : MonoBehaviour
     public AudioLibrary BGMLibrary;
     public List<AudioLibrary> battleBGM;
 
-    public AceMusicManager aceMusicManager;
     private int BGMIndex = 0;
     private bool nextFlag = false;
     private AudioSource AvailableSFXAudioSource { get => SFXAudioSources.Find(a => !a.isPlaying); }
@@ -202,6 +201,8 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 17)
+            return;
+        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 12)
             return;
         if (BGMLibrary != null && !BGMAudioSource.isPlaying) 
         {

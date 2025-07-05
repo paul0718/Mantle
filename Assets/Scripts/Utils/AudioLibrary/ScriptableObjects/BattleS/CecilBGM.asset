@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CecilBGM
   m_EditorClassIdentifier: 
   library:
-  - {fileID: 8300000, guid: 005608420d377aa45bce7c71b768ef70, type: 3}
-  - {fileID: 8300000, guid: 865e46c71d013eb4e8c53c0ec63c9785, type: 3}
-  - {fileID: 8300000, guid: 865e46c71d013eb4e8c53c0ec63c9785, type: 3}
+  - {fileID: 8300000, guid: 84889bca64bc7c840a2501127e4cf18b, type: 3}
+  - {fileID: 8300000, guid: e6adce9a54e22e24aabcade974a3f108, type: 3}
+  - {fileID: 8300000, guid: 1d81de2a8723fe8488c261e85a5fcd78, type: 3}
+  - {fileID: 8300000, guid: cfc6a832ed722444d91cd0816cb311e1, type: 3}

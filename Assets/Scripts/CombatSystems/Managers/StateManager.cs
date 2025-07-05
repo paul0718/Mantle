@@ -44,7 +44,7 @@ public class StateManager : MonoBehaviour
         AfterEnd,
     };
 
-    [HideInInspector] public BattleState currentState = BattleState.BeforeStart;
+    public BattleState currentState = BattleState.BeforeStart;
 
     [SerializeField] private bool playIntro = true;
 
@@ -85,6 +85,7 @@ public class StateManager : MonoBehaviour
         coverAnimator.enabled = true;
         AudioManager.Instance.PlayNextBGM();
         Debug.Log("next bgm");
+        currentState = BattleState.Start;
         Sequence s = DOTween.Sequence();
         s.AppendInterval(bgmTime);//important
         s.AppendCallback(() =>
