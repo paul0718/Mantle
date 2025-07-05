@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 28.3}
+  m_AnchoredPosition: {x: 0, y: 28.300049}
   m_SizeDelta: {x: 185.6, y: 21.400024}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &44087197
@@ -314,7 +314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -424.2, y: 10.700012}
+  m_AnchoredPosition: {x: -424.19995, y: 10.700073}
   m_SizeDelta: {x: 68.57, y: 50}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &218862138
@@ -617,7 +617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 257.99, y: 10.700012}
+  m_AnchoredPosition: {x: 257.99, y: 10.700073}
   m_SizeDelta: {x: 68.57, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &428374887
@@ -1678,7 +1678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -152.02002, y: 10.700012}
+  m_AnchoredPosition: {x: -152.02002, y: 10.700073}
   m_SizeDelta: {x: 68.57, y: 50}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1005935053
@@ -2142,7 +2142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 52, y: 10.700012}
+  m_AnchoredPosition: {x: 52, y: 10.700073}
   m_SizeDelta: {x: 68.57, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1129754536
@@ -2363,7 +2363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 394.38, y: -23.390015}
+  m_AnchoredPosition: {x: 394.38, y: -23.390137}
   m_SizeDelta: {x: 551.5, y: 53.419495}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1393121312
@@ -3666,6 +3666,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 665045520}
+    - target: {fileID: 3076241286011763153, guid: f31b7b0b0a1f7cb4da676a38e2ebfbd4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3813527512412270501, guid: f31b7b0b0a1f7cb4da676a38e2ebfbd4, type: 3}
       propertyPath: m_IsActive
       value: 0
