@@ -135,10 +135,10 @@ public class RepairManager : MonoBehaviour
             yield return new WaitForSeconds(attackInterval - alertDuration);
             if (!hasEnded)
             {
+                PlayEnemyAttackSound();
                 attackAlert.DOScale(new Vector3(25, 25, 0), alertDuration).onComplete = () => ResetAlertScale();
             }
             yield return new WaitForSeconds(alertDuration);
-            PlayEnemyAttackSound();
         }
     }
 
@@ -197,13 +197,12 @@ public class RepairManager : MonoBehaviour
         var battle = BattleSequenceManager.Instance.enemyMinigames;
         
         hasEnded = true;
-        audioSource.clip = playerWins ? winSound : loseSound;
-        //audioSource.Play();
         
         GameObject.Find("Enemy").transform.GetChild(0).GetComponent<EnemyInfo>().ChangePose(playerWins);
         BarkManager.Instance.ShowGameBark("Repair", playerWins);
         if (!playerWins)
         {
+            AudioManager.Instance.PlayOneShot(SFXNAME.Overheated, 0.6f);
             if (MetricManagerScript.instance != null)
             { 
                 MetricManagerScript.instance.LogString("Repair", "Lose");
