@@ -120,12 +120,11 @@ public class RepairManager : MonoBehaviour
     IEnumerator RepeatedAttack()
     {
         yield return new WaitForSeconds(attackInterval - alertDuration);
+        PlayEnemyAttackSound();
         attackAlert.DOScale(new Vector3(25, 25, 0), alertDuration).onComplete = () => ResetAlertScale();
         yield return new WaitForSeconds(alertDuration);
         while (!hasEnded) // Continue as long as the game is not lost
         {
-            audioSource.clip = attackSound;
-            audioSource.Play();
             KnocksOff(knockOffPerAttack);
             timer.ResetTimer();
             timer.StartTimer();
@@ -139,6 +138,7 @@ public class RepairManager : MonoBehaviour
                 attackAlert.DOScale(new Vector3(25, 25, 0), alertDuration).onComplete = () => ResetAlertScale();
             }
             yield return new WaitForSeconds(alertDuration);
+            PlayEnemyAttackSound();
         }
     }
 
@@ -198,9 +198,8 @@ public class RepairManager : MonoBehaviour
         
         hasEnded = true;
         audioSource.clip = playerWins ? winSound : loseSound;
-        audioSource.Play();
-
-        AudioManager.Instance.PlayOneShot(SFXNAME.LaserSound);
+        //audioSource.Play();
+        
         GameObject.Find("Enemy").transform.GetChild(0).GetComponent<EnemyInfo>().ChangePose(playerWins);
         BarkManager.Instance.ShowGameBark("Repair", playerWins);
         if (!playerWins)
@@ -213,6 +212,7 @@ public class RepairManager : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.PlayOneShot(SFXNAME.RepairSuccess);
             if (MetricManagerScript.instance != null)
             { 
                 MetricManagerScript.instance.LogString("Repair", "Win");
@@ -225,5 +225,29 @@ public class RepairManager : MonoBehaviour
     {
         totalFixed++;
     }
-    
+
+    public void PlayEnemyAttackSound()
+    {
+        switch (SequenceManager.Instance.SequenceID)
+        {
+            case 3:
+                AudioManager.Instance.PlayOneShot(SFXNAME.EnagaRepair, .2f);
+                break;
+            case 6:
+                AudioManager.Instance.PlayOneShot(SFXNAME.QuincyRepair);
+                break;
+            case 9:
+                AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarRepair, .5f);
+                break;
+            case 12:
+                AudioManager.Instance.PlayOneShot(SFXNAME.CecilRepair, .5f);
+                break;
+            case 14:
+                AudioManager.Instance.PlayOneShot(SFXNAME.HarbingerRepair);
+                break;
+            case 17:
+                AudioManager.Instance.PlayOneShot(SFXNAME.AceRepair);
+                break;
+        }
+    }
 }
