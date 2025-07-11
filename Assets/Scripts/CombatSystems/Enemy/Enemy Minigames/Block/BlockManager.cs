@@ -342,7 +342,7 @@ public class BlockManager : MonoBehaviour
         energyBar.GetWorldCorners(corners);
         float yMin = corners[1].y;
         
-        // Set the top, left and right of the grid to the edge of the screen
+        /*// Set the top, left and right of the grid to the edge of the screen
         // Untiy screen space starts at bottom left
         var mainCam = Camera.main;
         var upLeft = mainCam.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
@@ -350,7 +350,12 @@ public class BlockManager : MonoBehaviour
         
         float xMin = upLeft.x;
         float yMax = upLeft.y;
-        float xMax = upRight.x;
+        float xMax = upRight.x;*/
+        
+        RectTransform UICanvasRectTrans =  GameObject.Find("UICanvas").GetComponent<RectTransform>();
+        float xMin = UICanvasRectTrans.position.x + UICanvasRectTrans.rect.xMin * UICanvasRectTrans.transform.lossyScale.x;
+        float xMax = UICanvasRectTrans.position.x + UICanvasRectTrans.rect.xMax * UICanvasRectTrans.transform.lossyScale.x;
+        float yMax = UICanvasRectTrans.position.y + UICanvasRectTrans.rect.yMax * UICanvasRectTrans.transform.lossyScale.y;
         
         // Init extents for later calculation for spawn area
         var outlineSpriteRenderer = indicators[0].gameObject.transform.Find("Outline").GetComponent<SpriteRenderer>();
@@ -363,7 +368,12 @@ public class BlockManager : MonoBehaviour
         yMin += extentY;
         yMax -= extentY;*/
         
+        
         spawnArea = new float[] { xMin, xMax, yMin, yMax };
+        Debug.Log(xMax);
+        Debug.Log(xMin);
+        Debug.Log(yMax);
+        Debug.Log(yMin);
         // TODO: make sure when generating indicators don't touch each other and the arms
     }
     private void RandomizeIndicators()
