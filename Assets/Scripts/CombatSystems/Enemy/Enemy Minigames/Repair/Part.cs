@@ -20,6 +20,9 @@ public class Part : MonoBehaviour
     private Collider2D thisCollider;
     private Rigidbody2D rb;
     
+    private float xMin, xMax, yMin, yMax;
+    private bool isPlayerControlling = false;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -32,7 +35,7 @@ public class Part : MonoBehaviour
         DisablePhysics();
         SetBackToSlot();
     }
-
+    
     public void OnEnable()
     {
         
@@ -42,6 +45,37 @@ public class Part : MonoBehaviour
     {
         DisablePhysics();
         SetBackToSlot();
+        isPlayerControlling = false;
+    }
+
+    void Start()
+    {
+        RectTransform UICanvasRectTrans =  GameObject.Find("UICanvas").GetComponent<RectTransform>();
+        xMin = UICanvasRectTrans.position.x + UICanvasRectTrans.rect.xMin * UICanvasRectTrans.transform.lossyScale.x;
+        xMax = UICanvasRectTrans.position.x + UICanvasRectTrans.rect.xMax * UICanvasRectTrans.transform.lossyScale.x;
+        yMin = UICanvasRectTrans.position.y + UICanvasRectTrans.rect.yMin * UICanvasRectTrans.transform.lossyScale.y;
+        yMax = UICanvasRectTrans.position.y; // since it's only half of the screen
+    }
+
+    public void Update()
+    {
+        if (IsOutOfBox() && !isPlayerControlling)
+        {
+            transform.position = slot.transform.position;
+            transform.rotation = slot.transform.rotation;
+        }
+    }
+
+    public void DisablePlayerControl()
+    {
+        isInPosition = true;
+    }
+
+    private bool IsOutOfBox()
+    {
+        float xWorld = transform.position.x;
+        float yWorld = transform.position.y;
+        return xWorld > xMax || yWorld > yMax || xWorld < xMin || yWorld < yMin;
     }
 
     public void OnMouseDown()
@@ -53,6 +87,8 @@ public class Part : MonoBehaviour
         DisablePhysics();
         currRotation = transform.rotation;
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
+        isPlayerControlling = true;
     }
     
     public void OnMouseDrag()
@@ -82,6 +118,8 @@ public class Part : MonoBehaviour
         {
             EnablePhysics();
         }
+        
+        isPlayerControlling = false;
     }
 
     public void KnockOff()
