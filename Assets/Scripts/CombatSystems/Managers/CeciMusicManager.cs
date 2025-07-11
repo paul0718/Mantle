@@ -34,14 +34,12 @@ public class CecilMusicManager : MonoBehaviour
         }
         preIntroSource = CreateAudioSource("preIntroSource", preIntroClip, loop: false);
         introSource = CreateAudioSource("introSource", introClip, loop: false);
-        headSource = CreateAudioSource("headSource", headClip, loop: true);
+        headSource = CreateAudioSource("headSource", headClip, loop: false);
         bodySource = CreateAudioSource("bodySource", bodyClip, loop: true);
         preIntroSource.outputAudioMixerGroup = audioMixerGroup;
         introSource.outputAudioMixerGroup = audioMixerGroup;
         headSource.outputAudioMixerGroup = audioMixerGroup;
         bodySource.outputAudioMixerGroup = audioMixerGroup;
-
-        bodySource.volume = 0f;
 
         preIntroSource.Play();
         introStartTime = Time.time;
@@ -49,7 +47,7 @@ public class CecilMusicManager : MonoBehaviour
     private int index = 0;
     void Update()
     {
-        Debug.Log(StateManager.Instance.currentState);
+        Debug.Log(index);
         if (!preIntroSource.isPlaying && index == 0)
         {
             if (StateManager.Instance.currentState == StateManager.BattleState.Start)
