@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
     public AudioLibrary SFXLibrary;
     public AudioLibrary BGMLibrary;
     public List<AudioLibrary> battleBGM;
-
+    private Sequence sequence;
     private int BGMIndex = 0;
     private bool nextFlag = false;
     private AudioSource AvailableSFXAudioSource { get => SFXAudioSources.Find(a => !a.isPlaying); }
@@ -151,9 +151,17 @@ public class AudioManager : MonoBehaviour
             int currentTime = (int)(BGMAudioSource.time * 10000.0f);
             int waitTime = 28325 - currentTime % 28325;
             float realTime = waitTime / 10000.0f;
-            Sequence sequence = DOTween.Sequence();
+            
+            sequence = DOTween.Sequence();
             sequence.AppendInterval(realTime);
-            sequence.AppendCallback(() => BGMAudioSource.Stop());
+            sequence.AppendCallback(() =>
+            {
+                if (SceneManager.GetActiveScene().name == "BattleScene")
+                {
+                    Debug.Log("Stop!");
+                    BGMAudioSource.Stop();
+                }
+            });
             sequence.SetUpdate(true);
         }
         nextFlag = true;
@@ -165,12 +173,17 @@ public class AudioManager : MonoBehaviour
             int currentTime = (int)(BGMAudioSource.time * 10000.0f);
             int waitTime = 23760 - currentTime % 23760;
             float realTime = waitTime / 10000.0f;
-            Sequence sequence = DOTween.Sequence();
+            sequence = DOTween.Sequence();
             sequence.AppendInterval(realTime);
             sequence.AppendCallback(() =>
             {
-                BGMIndex = 5;
-                BGMAudioSource.Stop();
+                if (SceneManager.GetActiveScene().name == "BattleScene")
+                {
+                    BGMIndex = 5;
+                    BGMAudioSource.Stop();
+                } 
+                    
+              
             });
             sequence.SetUpdate(true);
         }
@@ -259,5 +272,10 @@ public class AudioManager : MonoBehaviour
     {
         foreach (var a in SFXAudioSources)
             a.UnPause();
+    }
+    private void OnDestroy()
+    {
+        Debug.Log("Audio Manager Destroyed");
+        sequence.Kill(false);
     }
 }
