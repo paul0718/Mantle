@@ -198,7 +198,7 @@
             "AttackInterval": 3
         },
         "BlockParameters": {
-            "AttackInterval": 4.5
+            "AttackInterval": 4
         }
     },
     "9": {
@@ -314,7 +314,7 @@
             "AttackInterval": 4
         },
         "BlockParameters": {
-            "AttackInterval": 4
+            "AttackInterval": 6
         }
     },
     "12": {
@@ -546,7 +546,7 @@
             "AttackInterval": 5
         },
         "BlockParameters": {
-            "AttackInterval": 3
+            "AttackInterval": 6
         }
     },
     "17": {
