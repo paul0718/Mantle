@@ -200,9 +200,9 @@ public class AudioManager : MonoBehaviour
     }
     private void Update()
     {
-        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 17)
+        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 17 && SceneManager.GetActiveScene().name=="BattleScene")
             return;
-        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 12)
+        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 12 && SceneManager.GetActiveScene().name == "BattleScene")
             return;
         if (BGMLibrary != null && !BGMAudioSource.isPlaying) 
         {
