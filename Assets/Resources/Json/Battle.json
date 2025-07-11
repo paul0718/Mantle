@@ -90,6 +90,9 @@
         "RepairParameters": {
             "KnockOffPerAttack": 1,
             "AttackInterval": 3
+        },
+        "BlockParameters": {
+            "AttackInterval": 5
         }
     },
     "6": {
@@ -193,6 +196,9 @@
         "RepairParameters": {
             "KnockOffPerAttack": 2,
             "AttackInterval": 3
+        },
+        "BlockParameters": {
+            "AttackInterval": 4.5
         }
     },
     "9": {
@@ -305,6 +311,9 @@
         "BGM": "Lily",
         "RepairParameters": {
             "KnockOffPerAttack": 3,
+            "AttackInterval": 4
+        },
+        "BlockParameters": {
             "AttackInterval": 4
         }
     },
@@ -419,6 +428,9 @@
         "RepairParameters": {
             "KnockOffPerAttack": 1,
             "AttackInterval": 2
+        },
+        "BlockParameters": {
+            "AttackInterval": 3.5
         }
     },
     "14": {
@@ -532,6 +544,9 @@
         "RepairParameters": {
             "KnockOffPerAttack": 4,
             "AttackInterval": 5
+        },
+        "BlockParameters": {
+            "AttackInterval": 3
         }
     },
     "17": {
@@ -645,6 +660,9 @@
         "RepairParameters": {
             "KnockOffPerAttack": 4,
             "AttackInterval": 5
+        },
+        "BlockParameters": {
+            "AttackInterval": 2.5
         }
     },
     "100": {
@@ -758,6 +776,9 @@
         "RepairParameters": {
             "KnockOffPerAttack": 1,
             "AttackInterval": 3
+        },
+        "BlockParameters": {
+            "AttackInterval": 5
         }
     }
 }

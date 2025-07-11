@@ -246,6 +246,7 @@ public class BlockManager : MonoBehaviour
         roundsTotal = (enemy == Enemies.Ace) ? 3 : 1; // Set rounds based on enemy
         roundsRemain = roundsTotal;
         armsPos = arms.transform.position; // Store default arms position
+        attackTimeTotal = SequenceManager.Instance.CurrentBattle.BlockParameters.AttackInterval;
         timeLeft = attackTimeTotal; // Reset Timer
         ended = true; // Set Game State
         endSoundAudioSource = GetComponent<AudioSource>();

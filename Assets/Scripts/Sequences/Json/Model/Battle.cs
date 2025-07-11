@@ -24,6 +24,7 @@ namespace JsonModel
         public string BGM;
 
         public RepairParameters RepairParameters;
+        public BlockParameters BlockParameters;
     }
     [Serializable]
     public class Minigame
@@ -48,6 +49,12 @@ namespace JsonModel
     {
         public int KnockOffPerAttack;
         public int AttackInterval;
+    }
+    
+    [Serializable]
+    public class BlockParameters
+    {
+        public float AttackInterval;
     }
 }
 
