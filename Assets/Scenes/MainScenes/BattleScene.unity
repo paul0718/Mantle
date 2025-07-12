@@ -9180,7 +9180,6 @@ MonoBehaviour:
   - {fileID: 1619099939}
   - {fileID: 806220809}
   effectPrefab: {fileID: 3280620776998650626, guid: 9d3565c19465ffd4ab8d481823319334, type: 3}
-  attackTimeTotal: 4
   attackPoint: {x: 0, y: -0.5, z: 0}
   arms: {fileID: 1634221127}
   effectDuration: 0.5
@@ -31474,7 +31473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: SequenceID
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: cutsceneSeq.Array.size

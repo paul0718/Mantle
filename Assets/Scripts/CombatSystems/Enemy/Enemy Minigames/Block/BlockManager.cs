@@ -42,7 +42,7 @@ public class BlockManager : MonoBehaviour
     [SerializeField] private List<Transform> IndicatorSpawnPositions;
     private List<Indicator> indicators;
     [SerializeField] private GameObject effectPrefab;
-    [SerializeField] private float attackTimeTotal; // unit: seconds
+    private float attackTimeTotal; // unit: seconds
     [SerializeField] private Vector3 attackPoint;
     [SerializeField] private GameObject arms;
     private Vector2 armsPos; 
