@@ -196,6 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2126726519367803809}
   - component: {fileID: 5043175783711432437}
+  - component: {fileID: 6271051768071179883}
   m_Layer: 0
   m_Name: Cecil_Idle
   m_TagString: Untagged
@@ -270,6 +271,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6271051768071179883
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568774699248575816}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8833f14c6a593242a6c00820a47893b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8029731808084183076
 GameObject:
   m_ObjectHideFlags: 0
