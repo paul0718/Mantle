@@ -653,6 +653,8 @@ public class ConvoManager : MonoBehaviour
             yield return null;
         if (SequenceManager.Instance.SequenceID == 7 && notif)
             yield return new WaitForSeconds(9);
+        if (SequenceManager.Instance.SequenceID == 10 && notif)
+            yield return new WaitForSeconds(5f);
 
         if (emailIndex >= aceEmails.Length)
         {
