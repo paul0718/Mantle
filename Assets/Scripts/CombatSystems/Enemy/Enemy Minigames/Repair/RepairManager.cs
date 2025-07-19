@@ -111,11 +111,6 @@ public class RepairManager : MonoBehaviour
         hasEnded = IsGameEnding();
         if (hasEnded)
         {
-            for (int i = 0; i < Parts.Count; i++)
-            {
-                Part partScript = Parts[i];
-                partScript.DisablePlayerControl();
-            }
             delayTime = (KnockOffCandidates.Count == 0) ? attackInterval : 0;
             StartCoroutine(ScheduledEndsGame(delayTime));
             //EndsGame();
@@ -195,6 +190,12 @@ public class RepairManager : MonoBehaviour
 
     private void EndsGame()
     {
+        for (int i = 0; i < Parts.Count; i++)
+        {
+            Part partScript = Parts[i];
+            partScript.DisablePlayerControl();
+        }
+        
         bool playerWins = (KnockOffCandidates.Count != 0); // Not every piece has been knocked off once
         Debug.Log(playerWins);
         StopCoroutine(attackCoroutine);
