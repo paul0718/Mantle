@@ -269,8 +269,8 @@ public class BlockManager : MonoBehaviour
                 break;
 
             case Enemies.Cecil:
-                indicators.Add(SpawnIndicator(prefab, leftPos, Quaternion.Euler(0, 0, 90)));
-                indicators.Add(SpawnIndicator(prefab, rightPos, Quaternion.Euler(0, 0, 90)));
+                indicators.Add(SpawnIndicator(prefab, leftPos, Quaternion.identity));
+                indicators.Add(SpawnIndicator(prefab, rightPos, Quaternion.identity));
                 break;
 
             case Enemies.Harbinger:
