@@ -45,7 +45,8 @@ public class BlockManager : MonoBehaviour
     private float attackTimeTotal; // unit: seconds
     [SerializeField] private Vector3 attackPoint;
     [SerializeField] private GameObject arms;
-    private Vector2 armsPos; 
+    private Vector2 armsPos;
+    private float armResetTime = 1f;
     
     private float timeLeft = -1f;
     private bool ended = true;
@@ -104,7 +105,7 @@ public class BlockManager : MonoBehaviour
     private IEnumerator ShowEffect(bool isWinning)
     {
         const float RotationAngle = 0f;
-        const float EndBuffer = 0.1f;
+        //const float EndBuffer = 0.1f;
         
         var clip = isWinning ? winSound : loseSound;
         if (isWinning) endSoundAudioSource.PlayOneShot(clip);
@@ -127,7 +128,7 @@ public class BlockManager : MonoBehaviour
             }
 
             yield return DOTween.Sequence()
-                .AppendInterval(effectDuration + EndBuffer)
+                .AppendInterval(effectDuration)
                 .OnComplete(FlashOnHit)
                 .WaitForCompletion();
             yield break;
@@ -159,7 +160,7 @@ public class BlockManager : MonoBehaviour
         }
 
         yield return DOTween.Sequence()
-            .AppendInterval(effectDuration + EndBuffer)
+            .AppendInterval(effectDuration)
             .OnComplete(() =>
                 {
                     if (!isWinning) FlashOnHit();
@@ -215,14 +216,14 @@ public class BlockManager : MonoBehaviour
     }
     private void ResetRound()
     {
-        timeLeft = attackTimeTotal;
+        timeLeft = attackTimeTotal + armResetTime;
         BroadcastMessage("Resetting");
         RandomizeIndicators();
     }
     private void StartGame()
     {
         // Move Arms Up and Start
-        arms.transform.DOLocalMoveY(0f, 1f).SetEase(Ease.InFlash)
+        arms.transform.DOLocalMoveY(0f, armResetTime).SetEase(Ease.InFlash)
             .OnComplete(() =>
             {
                 BroadcastMessage("StartAttack");
