@@ -430,7 +430,7 @@
             "AttackInterval": 2
         },
         "BlockParameters": {
-            "AttackInterval": 3.5
+            "AttackInterval": 3
         }
     },
     "14": {
