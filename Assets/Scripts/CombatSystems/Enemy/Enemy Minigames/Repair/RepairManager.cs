@@ -34,10 +34,7 @@ public class RepairManager : MonoBehaviour
 
     void OnEnable()
     {
-        if (!isInitialized)
-        {
-            return;
-        }
+        if (!isInitialized) return;
         attackCoroutine = StartCoroutine(RepeatedAttack());
     }
     
@@ -104,59 +101,59 @@ public class RepairManager : MonoBehaviour
 
     void Update()
     {
-        if (hasEnded)
+        if (hasEnded) return;
+        
+        // Fixed all KnockedOff Pcs AND not beginning of game
+        if (totalFixed == (Parts.Count - KnockOffCandidates.Count) && 
+            totalFixed != 0)
         {
-            return;
-        }
-        hasEnded = IsGameEnding();
-        if (hasEnded)
-        {
-            delayTime = (KnockOffCandidates.Count == 0) ? attackInterval : 0;
-            StartCoroutine(ScheduledEndsGame(delayTime));
-            //EndsGame();
+            EndsGame();
         }
     }
     
     IEnumerator RepeatedAttack()
     {
-        yield return new WaitForSeconds(attackInterval - alertDuration);
-        PlayEnemyAttackSound();
-        attackAlert.DOScale(new Vector3(25, 25, 0), alertDuration).onComplete = () => ResetAlertScale();
-        yield return new WaitForSeconds(alertDuration);
-        while (!hasEnded) // Continue as long as the game is not lost
+        yield return WaitForNextAlert();
+        while (!hasEnded)
         {
-            KnocksOff(knockOffPerAttack);
-            timer.ResetTimer();
-            timer.StartTimer();
+            TriggerAttackAlert();
+            yield return new WaitForSeconds(alertDuration);
+            if (hasEnded) yield break;
+            PerformAttack();
             if (KnockOffCandidates.Count == 0)
             {
                 timer.ChangeColor();
+                yield return new WaitForSeconds(attackInterval);
+                EndsGame();
+                yield break;
             }
-            yield return new WaitForSeconds(attackInterval - alertDuration);
-            if (!hasEnded)
-            {
-                PlayEnemyAttackSound();
-                attackAlert.DOScale(new Vector3(25, 25, 0), alertDuration).onComplete = () => ResetAlertScale();
-            }
-            yield return new WaitForSeconds(alertDuration);
+            yield return WaitForNextAlert();
         }
     }
 
-    IEnumerator ScheduledEndsGame(float delayTime)
+    private IEnumerator WaitForNextAlert()
     {
-        if (delayTime > 0)
-        {
-            yield return new WaitForSeconds(attackInterval);
-        }
-        EndsGame();
+        yield return new WaitForSeconds(attackInterval - alertDuration);
     }
 
+    private void TriggerAttackAlert()
+    {
+        PlayEnemyAttackSound();
+        attackAlert
+            .DOScale(new Vector3(25, 25, 0), alertDuration)
+            .onComplete = ResetAlertScale;
+    }
+
+    private void PerformAttack()
+    {
+        KnocksOff(knockOffPerAttack);
+        timer.ResetTimer();
+        timer.StartTimer();
+    }
+    
     private void KnocksOff(int num)
     {
-        if (KnockOffCandidates.Count == 0)
-        {
-            return;
-        }
+        if (KnockOffCandidates.Count == 0) return;
         if (num > KnockOffCandidates.Count)
         {
             num = KnockOffCandidates.Count;
@@ -175,34 +172,20 @@ public class RepairManager : MonoBehaviour
         attackAlert.localScale = new Vector3(0, 0, 0);
     }
 
-    private bool IsGameEnding()
-    {
-        if (totalFixed == 0 && (Parts.Count == KnockOffCandidates.Count)) // Game just started
-        {
-            return false;
-        }
-        if (totalFixed != (Parts.Count - KnockOffCandidates.Count) && KnockOffCandidates.Count != 0) // Player hasn't finished fixing
-        {
-            return false;
-        }
-        return true;
-    }
-
     private void EndsGame()
     {
+        hasEnded = true;
+        bool playerWins = (totalFixed == (Parts.Count - KnockOffCandidates.Count));
+        StopCoroutine(attackCoroutine);
+        timer.StopTimer();
         for (int i = 0; i < Parts.Count; i++)
         {
             Part partScript = Parts[i];
             partScript.DisablePlayerControl();
         }
         
-        bool playerWins = (KnockOffCandidates.Count != 0); // Not every piece has been knocked off once
-        Debug.Log(playerWins);
-        StopCoroutine(attackCoroutine);
-        timer.StopTimer();
-        var battle = BattleSequenceManager.Instance.enemyMinigames;
         
-        hasEnded = true;
+        var battle = BattleSequenceManager.Instance.enemyMinigames;
         
         GameObject.Find("Enemy").transform.GetChild(0).GetComponent<EnemyInfo>().ChangePose(playerWins);
         BarkManager.Instance.ShowGameBark("Repair", playerWins);
