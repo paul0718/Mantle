@@ -51,7 +51,7 @@ public class EndFightCutscene : MonoBehaviour
         explodeAnims[2].gameObject.SetActive(true);
         explodeAnims[2].SetTrigger("StartExplosion");
         AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarExplosion);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         panel.FadeToBlack();
     }
 
