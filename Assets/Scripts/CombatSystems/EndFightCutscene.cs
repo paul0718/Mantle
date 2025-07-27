@@ -32,9 +32,10 @@ public class EndFightCutscene : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         barkText.text = "It's going to explode!";
         StartCoroutine(ResizeBubble());
-        AudioManager.Instance.PlayOneShot(SFXNAME.HospitalDestroyed);
+        yield return new WaitForSeconds(2.0f);
+        AudioManager.Instance.PlayOneShot(SFXNAME.HospitalDestruction);
         
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(2.0f);
         SteamIntegration.Instance.UnlockAchievement("ACH_BLOW_HOSPITAL");
         barkBubble.SetActive(false);
         explodeAnims[0].gameObject.SetActive(true);
@@ -51,7 +52,7 @@ public class EndFightCutscene : MonoBehaviour
         explodeAnims[2].gameObject.SetActive(true);
         explodeAnims[2].SetTrigger("StartExplosion");
         AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarExplosion);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(6f);
         panel.FadeToBlack();
     }
 

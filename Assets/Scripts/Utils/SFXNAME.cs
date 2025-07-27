@@ -79,6 +79,7 @@ public enum SFXNAME
 	WireOpen,
 	Explosion,
 	HospitalDestroyed,
+	HospitalDestruction,
 	Pulsing,
 	VyzzarExplosion,
 	VyzzarPulsing,
