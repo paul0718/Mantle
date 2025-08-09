@@ -13,6 +13,10 @@ public class EndFightCutscene : MonoBehaviour
     [SerializeField] private TMP_Text barkText;
     private Vector2 origSize;
 
+    [Header("Vyzzar Explosions")] [SerializeField]
+    private Animator vyzzarExplosion;
+
+    [Header("Self-Destruct Explosions")]
     [SerializeField] private Animator[] explodeAnims;
 
     [SerializeField] private SceneTransition panel;
@@ -21,6 +25,7 @@ public class EndFightCutscene : MonoBehaviour
     public IEnumerator PlayEndSequence()
     {
         AudioManager.Instance.PlayOneShot(SFXNAME.Pulsing);
+        vyzzarExplosion.gameObject.SetActive(true);
         barkBubble.SetActive(true);
         barkText.text = "NO! WHAT DID YOU DO?!";
         StartCoroutine(ResizeBubble());
@@ -38,21 +43,21 @@ public class EndFightCutscene : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         SteamIntegration.Instance.UnlockAchievement("ACH_BLOW_HOSPITAL");
         barkBubble.SetActive(false);
-        explodeAnims[0].gameObject.SetActive(true);
-        explodeAnims[0].SetTrigger("StartExplosion");
-        AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarExplosion);
-        
-        
+        vyzzarExplosion.SetTrigger("VyzzarExplode");
         yield return new WaitForSeconds(1.0f);
-        explodeAnims[1].gameObject.SetActive(true);
-        explodeAnims[1].SetTrigger("StartExplosion");
         AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarExplosion);
         
-        yield return new WaitForSeconds(1.0f);
-        explodeAnims[2].gameObject.SetActive(true);
-        explodeAnims[2].SetTrigger("StartExplosion");
-        AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarExplosion);
-        yield return new WaitForSeconds(6f);
+        
+        // yield return new WaitForSeconds(1.0f);
+        // explodeAnims[1].gameObject.SetActive(true);
+        // explodeAnims[1].SetTrigger("StartExplosion");
+        // AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarExplosion);
+        //
+        // yield return new WaitForSeconds(1.0f);
+        // explodeAnims[2].gameObject.SetActive(true);
+        // explodeAnims[2].SetTrigger("StartExplosion");
+        // AudioManager.Instance.PlayOneShot(SFXNAME.VyzzarExplosion);
+        yield return new WaitForSeconds(8f);
         panel.FadeToBlack();
     }
 

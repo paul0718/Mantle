@@ -1,0 +1,998 @@
+fileFormatVersion: 2
+guid: f4f5fe8889442f9429bf562aa85348f3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VyzzarExplosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 665
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04856d5428e8e1479846b35a6a99fe2
+      internalID: -526221226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 665
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0c9cfafd0afb347a8c43a3bc85cc80
+      internalID: -607954935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 665
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b899889be7c2e764da761f66136834de
+      internalID: -1128254239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 665
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3222e67ca6593f4c907f2cf9896a0e4
+      internalID: 111584911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 665
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16d4b5b8603ee84c897d8a237bc4d44
+      internalID: 144263784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 570
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 134018575d7657f47b1f28f6b67202a1
+      internalID: 30385240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_6
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 570
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcacf018b84543f4ba42f93ded694b28
+      internalID: -2077771207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_7
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 570
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fd050e2b6f3454daa430864a9f2c71
+      internalID: -481384257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_8
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 570
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7ebc18f39a3c1438c289fc177c1c10
+      internalID: -335389106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_9
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 570
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162a796f30e7429419ff174d73272cf4
+      internalID: 1963692012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 475
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6481bc75f8c75024f9c02a3f9f0cbf8f
+      internalID: -1402287085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 475
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4ffc19787503a47b9dcfff53eaeea2
+      internalID: 1477281795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_12
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 475
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91792561a7086464183d3ae2c064d678
+      internalID: 472445958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_13
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 475
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa7969cd662f134f93ce63f58b61f72
+      internalID: -1245515489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_14
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 475
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d07e5cbc79a0e4eadeb3d7141f190f
+      internalID: -1429481642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 380
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4c6d496e93f294d95566aa2d59fc9a
+      internalID: 1341058254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_16
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 380
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b0309f2e7f7bd4eb5de633558ef58b
+      internalID: 2077008560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_17
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 380
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4a3ab85e4c05642a673089a72f3740
+      internalID: -58442907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_18
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 380
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ada103f75388a4eae16f06c3165bec
+      internalID: -235383333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_19
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 380
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493c28f7c80b6354397abf5f33005f00
+      internalID: 538277900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 285
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c3480844b3392e418f95c3e156891e0
+      internalID: 548781040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_21
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 285
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0373e24150f5d504dbbe4aaf492d0eab
+      internalID: 306412232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_22
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 285
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f6390182305f744893122de4056b57
+      internalID: 570634767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_23
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 285
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe21ad16c92244b4d88d3e23ceba0552
+      internalID: 1889392842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_24
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 285
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2078c70ad56fe304b908a01d9bd54774
+      internalID: -772761287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a1afb6ae1f1d842ae3f01fca29376e
+      internalID: -1419632978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_26
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 190
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc68ba02fd5f6840a5b09b0648e0a69
+      internalID: -393068850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_27
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 190
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2277aed3203ec34db51fca337a2d51c
+      internalID: 1051159855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_28
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 190
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b58a593b1f17f840abb6649cd1b0547
+      internalID: 1562314156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_29
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 190
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603b408655454794bb98155d0fae8f02
+      internalID: 93857252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c918c6ea9485464a894f2c7c335bd4e
+      internalID: -1158680644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_31
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 95
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 619e25b0c437ac543a35b80b1e2d5c37
+      internalID: 1612310164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_32
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 95
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a077697cb6d9abb47bf294d858b90794
+      internalID: 2013583103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_33
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 95
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f79391367b6761408aae6c52b3bd1a3
+      internalID: -1955950547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_34
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 95
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de5ad02a85846e45acbf5c268216db8
+      internalID: -1488200597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2a82be47ca2664e81c95c87e8c6f4b
+      internalID: 1659752191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_36
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d046aa90a9675c42998a062dd780cfd
+      internalID: 1602071359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_37
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6480a9ab13a3a141bde7eeefddd8538
+      internalID: -935310706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VyzzarExplosion_38
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 320
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e1bf765c8d58242a92b1d74d25f672
+      internalID: 541083993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      VyzzarExplosion_0: -526221226
+      VyzzarExplosion_1: -607954935
+      VyzzarExplosion_10: -1402287085
+      VyzzarExplosion_11: 1477281795
+      VyzzarExplosion_12: 472445958
+      VyzzarExplosion_13: -1245515489
+      VyzzarExplosion_14: -1429481642
+      VyzzarExplosion_15: 1341058254
+      VyzzarExplosion_16: 2077008560
+      VyzzarExplosion_17: -58442907
+      VyzzarExplosion_18: -235383333
+      VyzzarExplosion_19: 538277900
+      VyzzarExplosion_2: -1128254239
+      VyzzarExplosion_20: 548781040
+      VyzzarExplosion_21: 306412232
+      VyzzarExplosion_22: 570634767
+      VyzzarExplosion_23: 1889392842
+      VyzzarExplosion_24: -772761287
+      VyzzarExplosion_25: -1419632978
+      VyzzarExplosion_26: -393068850
+      VyzzarExplosion_27: 1051159855
+      VyzzarExplosion_28: 1562314156
+      VyzzarExplosion_29: 93857252
+      VyzzarExplosion_3: 111584911
+      VyzzarExplosion_30: -1158680644
+      VyzzarExplosion_31: 1612310164
+      VyzzarExplosion_32: 2013583103
+      VyzzarExplosion_33: -1955950547
+      VyzzarExplosion_34: -1488200597
+      VyzzarExplosion_35: 1659752191
+      VyzzarExplosion_36: 1602071359
+      VyzzarExplosion_37: -935310706
+      VyzzarExplosion_38: 541083993
+      VyzzarExplosion_4: 144263784
+      VyzzarExplosion_5: 30385240
+      VyzzarExplosion_6: -2077771207
+      VyzzarExplosion_7: -481384257
+      VyzzarExplosion_8: -335389106
+      VyzzarExplosion_9: 1963692012
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
