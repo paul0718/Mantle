@@ -19,7 +19,6 @@ public class SteamIntegration : MonoBehaviour
         try
         {
             Steamworks.SteamClient.Init(3714810);
-            PrintName();
         }
         catch (Exception e)
         {
@@ -44,11 +43,6 @@ public class SteamIntegration : MonoBehaviour
         {
             ClearAchievementStatus("ACH_DEFEAT_ENAGA");
         }
-    }
-
-    private void PrintName()
-    {
-        Debug.Log(Steamworks.SteamClient.Name);
     }
 
     void OnApplicationQuit()

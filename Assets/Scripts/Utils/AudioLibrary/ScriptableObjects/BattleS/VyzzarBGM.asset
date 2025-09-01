@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: VyzzarBGM
   m_EditorClassIdentifier: 
   library:
-  - {fileID: 8300000, guid: ab86caaa2df829d4281d923b2685df1f, type: 3}
-  - {fileID: 8300000, guid: 45020f9cca45a8d4e956cf6c990d0511, type: 3}
-  - {fileID: 8300000, guid: 03c663b7a38461447943b3e16ec3ede3, type: 3}
+  - {fileID: 8300000, guid: 7efaa0ec0df41c74b9f56e7631d1eca1, type: 3}
+  - {fileID: 8300000, guid: d54bc5775f9d95f41a499360aa52c15e, type: 3}
+  - {fileID: 8300000, guid: 90c2374f7ab00bb4786a6353b0e172c1, type: 3}

@@ -217,6 +217,8 @@ public class AudioManager : MonoBehaviour
             return;
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 12 && SceneManager.GetActiveScene().name == "BattleScene")
             return;
+        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 6 && SceneManager.GetActiveScene().name == "BattleScene")
+            return;
         if (BGMLibrary != null && !BGMAudioSource.isPlaying) 
         {
             if (nextFlag)

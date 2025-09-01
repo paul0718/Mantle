@@ -20764,6 +20764,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800120653}
   m_CullTransparentMesh: 1
+--- !u!1 &1810064004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1810064006}
+  - component: {fileID: 1810064005}
+  m_Layer: 0
+  m_Name: QuincyAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1810064005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810064004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50e236986e62104c8db2af0377bf616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixerGroup: {fileID: -2887524295474471917, guid: b79c500e39c732f49860c9e207a69a81, type: 2}
+  preIntroClip: {fileID: 8300000, guid: 07cd953a215ab334d8a3871043cb28b2, type: 3}
+  introAClip: {fileID: 8300000, guid: 5cdaefda86451524fa087aa44d01e201, type: 3}
+  introBClip: {fileID: 8300000, guid: 28d0d3f13b8ab42429456ec6d7ef6f63, type: 3}
+  headClip: {fileID: 8300000, guid: 74e04d95bf39f7f46b7b8659b5e6a312, type: 3}
+  bodyClip: {fileID: 8300000, guid: 8457a3ff3382125458237a40d3f71e1d, type: 3}
+--- !u!4 &1810064006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810064004}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1812397916
 GameObject:
   m_ObjectHideFlags: 0
@@ -21823,7 +21873,7 @@ PrefabInstance:
       objectReference: {fileID: 1572671633}
     - target: {fileID: 3075075016852499805, guid: 40a3e7254a9c21c4d83596edff8c79d8, type: 3}
       propertyPath: battleBGM.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3075075016852499805, guid: 40a3e7254a9c21c4d83596edff8c79d8, type: 3}
       propertyPath: battleBGM.Array.data[0]
@@ -21844,7 +21894,7 @@ PrefabInstance:
     - target: {fileID: 3075075016852499805, guid: 40a3e7254a9c21c4d83596edff8c79d8, type: 3}
       propertyPath: battleBGM.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: 612b0e4c6eb6c3f4bbdce5a6eb973bb4, type: 2}
+      objectReference: {fileID: 11400000, guid: 175aaac9502d53f48aa9e8eb3e25b98d, type: 2}
     - target: {fileID: 5705176645897427597, guid: 40a3e7254a9c21c4d83596edff8c79d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 789.8703
@@ -21888,6 +21938,10 @@ PrefabInstance:
     - target: {fileID: 6376444847657100315, guid: 40a3e7254a9c21c4d83596edff8c79d8, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6376444847657100315, guid: 40a3e7254a9c21c4d83596edff8c79d8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7218667238451363110, guid: 40a3e7254a9c21c4d83596edff8c79d8, type: 3}
       propertyPath: m_Volume
@@ -31616,7 +31670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: SequenceID
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: cutsceneSeq.Array.size
@@ -35510,3 +35564,4 @@ SceneRoots:
   - {fileID: 704308857}
   - {fileID: 1572671634}
   - {fileID: 1936466561}
+  - {fileID: 1810064006}
