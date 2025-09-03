@@ -192,13 +192,17 @@ public class AudioManager : MonoBehaviour
     {
         audioMixer.DOSetFloat("Master", 0, 1.5f);
         float startVolume = 0.001f; 
-        float targetVolume = 1.0f;  
+        float targetVolume = 1.0f;
 
-        DOTween.To(() => startVolume, x => {
-            startVolume = x;
-            audioMixer.SetFloat("Master", Mathf.Log10(startVolume) * 20);
-        }, targetVolume, 1.5f);
-
+        if (SceneManager.GetActiveScene().name == "BattleScene")
+            audioMixer.SetFloat("Master", targetVolume);
+        else
+        {
+            DOTween.To(() => startVolume, x => {
+                startVolume = x;
+                audioMixer.SetFloat("Master", Mathf.Log10(startVolume) * 20);
+            }, targetVolume, 1.5f);
+        }
     }
     public void FadeOut()
     {

@@ -4,6 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Audio;
 
 public class CreditManager : MonoBehaviour
 {
@@ -22,6 +23,17 @@ public class CreditManager : MonoBehaviour
     [SerializeField] private GameObject skipText;
     private bool skipCredits = false;
     
+    [SerializeField] AudioMixerGroup audioMixerGroup;
+    [SerializeField] AudioClip introClip;
+    [SerializeField] AudioClip[] headClips;
+    [SerializeField] AudioClip bodyClip;
+
+    private AudioSource introSource;
+    private AudioSource headSource;
+    private AudioSource bodySource;
+
+    private int index = 0;
+    
     private bool playingCredits;
 
 
@@ -30,12 +42,95 @@ public class CreditManager : MonoBehaviour
         if (SequenceManager.Instance.SequenceID == 19)
         {
             ShowLogo();
-            AudioManager.Instance.SetBGMLibrary("CreditsBGM");
+            introSource = CreateAudioSource("introSource", introClip, loop: false);
+            headSource = CreateAudioSource("headSource", headClips[0], loop: false);
+            bodySource = CreateAudioSource("bodySource", bodyClip, loop: true);
+            
+            introSource.outputAudioMixerGroup = audioMixerGroup;
+            headSource.outputAudioMixerGroup = audioMixerGroup;
+            bodySource.outputAudioMixerGroup = audioMixerGroup;
+            
+            introSource.Play();
         }
+    }
+
+    private void ControlMusic()
+    {
+        if (!introSource.isPlaying && index == 0)
+        {
+            if (playingCredits)
+            {
+                PlayBodyMusic();
+            }
+            else
+            {
+                headSource.Play();
+                index = 1; 
+            }
+        }
+        if (!headSource.isPlaying && index == 1)
+        {
+            if (playingCredits)
+            {
+                PlayBodyMusic();
+            }
+            else
+            {
+                headSource.clip = headClips[1];
+                headSource.Play();
+                index = 2;
+            }
+        }
+        if (!headSource.isPlaying && index == 2)
+        {
+            if (playingCredits)
+            {
+                PlayBodyMusic();
+            }
+            else
+            {
+                headSource.clip = headClips[2];
+                headSource.Play();
+                index = 3;
+            }
+        }
+        if (!headSource.isPlaying && index == 3)
+        {
+            if (playingCredits)
+            {
+                PlayBodyMusic();
+            }
+            else
+            {
+                headSource.clip = headClips[3];
+                headSource.Play();
+                index = 4;
+            }
+        }
+        if (!headSource.isPlaying && index == 4)
+        {
+            if (playingCredits)
+            {
+                PlayBodyMusic();
+            }
+            else
+            {
+                headSource.clip = headClips[0];
+                headSource.Play();
+                index = 1;
+            }
+        }
+    }
+
+    private void PlayBodyMusic()
+    {
+        bodySource.Play();
+        index = 5;
     }
 
     private void Update()
     {
+        ControlMusic();
         if (playingCredits)
         {
             scrollParent.anchoredPosition += new Vector2(0, spacing/timing * Time.deltaTime);
@@ -52,14 +147,14 @@ public class CreditManager : MonoBehaviour
                     StartCoroutine(SkipCredits()); 
                 }
             }
-            /*if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+            if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
             {
                 Time.timeScale = 3;
             }
             else
             {
                 Time.timeScale = 1;
-            }*/
+            }
         }
     }
 
@@ -125,7 +220,19 @@ public class CreditManager : MonoBehaviour
         skipText.SetActive(false);
         skipCredits = false;
     }
+    
+    private AudioSource CreateAudioSource(string name, AudioClip clip, bool loop)
+    {
+        GameObject go = new GameObject(name);
+        go.transform.SetParent(this.transform);
+        AudioSource src = go.AddComponent<AudioSource>();
+        src.clip = clip;
+        src.loop = loop;
+        return src;
+    }
 }
+
+
 
 
 [System.Serializable]

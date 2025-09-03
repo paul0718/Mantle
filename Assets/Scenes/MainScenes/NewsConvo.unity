@@ -21842,7 +21842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3899227092862801904, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: SequenceID
-      value: 10
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8701857117213652670, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22506,6 +22506,14 @@ MonoBehaviour:
   logoBG: {fileID: 1593780944}
   logo: {fileID: 1601230386}
   skipText: {fileID: 1932265472}
+  audioMixerGroup: {fileID: 24300002, guid: b79c500e39c732f49860c9e207a69a81, type: 2}
+  introClip: {fileID: 8300000, guid: f6986b902e6b6144ba683854323ca1f0, type: 3}
+  headClips:
+  - {fileID: 8300000, guid: 197cc9e45db09f245b53f9978e52f539, type: 3}
+  - {fileID: 8300000, guid: ba9c31d24dcdcc44c8eb756df807bb1f, type: 3}
+  - {fileID: 8300000, guid: 9833a69515d45d448a845fad2b441240, type: 3}
+  - {fileID: 8300000, guid: 758d28063a1a2924cb57279dbcb2e6ed, type: 3}
+  bodyClip: {fileID: 8300000, guid: fcbb1897f77433d4fa73c259a1467fd8, type: 3}
 --- !u!4 &1701099010
 Transform:
   m_ObjectHideFlags: 0

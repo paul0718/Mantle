@@ -18,8 +18,6 @@ public class QuincyMusicManager : MonoBehaviour
     private AudioSource introBSource;
     private AudioSource headSource;
     private AudioSource bodySource;
-    
-    private float nextClipEndTime;
 
     private float introStartTime;
     private void Awake()

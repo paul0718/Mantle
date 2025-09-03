@@ -47,7 +47,6 @@ public class CecilMusicManager : MonoBehaviour
     private int index = 0;
     void Update()
     {
-        Debug.Log(index);
         if (!preIntroSource.isPlaying && index == 0)
         {
             if (StateManager.Instance.currentState == StateManager.BattleState.Start)

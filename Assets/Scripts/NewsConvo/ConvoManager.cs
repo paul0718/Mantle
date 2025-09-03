@@ -581,7 +581,6 @@ public class ConvoManager : MonoBehaviour
         if (SequenceManager.Instance.SequenceID == 19)
         {
             creditManager.StartCoroutine(creditManager.PlayCredits());
-            AudioManager.Instance.PlayNextPhase();
         }
         if (restart || firstPlay)
         {

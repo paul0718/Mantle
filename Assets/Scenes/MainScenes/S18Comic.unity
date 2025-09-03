@@ -154,6 +154,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aceDeadComic: {fileID: 1019739667}
   mantleDeadComic: {fileID: 1428736113}
+  audioMixerGroup: {fileID: -8554480812320407431, guid: b79c500e39c732f49860c9e207a69a81, type: 2}
+  loseMantleHeadClip: {fileID: 8300000, guid: 8c17be8d0c5363545a7edd1ed2a30daa, type: 3}
+  loseMantleBodyClip: {fileID: 8300000, guid: 0327dba419243a44a8e4287bf7945f3c, type: 3}
+  winMantleHeadClip: {fileID: 8300000, guid: 3d0e6a5ef31b2b54bb4ae00bc983947b, type: 3}
+  winMantleBodyClip: {fileID: 8300000, guid: 1053ed4b1240c3342b55ae1494173cdf, type: 3}
 --- !u!4 &63472831
 Transform:
   m_ObjectHideFlags: 0
@@ -964,27 +969,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: field of view
-      value: 0.00001
+      value: 49.834755
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.008130081
+      value: 0.008768084
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: -0.9863454
+      value: 0.0155763235
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9828365
+      value: 0.9829022
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9702811
+      value: 0.96884733
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198673390, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_Name
@@ -1293,7 +1298,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.32400513, y: 0.34469998, z: -0.091759086}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.097206, y: 0.097206, z: 0.097206}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1428736114}
@@ -1317,7 +1322,7 @@ MonoBehaviour:
     positionSpecified: 0
     rotation: {x: 0, y: 0, z: 0}
     rotationSpecified: 0
-    scale: {x: 0, y: 0, z: 0}
+    scale: {x: 0.097206, y: 0.097206, z: 0.097206}
     scaleSpecified: 0
     overlayTarget: 
     overlayTargetVal: 0
@@ -1361,7 +1366,7 @@ MonoBehaviour:
   - Hold
   - Hold
   - Hold
-  scriptIndex: 0
+  scriptIndex: 1
   crossfade: 0
   scriptStateIndices: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
   priorHoldStateIndex: -1
@@ -1423,7 +1428,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1499923796}
+  - {fileID: 920326956}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1573,50 +1578,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &824655366
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites-Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DecalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &829495593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,6 +1706,94 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1047595942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &907926772
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites-Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DecalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &920326956
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites-Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DecalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &959140162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1977,7 +2026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1047595941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2046,7 +2095,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.3639984, y: 0.32469997, z: -0.091759086}
-  m_LocalScale: {x: 0.09719436, y: 0.09719436, z: 0.09719436}
+  m_LocalScale: {x: 0.097206, y: 0.097206, z: 0.097206}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1019739668}
@@ -2070,7 +2119,7 @@ MonoBehaviour:
     positionSpecified: 0
     rotation: {x: 0, y: 0, z: 0}
     rotationSpecified: 0
-    scale: {x: 0.09719436, y: 0.09719436, z: 0.09719436}
+    scale: {x: 0.097206, y: 0.097206, z: 0.097206}
     scaleSpecified: 0
     overlayTarget: 
     overlayTargetVal: 0
@@ -2114,7 +2163,7 @@ MonoBehaviour:
   - Hold
   - Hold
   - Hold
-  scriptIndex: 0
+  scriptIndex: 1
   crossfade: 0
   scriptStateIndices: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
   priorHoldStateIndex: -1
@@ -2176,7 +2225,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 824655366}
+  - {fileID: 1426123977}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2443,50 +2492,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4005565556116441167, guid: 7299032cc79b9514fb7929016db1e0e6, type: 3}
   m_PrefabInstance: {fileID: 1222738542}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1249224925
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites-Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DecalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &1259023605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3298,23 +3303,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: field of view
-      value: 49.874416
+      value: 49.834755
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.008130081
+      value: 0.008768084
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.014457831
+      value: 0.0155763235
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9828365
+      value: 0.9829022
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9702811
+      value: 0.96884733
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198673390, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_Name
@@ -3409,7 +3414,7 @@ MonoBehaviour:
   - '(1) '
   - Hold
   - Hold
-  scriptIndex: 2
+  scriptIndex: 1
   crossfade: 0
   scriptStateIndices: 010000000000000002000000
   isEditingStates: 0
@@ -3518,6 +3523,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1426123977
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites-Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DecalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1428736113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3533,7 +3582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1428736114
 Transform:
   m_ObjectHideFlags: 0
@@ -3654,50 +3703,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d894629bfa9947479b9bfbd283227bf, type: 3}
---- !u!21 &1470778821
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites-Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DecalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1489317636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,7 +3731,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -99.636, y: 0.32469997, z: -0.091759086}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.097206, y: 0.097206, z: 0.097206}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1428736114}
@@ -3750,7 +3755,7 @@ MonoBehaviour:
     positionSpecified: 0
     rotation: {x: 0, y: 0, z: 0}
     rotationSpecified: 0
-    scale: {x: 0, y: 0, z: 0}
+    scale: {x: 0.097206, y: 0.097206, z: 0.097206}
     scaleSpecified: 0
     overlayTarget: 
     overlayTargetVal: 0
@@ -3794,7 +3799,7 @@ MonoBehaviour:
   - Hold
   - Hold
   - Hold
-  scriptIndex: 0
+  scriptIndex: 1
   crossfade: 0
   scriptStateIndices: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
   priorHoldStateIndex: -1
@@ -3856,7 +3861,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1249224925}
+  - {fileID: 1945566579}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3888,50 +3893,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!21 &1499923796
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites-Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DecalTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &1534941751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3946,11 +3907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: left
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: width
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: height
@@ -3966,7 +3927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameRect.x
-      value: 10
+      value: -371
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameRect.y
@@ -3977,8 +3938,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateA.h
+      value: -33.333332
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.v
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateB.h
+      value: -33.333332
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.v
@@ -3990,7 +3959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.id
-      value: State 1
+      value: State 2
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.id
@@ -3998,11 +3967,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: homePosition.x
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameRect.width
-      value: 1171
+      value: 1502
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: isEditingCamera
@@ -4010,43 +3979,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameRect.height
-      value: 650
+      value: 622
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.pxTop
-      value: 670
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.pxTop
-      value: 670
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateCounter
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateA.pxLeft
+      value: -380.3333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.topVal
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateB.pxLeft
+      value: -380.3333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.topVal
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateA.leftVal
+      value: -33.333332
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.pxRight
-      value: 1191
+      value: 1141
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.pxWidth
-      value: 1191
+      value: 1521.3333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateB.leftVal
+      value: -33.333332
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.pxRight
-      value: 1191
+      value: 1141
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.pxWidth
-      value: 1191
+      value: 1521.3333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.pxBottom
@@ -4054,7 +4039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.pxHeight
-      value: 670
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.topUnits
@@ -4062,7 +4047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.widthVal
-      value: 100
+      value: 133.33333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.pxBottom
@@ -4070,7 +4055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.pxHeight
-      value: 670
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.topUnits
@@ -4078,7 +4063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.widthVal
-      value: 100
+      value: 133.33333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: cameraStateA.lookAt.x
@@ -4162,7 +4147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].h
-      value: 0
+      value: -33.333332
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].v
@@ -4206,19 +4191,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].pxTop
-      value: 670
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].pxTop
-      value: 670
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[2].pxTop
       value: 638
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStates.Array.data[0].pxLeft
+      value: 1141
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].topVal
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStates.Array.data[1].pxLeft
+      value: -380.3333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].topVal
@@ -4234,23 +4227,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].pxRight
-      value: 1191
+      value: 1521.3333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].pxWidth
-      value: 1191
+      value: 380.33325
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].leftVal
-      value: 0
+      value: -33.333332
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].pxRight
-      value: 1191
+      value: 1141
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].pxWidth
-      value: 1191
+      value: 1521.3333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[2].pxRight
@@ -4266,7 +4259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].pxHeight
-      value: 670
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].topUnits
@@ -4282,7 +4275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].pxHeight
-      value: 670
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].topUnits
@@ -4290,7 +4283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].widthVal
-      value: 100
+      value: 133.33333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[2].pxBottom
@@ -4410,35 +4403,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: passiveMotionHStateA.outputMaximumVal
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: passiveMotionHStateA.outputMinimumVal
-      value: -0.01
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: passiveMotionHStateB.outputMaximumVal
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: passiveMotionHStateB.outputMinimumVal
-      value: -0.01
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: passiveMotionVStateA.outputMaximumVal
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: passiveMotionVStateA.outputMinimumVal
-      value: -0.01
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: passiveMotionVStateB.outputMaximumVal
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: passiveMotionVStateB.outputMinimumVal
-      value: -0.01
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameScriptStateIndices.Array.data[10]
@@ -4706,23 +4699,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: field of view
-      value: 49.874416
+      value: 49.834755
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.008130081
+      value: -0.32529593
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.014457831
+      value: 0.0155763235
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9828365
+      value: 1.3169663
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9702811
+      value: 0.96884733
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198673390, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_Name
@@ -5225,11 +5218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: left
-      value: 3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: width
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: height
@@ -5245,19 +5238,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameRect.x
-      value: 9
+      value: -371
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameRect.y
-      value: -614
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: scriptIndex
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateA.h
+      value: -33.333332
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.v
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateB.h
+      value: -33.333332
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.v
@@ -5269,7 +5270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.id
-      value: State 1
+      value: State 2
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.id
@@ -5281,7 +5282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameRect.width
-      value: 1088
+      value: 1502
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: isEditingCamera
@@ -5289,51 +5290,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameRect.height
-      value: 604
+      value: 622
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.pxTop
-      value: 0.000013925135
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.pxTop
-      value: 623
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateCounter
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateA.pxLeft
+      value: -380.3333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.topVal
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateB.pxLeft
+      value: -380.3333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.topVal
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateA.leftVal
+      value: -33.333332
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.pxRight
-      value: 1107
+      value: 1141
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.pxWidth
-      value: 1107
+      value: 1521.3333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStateB.leftVal
+      value: -33.333332
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.pxRight
-      value: 1107
+      value: 1141
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.pxWidth
-      value: 1107
+      value: 1521.3333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.pxBottom
-      value: -311.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.pxHeight
-      value: 311.5
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.topUnits
@@ -5341,7 +5358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateA.widthVal
-      value: 100
+      value: 133.33333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.pxBottom
@@ -5349,7 +5366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.pxHeight
-      value: 623
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.topUnits
@@ -5357,7 +5374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStateB.widthVal
-      value: 100
+      value: 133.33333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: cameraStateA.lookAt.x
@@ -5440,6 +5457,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStates.Array.data[1].h
+      value: -33.333332
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].v
       value: 0
       objectReference: {fileID: 0}
@@ -5481,19 +5502,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].pxTop
-      value: 0.000013925135
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].pxTop
-      value: 623
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[2].pxTop
       value: 638
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStates.Array.data[0].pxLeft
+      value: 1141
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].topVal
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStates.Array.data[1].pxLeft
+      value: -380.3333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].topVal
@@ -5509,19 +5538,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].pxRight
-      value: 1107
+      value: 1521.3333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].pxWidth
-      value: 1107
+      value: 380.33325
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
+      propertyPath: frameStates.Array.data[1].leftVal
+      value: -33.333332
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].pxRight
-      value: 1107
+      value: 1141
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].pxWidth
-      value: 1107
+      value: 1521.3333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[2].pxRight
@@ -5533,11 +5566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].pxBottom
-      value: -311.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].pxHeight
-      value: 311.5
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[0].topUnits
@@ -5553,7 +5586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].pxHeight
-      value: 623
+      value: 642
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].topUnits
@@ -5561,7 +5594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[1].widthVal
-      value: 100
+      value: 133.33333
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787188995086, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: frameStates.Array.data[2].pxBottom
@@ -5969,7 +6002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_ClearFlags
@@ -5977,23 +6010,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: field of view
-      value: 0.00001
+      value: 49.834755
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.008130081
+      value: -0.32529593
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: -0.9863454
+      value: 0.0155763235
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9828365
+      value: 1.3169663
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198477262, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9702811
+      value: 0.96884733
       objectReference: {fileID: 0}
     - target: {fileID: 1016737787198673390, guid: 84dfa90e7bc314e908c4dcbcbd2f2cec, type: 3}
       propertyPath: m_Name
@@ -6079,7 +6112,7 @@ MonoBehaviour:
   - '(1) '
   - (2) State 2
   - Hold
-  scriptIndex: 0
+  scriptIndex: 1
   crossfade: 0
   scriptStateIndices: 010000000200000003000000
   isEditingStates: 0
@@ -6103,6 +6136,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db83d6b9230d4d2f9b8466694e33f9d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &1945566579
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites-Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DecalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &2041168654
 GameObject:
   m_ObjectHideFlags: 0
@@ -6131,7 +6208,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 100.32399, y: 0.34469998, z: -0.091759086}
-  m_LocalScale: {x: 0.09719436, y: 0.09719436, z: 0.09719436}
+  m_LocalScale: {x: 0.097206, y: 0.097206, z: 0.097206}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1019739668}
@@ -6155,7 +6232,7 @@ MonoBehaviour:
     positionSpecified: 0
     rotation: {x: 0, y: 0, z: 0}
     rotationSpecified: 0
-    scale: {x: 0.09719436, y: 0.09719436, z: 0.09719436}
+    scale: {x: 0.097206, y: 0.097206, z: 0.097206}
     scaleSpecified: 0
     overlayTarget: 
     overlayTargetVal: 0
@@ -6199,7 +6276,7 @@ MonoBehaviour:
   - Hold
   - Hold
   - Hold
-  scriptIndex: 0
+  scriptIndex: 1
   crossfade: 0
   scriptStateIndices: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
   priorHoldStateIndex: -1
@@ -6261,7 +6338,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1470778821}
+  - {fileID: 907926772}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
