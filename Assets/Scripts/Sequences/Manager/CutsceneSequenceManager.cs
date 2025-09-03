@@ -40,7 +40,7 @@ public class CutsceneSequenceManager : MonoBehaviour
         headSource.outputAudioMixerGroup = audioMixerGroup;
         bodySource.outputAudioMixerGroup = audioMixerGroup;
 
-        audioMixerGroup.audioMixer.SetFloat("BGM", -7);
+        audioMixerGroup.audioMixer.SetFloat("Master", -7);
 
         headSource.Play();
     }

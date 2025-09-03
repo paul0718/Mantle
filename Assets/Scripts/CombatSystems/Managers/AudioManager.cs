@@ -58,14 +58,17 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        var bgm = PlayerPrefs.GetFloat("BGM", -1);
-        var sfx = PlayerPrefs.GetFloat("SFX", -1);
-        if (bgm != -1)
-            SetMasterVolumn("BGM",bgm);
-        if (sfx != -1)
-            SetMasterVolumn("SFX",sfx);
+        if (SequenceManager.Instance.SequenceID != 18)
+        {
+            var bgm = PlayerPrefs.GetFloat("BGM", -1);
+            var sfx = PlayerPrefs.GetFloat("SFX", -1);
+            if (bgm != -1)
+                SetMasterVolumn("BGM",bgm);
+            if (sfx != -1)
+                SetMasterVolumn("SFX",sfx);
 
-        FadeIn();
+            FadeIn();
+        }
     }
    
     public void PlayOneShot(SFXNAME name, float volume = -1)
@@ -217,6 +220,8 @@ public class AudioManager : MonoBehaviour
     }
     private void Update()
     {
+        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 18 && SceneManager.GetActiveScene().name=="S18Comic")
+            return;
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 17 && SceneManager.GetActiveScene().name=="BattleScene")
             return;
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 12 && SceneManager.GetActiveScene().name == "BattleScene")

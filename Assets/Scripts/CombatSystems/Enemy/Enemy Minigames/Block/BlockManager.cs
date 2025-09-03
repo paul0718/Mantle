@@ -108,7 +108,7 @@ public class BlockManager : MonoBehaviour
         //const float EndBuffer = 0.1f;
         
         var clip = isWinning ? winSound : loseSound;
-        if (isWinning) endSoundAudioSource.PlayOneShot(clip);
+        if (isWinning) endSoundAudioSource.PlayOneShot(clip, 0.5f);
 
         if (enemy == Enemies.Ace && !isWinning)
         {
@@ -177,7 +177,7 @@ public class BlockManager : MonoBehaviour
     {
         if (flashObject == null) return;
         flashObject.SetActive(true);
-        endSoundAudioSource.Play();
+        AudioManager.Instance.PlayOneShot(SFXNAME.MantleHit, 0.5f);
         var flashSprite = flashObject.GetComponent<SpriteRenderer>();
 
         Color c = flashSprite.color;
@@ -310,18 +310,10 @@ public class BlockManager : MonoBehaviour
 
         if (playerWins)
         {
-            if (MetricManagerScript.instance != null)
-            { 
-                MetricManagerScript.instance.LogString("Block", "Win");
-            }
             GridManager.Instance.UpdateDotPosition(Vector2.zero, GridManager.MiniGame.Defend, playerWins);
         }
         else
         {
-            if (MetricManagerScript.instance != null)
-            { 
-                MetricManagerScript.instance.LogString("Block", "Lose");
-            }
             GridManager.Instance.UpdateDotPosition(battle[3].LoseEffect, GridManager.MiniGame.Defend, playerWins);
         }
         BarkManager.Instance.ShowGameBark("Block", playerWins);
