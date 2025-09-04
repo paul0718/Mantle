@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.Audio;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -30,6 +31,13 @@ public class MainMenuManager : MonoBehaviour
 
     private readonly int logoNormalY = -25;
     private readonly int logoHideY = -1025;
+    
+    public AudioMixerGroup audioMixerGroup;
+    public AudioClip headClip;
+    public AudioClip bodyClip;
+    private AudioSource headSource;
+    private AudioSource bodySource;
+    private int index = 0;
     private void Awake()
     {
         Instance = this;
@@ -74,6 +82,15 @@ public class MainMenuManager : MonoBehaviour
                     continueButton.interactable = false;
                 }
             });
+            
+            headSource = CreateAudioSource("headSource", headClip, loop: false);
+            bodySource = CreateAudioSource("bodySource", bodyClip, loop: true);
+            
+            headSource.outputAudioMixerGroup = audioMixerGroup;
+            bodySource.outputAudioMixerGroup = audioMixerGroup;
+
+            audioMixerGroup.audioMixer.SetFloat("MenuBGM", -3f);
+            headSource.Play();
         }
     }
 
@@ -93,14 +110,20 @@ public class MainMenuManager : MonoBehaviour
             headlineTxt2.anchoredPosition = new Vector2(newX+17, headlineTxt2.anchoredPosition.y);
         }
 
-        if (SceneManager.GetActiveScene().name == "MainMenu")
+        if (!headSource.isPlaying && index == 0)
         {
-            if (!bgmStarted && bgmSource.clip!=null)
-            {
-                StartCoroutine(GoToBodyBGM());
-                bgmStarted = true;
-            }
+            bodySource.Play();
+            index = 1;
         }
+
+        // if (SceneManager.GetActiveScene().name == "MainMenu")
+        // {
+        //     if (!bgmStarted && bgmSource.clip!=null)
+        //     {
+        //         StartCoroutine(GoToBodyBGM());
+        //         bgmStarted = true;
+        //     }
+        // }
     }
 
     private void NewGame()
@@ -122,11 +145,22 @@ public class MainMenuManager : MonoBehaviour
     {
         yield return new WaitForSeconds(bgmSource.clip.length/2);
         AudioManager.Instance.PlayNextBGM();
+        Debug.Log("play body");
     }
 
     public void ActivateOtherButtons()
     {
         newGameButton.interactable = true;
         continueButton.interactable = true;
+    }
+    
+    private AudioSource CreateAudioSource(string name, AudioClip clip, bool loop)
+    {
+        GameObject go = new GameObject(name);
+        go.transform.SetParent(this.transform);
+        AudioSource src = go.AddComponent<AudioSource>();
+        src.clip = clip;
+        src.loop = loop;
+        return src;
     }
 }

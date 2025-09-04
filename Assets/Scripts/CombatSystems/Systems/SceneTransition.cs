@@ -84,6 +84,8 @@ public class SceneTransition : MonoBehaviour
     }
     public void SwitchScene(string name)
     {
+        if(AudioManager.Instance != null)
+            AudioManager.Instance.FadeOut();
         panelImg.DOFade(1, 1.5f).onComplete = () =>
         {
             SceneManager.LoadScene(name);

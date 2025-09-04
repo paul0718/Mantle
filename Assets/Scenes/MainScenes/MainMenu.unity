@@ -964,6 +964,9 @@ MonoBehaviour:
   optionButton: {fileID: 218862138}
   creditTransform: {fileID: 348853815}
   steamPage: {fileID: 1550505523}
+  audioMixerGroup: {fileID: -2160318428936266081, guid: b79c500e39c732f49860c9e207a69a81, type: 2}
+  headClip: {fileID: 8300000, guid: 3edd462a000bfc543964b48ecb9b907e, type: 3}
+  bodyClip: {fileID: 8300000, guid: 941fe918e0ff6d141b321e90366b42e8, type: 3}
 --- !u!1 &480398097
 GameObject:
   m_ObjectHideFlags: 0

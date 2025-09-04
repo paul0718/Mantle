@@ -58,7 +58,7 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        if (SequenceManager.Instance.SequenceID != 18)
+        if (SequenceManager.Instance.SequenceID != 18 && SequenceManager.Instance.SequenceID != 1)
         {
             var bgm = PlayerPrefs.GetFloat("BGM", -1);
             var sfx = PlayerPrefs.GetFloat("SFX", -1);
@@ -197,7 +197,7 @@ public class AudioManager : MonoBehaviour
         float startVolume = 0.001f; 
         float targetVolume = 1.0f;
 
-        if (SceneManager.GetActiveScene().name == "BattleScene")
+        if (SceneManager.GetActiveScene().name == "BattleScene" || SceneManager.GetActiveScene().name == "MainMenu")
             audioMixer.SetFloat("Master", targetVolume);
         else
         {
@@ -220,6 +220,8 @@ public class AudioManager : MonoBehaviour
     }
     private void Update()
     {
+        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 1 && SceneManager.GetActiveScene().name=="MainMenu")
+            return;
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 18 && SceneManager.GetActiveScene().name=="S18Comic")
             return;
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 17 && SceneManager.GetActiveScene().name=="BattleScene")
