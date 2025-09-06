@@ -88,8 +88,7 @@ public class MainMenuManager : MonoBehaviour
             
             headSource.outputAudioMixerGroup = audioMixerGroup;
             bodySource.outputAudioMixerGroup = audioMixerGroup;
-
-            audioMixerGroup.audioMixer.SetFloat("MenuBGM", -3f);
+            
             headSource.Play();
         }
     }

@@ -58,7 +58,7 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        if (SequenceManager.Instance.SequenceID != 18 && SequenceManager.Instance.SequenceID != 1)
+        if (SequenceManager.Instance.SequenceID != 18)
         {
             var bgm = PlayerPrefs.GetFloat("BGM", -1);
             var sfx = PlayerPrefs.GetFloat("SFX", -1);
