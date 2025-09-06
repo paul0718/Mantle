@@ -220,6 +220,7 @@ public class AudioManager : MonoBehaviour
     }
     private void Update()
     {
+        SetBattleBGMVolume();
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 1 && SceneManager.GetActiveScene().name=="MainMenu")
             return;
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 18 && SceneManager.GetActiveScene().name=="S18Comic")
@@ -230,8 +231,13 @@ public class AudioManager : MonoBehaviour
             return;
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 6 && SceneManager.GetActiveScene().name == "BattleScene")
             return;
-        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 3 && SceneManager.GetActiveScene().name == "BattleScene")
+        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 3 &&
+            SceneManager.GetActiveScene().name == "BattleScene")
+        {
+            SetBattleBGMVolume(-10);
             return;
+        }
+            
         if (BGMLibrary != null && !BGMAudioSource.isPlaying) 
         {
             if (nextFlag)
@@ -292,5 +298,10 @@ public class AudioManager : MonoBehaviour
     {
         Debug.Log("Audio Manager Destroyed");
         sequence.Kill(false);
+    }
+
+    private void SetBattleBGMVolume(float n = -7)
+    {
+        audioMixer.SetFloat("BattleBGM", n);
     }
 }

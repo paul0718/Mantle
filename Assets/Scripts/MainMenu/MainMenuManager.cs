@@ -40,6 +40,7 @@ public class MainMenuManager : MonoBehaviour
     private int index = 0;
     private void Awake()
     {
+        Debug.Log(Time.timeScale);
         Instance = this;
     }
     private void Start()
