@@ -130,7 +130,8 @@ public class CreditManager : MonoBehaviour
 
     private void Update()
     {
-        ControlMusic();
+        if(SequenceManager.Instance.SequenceID == 19)
+            ControlMusic();
         if (playingCredits)
         {
             scrollParent.anchoredPosition += new Vector2(0, spacing/timing * Time.deltaTime);
