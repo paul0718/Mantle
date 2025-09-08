@@ -221,7 +221,7 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         SetBattleBGMVolume();
-        if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 1 && SceneManager.GetActiveScene().name=="MainMenu")
+        if (SequenceManager.Instance != null && SceneManager.GetActiveScene().name=="MainMenu")
             return;
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 18 && SceneManager.GetActiveScene().name=="S18Comic")
             return;

@@ -15,10 +15,6 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private RectTransform headlineTxt2;
     public RectTransform logo;
     [SerializeField] private float headlineSpeed;
-    
-    //temp audio fix
-    [SerializeField] private AudioSource bgmSource;
-    private bool bgmStarted = false;
 
     public Button newGameButton;
     public Button continueButton;
@@ -44,8 +40,6 @@ public class MainMenuManager : MonoBehaviour
     }
     private void Start()
     {
-        bgmStarted = false;
-        
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             int savedID = PlayerPrefs.GetInt("SequenceID");
@@ -82,7 +76,9 @@ public class MainMenuManager : MonoBehaviour
                     continueButton.interactable = false;
                 }
             });
-            
+
+            index = 0;
+                
             headSource = CreateAudioSource("headSource", headClip, loop: false);
             bodySource = CreateAudioSource("bodySource", bodyClip, loop: true);
             
@@ -114,15 +110,6 @@ public class MainMenuManager : MonoBehaviour
             bodySource.Play();
             index = 1;
         }
-
-        // if (SceneManager.GetActiveScene().name == "MainMenu")
-        // {
-        //     if (!bgmStarted && bgmSource.clip!=null)
-        //     {
-        //         StartCoroutine(GoToBodyBGM());
-        //         bgmStarted = true;
-        //     }
-        // }
     }
 
     private void NewGame()
@@ -138,13 +125,6 @@ public class MainMenuManager : MonoBehaviour
     public void HideLogo()
     {
         logo.DOAnchorPosY(logoHideY, 0.2f).SetUpdate(true);
-    }
-
-    IEnumerator GoToBodyBGM()
-    {
-        yield return new WaitForSeconds(bgmSource.clip.length/2);
-        AudioManager.Instance.PlayNextBGM();
-        Debug.Log("play body");
     }
 
     public void ActivateOtherButtons()
