@@ -76,7 +76,6 @@ public class AudioManager : MonoBehaviour
         var audioSource = SFXAudioSources[0];
         if (audioSource == null)
         {
-            Debug.LogWarning("Audio Source Not Available"); 
             return;
         }
         if (volume == -1)
@@ -96,7 +95,6 @@ public class AudioManager : MonoBehaviour
         var audioSource = AvailableSFXAudioSource;
         if (audioSource == null)
         {
-            Debug.LogWarning("Audio Source Not Available");
             return;
         }
         audioSource.clip = sfxs[name];

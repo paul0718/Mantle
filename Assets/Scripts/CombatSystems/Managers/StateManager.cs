@@ -84,13 +84,11 @@ public class StateManager : MonoBehaviour
         playingDialogue = false;
         coverAnimator.enabled = true;
         AudioManager.Instance.PlayNextBGM();
-        Debug.Log("next bgm");
         currentState = BattleState.Start;
         Sequence s = DOTween.Sequence();
         s.AppendInterval(bgmTime);//important
         s.AppendCallback(() =>
         {
-            Debug.Log("next bgm 2");
             AudioManager.Instance.PlayNextBGM();
         });
         s.SetUpdate(true);

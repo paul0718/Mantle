@@ -23,7 +23,8 @@ public class EnagaMusicManager : MonoBehaviour
     private AudioSource headBSource;
     private AudioSource bodySource;
     
-
+    private double nextScheduleTime;
+    private bool useScheduled = false;
     private void Awake()
     {
         Instance = this;
@@ -35,6 +36,7 @@ public class EnagaMusicManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        
         preIntroASource = CreateAudioSource("preIntroASource", preIntroAClip, loop: false);
         preIntroBSource = CreateAudioSource("preIntroBSource", preIntroBClip, loop: false);
 
@@ -55,6 +57,7 @@ public class EnagaMusicManager : MonoBehaviour
         bodySource.outputAudioMixerGroup = audioMixerGroup;
 
         preIntroASource.Play();
+        index = 0;
     }
     private AudioSource CreateAudioSource(string name, AudioClip clip, bool loop)
     {
@@ -66,69 +69,91 @@ public class EnagaMusicManager : MonoBehaviour
         return src;
     }
     private int index = 0;
+    
     void Update()
     {
-        if (!preIntroASource.isPlaying && index == 0) 
+        if (!useScheduled)
         {
-            if (StateManager.Instance.currentState == StateManager.BattleState.Start)
+            if (!preIntroASource.isPlaying && index == 0)
             {
-                headBSource.Play();
-                index = 5;
-            }
-            else
-            {
-                preIntroBSource.Play();
-                index = 1;
+                if (StateManager.Instance.currentState == StateManager.BattleState.Start)
+                {
+                    headBSource.Play();
+                    index = 5;
+
+                    nextScheduleTime = AudioSettings.dspTime + headBSource.clip.length;
+                }
+                else
+                {
+                    preIntroBSource.Play();
+                    index = 1;
+
+                    nextScheduleTime = AudioSettings.dspTime + preIntroBSource.clip.length;
+                }
+
+                // After this transition, switch to scheduled mode
+                useScheduled = true;
             }
         }
-        if (!preIntroBSource.isPlaying && index == 1)
+        else
         {
-            if (StateManager.Instance.currentState == StateManager.BattleState.Start)
+            // Gapless scheduling for everything after
+            double dspTime = AudioSettings.dspTime;
+
+            if (dspTime >= nextScheduleTime - 0.05)
             {
-                headASource.Play();
-                index = 4;
+                switch (index)
+                {
+                    case 1: // after preIntroB
+                        if (StateManager.Instance.currentState == StateManager.BattleState.Start)
+                        {
+                            ScheduleNext(headASource, 4);
+                        }
+                        else
+                        {
+                            ScheduleNext(introASource, 2);
+                        }
+                        break;
+
+                    case 2:
+                        if (StateManager.Instance.currentState == StateManager.BattleState.Start)
+                        {
+                            ScheduleNext(headBSource, 5);
+                        }
+                        else
+                        {
+                            ScheduleNext(introBSource, 3);
+                        }
+                        break;
+
+                    case 3:
+                        if (StateManager.Instance.currentState == StateManager.BattleState.Start)
+                        {
+                            ScheduleNext(headASource, 4);
+                        }
+                        else
+                        {
+                            ScheduleNext(introASource, 2);
+                        }
+                        break;
+
+                    case 4:
+                    case 5:
+                        ScheduleNext(bodySource, 6);
+                        break;
+                }
             }
-            else
-            {
-                introASource.Play();
-                index = 2;
-            }
-        }
-        if (!introASource.isPlaying && index == 2)
-        {
-            if (StateManager.Instance.currentState == StateManager.BattleState.Start)
-            {
-                headBSource.Play();
-                index = 5;
-            }
-            else
-            {
-                introBSource.Play();
-                index = 3;
-            }
-        }
-        if (!introBSource.isPlaying && index == 3)
-        {
-            if (StateManager.Instance.currentState == StateManager.BattleState.Start)
-            {
-                headASource.Play();
-                index = 4;
-            }
-            else
-            {
-                introASource.Play();
-                index = 2;
-            }
-        }
-        if (!headASource.isPlaying && index == 4)
-        {
-            bodySource.Play();
-            index = 6;
-        }
-        if (!headBSource.isPlaying && index == 5)
-        {
-            bodySource.Play();
-            index = 6;
         }
     }
+
+    void ScheduleNext(AudioSource nextSource, int nextIndex)
+    {
+        // Schedule to start exactly when the previous clip ends
+        nextSource.PlayScheduled(nextScheduleTime);
+        index = nextIndex;
+
+        // Update the next schedule time for the following clip
+        nextScheduleTime += nextSource.clip.length;
+    }
+
 }
