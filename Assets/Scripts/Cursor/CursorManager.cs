@@ -6,6 +6,9 @@ public class CursorManager : MonoBehaviour
 {
     public Texture2D[] cursors;
     private int cursorIndex = -1;
+    
+    public Vector2 hotspot = Vector2.zero;
+    public CursorMode cursorMode = CursorMode.Auto;
     public static CursorManager Instance { get; private set; }
     private void Awake()
     {
@@ -41,5 +44,13 @@ public class CursorManager : MonoBehaviour
     private void OnDisable()
     {
         CancelInvoke();
+    }
+    
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (hasFocus)
+        {
+            Cursor.SetCursor(cursors[0], hotspot, cursorMode);
+        }
     }
 }

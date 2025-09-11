@@ -41,9 +41,7 @@ public class SequenceManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        Debug.Log("SequenceID: "+PlayerPrefs.GetInt("SequenceID"));
-        Debug.Log("DateNum: " + PlayerPrefs.GetInt("DateNum"));
+        
         battles = LoadJson<Dictionary<int, Battle>>("Json/Battle");
         desktops = LoadJson<Dictionary<int, Desktop>>("Json/Desktop");
         cutscenes = LoadJson<Dictionary<int, Cutscene>>("Json/Cutscene");
@@ -82,7 +80,6 @@ public class SequenceManager : MonoBehaviour
     
     private void SaveData()
     {
-        Debug.Log("SequenceId and DataNum saved.");
         PlayerPrefs.SetInt("SequenceID", SequenceID);
         PlayerPrefs.SetInt("DateNum", dateNum);
     }
