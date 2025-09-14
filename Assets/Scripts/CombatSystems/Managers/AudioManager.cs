@@ -232,7 +232,7 @@ public class AudioManager : MonoBehaviour
         if (SequenceManager.Instance != null && SequenceManager.Instance.SequenceID == 3 &&
             SceneManager.GetActiveScene().name == "BattleScene")
         {
-            SetBattleBGMVolume(-10);
+            SetBattleBGMVolume(-11);
             return;
         }
             

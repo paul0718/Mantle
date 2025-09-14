@@ -154,7 +154,7 @@ public class StateManager : MonoBehaviour
                 ChooseGame();
             else
                 enemyChoice = gameChoice;
-            //enemyChoice = 1;
+            //enemyChoice = 0;
             CoverManager.Instance.SetDefendButton(true);
             CoreButton.Instance.SetCoreButton(CoreButton.FunctionType.Respond);
 
@@ -179,11 +179,6 @@ public class StateManager : MonoBehaviour
                 out worldPosition 
             );
             endRect.position = worldPosition;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Semicolon))
-        {
-            WinBattle(false);
         }
     }
 

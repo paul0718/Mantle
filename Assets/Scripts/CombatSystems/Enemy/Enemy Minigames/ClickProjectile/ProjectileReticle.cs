@@ -7,7 +7,8 @@ using UnityEngine;
 public class ProjectileReticle : MonoBehaviour
 {
     [SerializeField] private bool destroyParent;
-    public SFXNAME sfx = SFXNAME.MainProjectile;
+    public SFXNAME sfx2;
+    public SFXNAME sfx3;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class ProjectileReticle : MonoBehaviour
 
     public void ClickedOn()
     {
-        AudioManager.Instance.PlayOneShot(sfx, 1);
+        PlayProjectileAudio();
         if (SequenceManager.Instance.SequenceID == 12 && transform.parent.childCount > 2)
         {
             if (transform.GetSiblingIndex() == 0)
@@ -43,5 +44,15 @@ public class ProjectileReticle : MonoBehaviour
             GameObject.Find("ClickProjectile EnemyGame").GetComponent<ClickProjectileManager>().projectiles.Remove(gameObject);
             Destroy(gameObject);
         }
+    }
+
+    public void PlayProjectileAudio()
+    {
+        if(sfx3 != SFXNAME.LargeRingProjectile)
+            AudioManager.Instance.PlayOneShot(SFXNAME.LargeRingProjectile);
+        else if(sfx2 != SFXNAME.MidRingProjectile)
+            AudioManager.Instance.PlayOneShot(SFXNAME.MidRingProjectile);
+        else
+            AudioManager.Instance.PlayOneShot(SFXNAME.MainProjectile);
     }
 }

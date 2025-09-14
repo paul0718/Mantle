@@ -166,9 +166,9 @@ public class ClickProjectileManager : MonoBehaviour
         {
             GameObject circle = Instantiate(reticlePrefabs[j-1], randomPos + new Vector3(0, 0, j-3), Quaternion.identity);
             if (j == 2)
-                circle.GetComponent<ProjectileReticle>().sfx = SFXNAME.MidRingProjectile;
+                circle.GetComponent<ProjectileReticle>().sfx2 = SFXNAME.MidRingProjectile;
             else if (j == 3)
-                circle.GetComponent<ProjectileReticle>().sfx = SFXNAME.LargeRingProjectile;
+                circle.GetComponent<ProjectileReticle>().sfx3 = SFXNAME.LargeRingProjectile;
             yield return new WaitForSeconds(0.1f);
         }
     }
