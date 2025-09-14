@@ -329,7 +329,6 @@ public class GridManager : MonoBehaviour
                 (int)dot.transform.localPosition.y <= (battle[0].Pos.y + 40))
             {
                 StateManager.Instance.WinBattle(true);
-                Debug.Log("Battle win, kill");
                 return;
             }
         }
@@ -341,7 +340,6 @@ public class GridManager : MonoBehaviour
                (int)dot.transform.localPosition.y <= (battle[1].Pos.y + 40))
             {
                 StateManager.Instance.WinBattle(false);
-                Debug.Log("Battle win, Capture");
                 return; 
             }
         }
@@ -356,7 +354,6 @@ public class GridManager : MonoBehaviour
             if ((int)dot.transform.localPosition.y >= (battle[1].Pos.y - 40) &&
                (int)dot.transform.localPosition.y <= (battle[1].Pos.y + 40))
             {
-                Debug.Log("Battle win, Capture");
                 return true;
             }
         }
@@ -371,7 +368,6 @@ public class GridManager : MonoBehaviour
             if ((int)dot.transform.localPosition.y >= (battle[0].Pos.y - 40) &&
                 (int)dot.transform.localPosition.y <= (battle[0].Pos.y + 40))
             {
-                Debug.Log("Battle win, kill");
                 return true;
             }
         }
@@ -391,19 +387,5 @@ public class GridManager : MonoBehaviour
     {
         _grid.gameObject.SetActive(false);
        
-    }
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            winSign = dot.gameObject;
-            loseSign = dot.gameObject;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            winSign = plusSign;
-            loseSign = minusSign;
-        }
     }
 }

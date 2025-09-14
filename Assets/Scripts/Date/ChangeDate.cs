@@ -37,7 +37,11 @@ public class ChangeDate : MonoBehaviour
             month = "March";
             currentDay = 20;
         }
-
+        if (time == "7:00PM")
+        {
+            timeText.gameObject.SetActive(false);
+        }
+        timeText.text = time;
         if (SequenceManager.Instance.dateNum > 6)
         {
             monthText.text = "April";
@@ -53,11 +57,7 @@ public class ChangeDate : MonoBehaviour
             monthText.color = Color.red;
             dayText.color = Color.red;
         }
-        if (time == "7:00PM")
-        {
-            timeText.gameObject.SetActive(false);
-        }
-        timeText.text = time;
+        
         StartCoroutine(IncrementDay());
     }
 

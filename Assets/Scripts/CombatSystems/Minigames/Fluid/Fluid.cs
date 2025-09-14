@@ -92,7 +92,7 @@ public class Fluid : MonoBehaviour
         lastFailCount = failCount;
         if (!end)
         {
-            if (failCount > 2000)
+            if (failCount > 1000)
             {
                 AudioManager.Instance.StopLoop(SFXNAME.StickyGoo);
                 foreach (var g in goopPos)

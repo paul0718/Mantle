@@ -24,10 +24,5 @@ public class PanoplyTestControl : MonoBehaviour
         {
             _mouseInstruct.SetActive(false);
         }
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SceneManager.LoadScene("NewsConvo");
-        }
     }
 }

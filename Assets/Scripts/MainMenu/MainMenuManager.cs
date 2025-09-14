@@ -105,16 +105,20 @@ public class MainMenuManager : MonoBehaviour
             headlineTxt2.anchoredPosition = new Vector2(newX+17, headlineTxt2.anchoredPosition.y);
         }
 
-        if (!headSource.isPlaying && index == 0)
+        if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            bodySource.Play();
-            index = 1;
+            if (!headSource.isPlaying && index == 0)
+            {
+                bodySource.Play();
+                index = 1;
+            }
         }
     }
 
     private void NewGame()
     {
         SequenceManager.Instance.dateNum = 0;
+        SequenceManager.Instance.SequenceID = 1;
         AudioManager.Instance.FadeOut();
         SceneTransition.Instance.FadeToBlack();
     }

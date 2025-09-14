@@ -123,7 +123,6 @@ public class CoverManager : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         if (!game && defend)
         {
-            Debug.Log("!game && defend");
             coverAnimator.SetTrigger("PanelOpen");
             sequence.AppendInterval(1f);
             sequence.AppendCallback(() =>
@@ -139,7 +138,6 @@ public class CoverManager : MonoBehaviour
         }
         if (game && defend)
         {
-            Debug.Log("game && defend");
             coverAnimator.SetTrigger("WireClose");
             coverAnimator.SetTrigger("PanelClose");
             sequence.AppendInterval(1.5f);
@@ -152,7 +150,6 @@ public class CoverManager : MonoBehaviour
         }
         if (!game && !defend)
         {
-            Debug.Log("!game && !defend");
             coverAnimator.SetTrigger("WireClose");
             sequence.AppendInterval(1.5f);
             sequence.AppendCallback(() =>
@@ -181,7 +178,6 @@ public class CoverManager : MonoBehaviour
         }
         if (game && !defend)
         {
-            Debug.Log("game && !defend");
             coverAnimator.SetTrigger("WireClose");
             sequence.AppendInterval(1.5f);
             sequence.AppendCallback(() =>
@@ -204,7 +200,6 @@ public class CoverManager : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         if (!game && defend)
         {
-            Debug.Log("!game && defend");
             //MasterMinigames.Instance.SetGame();
             Core.SetActive(true);
             Pipes.SetActive(true);
@@ -214,8 +209,6 @@ public class CoverManager : MonoBehaviour
         }
         if (!game && !defend)
         {
-            Debug.Log("!game && !defend");
-            
             sequence.AppendInterval(1.5f);
             //MasterMinigames.Instance.SetGame();
             Core.SetActive(true);

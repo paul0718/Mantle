@@ -154,7 +154,7 @@ public class StateManager : MonoBehaviour
                 ChooseGame();
             else
                 enemyChoice = gameChoice;
-            //enemyChoice = 0;
+            //enemyChoice = 1;
             CoverManager.Instance.SetDefendButton(true);
             CoreButton.Instance.SetCoreButton(CoreButton.FunctionType.Respond);
 
@@ -263,11 +263,6 @@ public class StateManager : MonoBehaviour
     //Battle is in end state. Open the panels on the right and show either the gun or taser
     public void WinBattle(bool kill)
     {
-        if (MetricManagerScript.instance != null)
-        { 
-            MetricManagerScript.instance.LogString("Player Win", SequenceManager.Instance.SequenceID.ToString());
-        }
-        
         currentState = BattleState.Win;
 
         CoverManager.Instance.SetDefendButton(false);

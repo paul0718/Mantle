@@ -49,25 +49,6 @@ public class SceneTransition : MonoBehaviour
             FadeOutOfBlack();
         }
     }
-    
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha7))
-            {
-                SequenceManager.Instance.SequenceID = 17;
-                SceneManager.LoadScene("BattleScene");
-            }
-        }
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            if (Input.GetKeyDown(KeyCode.N))
-            {
-                FadeToBlack();
-            }
-        }
-    }
 
     public void FadeToBlack(float t = 1.5f)
     {

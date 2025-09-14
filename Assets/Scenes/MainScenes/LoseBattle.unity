@@ -475,71 +475,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c5fe7d351962f4dbb78ce9c49d360d, type: 3}
---- !u!1 &319807454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 319807456}
-  - component: {fileID: 319807455}
-  - component: {fileID: 319807457}
-  m_Layer: 0
-  m_Name: Debug
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &319807455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319807454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0dfddaff10e0ee499c36075cda69e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chargeUpGame: {fileID: 0}
-  interceptGame: {fileID: 0}
-  repairGame: {fileID: 0}
-  blockGame: {fileID: 0}
-  endFightCutscene: {fileID: 0}
-  battleBuild: 0
-  destruct: {fileID: 0}
---- !u!4 &319807456
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319807454}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 589.3042, y: 162.29291, z: -7.386601}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &319807457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319807454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 927584d4b4f931b4b89b767e0706eec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeyCodes: 3001000072000000
 --- !u!1 &361743292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,58 +1059,15 @@ MonoBehaviour:
   headlineTxt2: {fileID: 1457242959}
   logo: {fileID: 0}
   headlineSpeed: 50
-  bgmSource: {fileID: 0}
   newGameButton: {fileID: 0}
   continueButton: {fileID: 0}
   quitButton: {fileID: 0}
   optionButton: {fileID: 0}
   creditTransform: {fileID: 0}
   steamPage: {fileID: 0}
---- !u!1 &972850554
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 972850555}
-  - component: {fileID: 972850556}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &972850555
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972850554}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &972850556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972850554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 927584d4b4f931b4b89b767e0706eec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeyCodes: 3001000072000000
+  audioMixerGroup: {fileID: 0}
+  headClip: {fileID: 0}
+  bodyClip: {fileID: 0}
 --- !u!1 &1024088415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,10 +3413,8 @@ SceneRoots:
   - {fileID: 312106444}
   - {fileID: 801122260}
   - {fileID: 1946788181}
-  - {fileID: 972850555}
   - {fileID: 671029663}
   - {fileID: 5185467759521356472}
   - {fileID: 1577767721}
   - {fileID: 1024088417}
-  - {fileID: 319807456}
   - {fileID: 2024931976}

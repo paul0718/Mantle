@@ -458,12 +458,8 @@ public class ChargeManager : MonoBehaviour
                 missed++;
             }
         }
-        if ((currentEnemy == enemy.CECIL && missed <= 1) || (currentEnemy == enemy.ACE && missed <= 8) || missed == 0)
+        if ((currentEnemy == enemy.CECIL && missed <= 1) || (currentEnemy == enemy.ACE && missed < 8) || missed == 0)
         {
-            if (MetricManagerScript.instance != null)
-            { 
-                MetricManagerScript.instance.LogString("Charge up", "Win");
-            }
             GameObject.Find("Enemy").transform.GetChild(0).GetComponent<EnemyInfo>().ChangePose(true);
             scannerBG.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0, 1, 0, 0.5f);
             GridManager.Instance.UpdateDotPosition(Vector2.zero, GridManager.MiniGame.Defend); //change to actual values
@@ -471,10 +467,6 @@ public class ChargeManager : MonoBehaviour
         }
         else
         {
-            if (MetricManagerScript.instance != null)
-            { 
-                MetricManagerScript.instance.LogString("Charge up", "Lose");
-            }
             GameObject.Find("Enemy").transform.GetChild(0).GetComponent<EnemyInfo>().ChangePose(false);
             scannerBG.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 0.5f);
             GridManager.Instance.UpdateDotPosition(battle.EnemyMinigames[1].LoseEffect, GridManager.MiniGame.Defend); //change to actual values

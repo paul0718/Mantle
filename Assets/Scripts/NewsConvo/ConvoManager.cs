@@ -778,7 +778,6 @@ public class ConvoManager : MonoBehaviour
 
     private void SetPictures(char c)
     {
-        Debug.Log("in set pictures");
         if (c == '(')
         {
             acePic.SetActive(true);
