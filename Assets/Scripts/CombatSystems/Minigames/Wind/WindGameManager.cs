@@ -236,18 +236,10 @@ public class WindGameManager : MonoBehaviour
         var battle = BattleSequenceManager.Instance.minigames;
         if (playerWins)
         {
-            if (MetricManagerScript.instance != null)
-            { 
-                MetricManagerScript.instance.LogString("Wind Breeze", "Win");
-            }
             GridManager.Instance.UpdateDotPosition(battle[2].WinEffect, GridManager.MiniGame.Vent, playerWins);
         }
         else
         {
-            if (MetricManagerScript.instance != null)
-            { 
-                MetricManagerScript.instance.LogString("Wind Breeze", "Lose");
-            }
             GridManager.Instance.UpdateDotPosition(battle[2].LoseEffect, GridManager.MiniGame.Vent, playerWins);
         }
         

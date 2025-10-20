@@ -126,25 +126,15 @@ public class AudioWave : MonoBehaviour
             {
                 audioVFX.gameObject.SetActive(true);
                 audioVFX.SetTrigger("PlayAudioVFX");
-                if (MetricManagerScript.instance != null)
-                { 
-                    MetricManagerScript.instance.LogString("Audio Wave", "Win");
-                }
                 GridManager.Instance?.UpdateDotPosition(battle.Minigames[4].WinEffect, GridManager.MiniGame.Audio, succeeded);
             }
             else
             {
-                if (MetricManagerScript.instance != null)
-                { 
-                    MetricManagerScript.instance.LogString("Audio Wave", "Lose");
-                }
                 GridManager.Instance?.UpdateDotPosition(battle.Minigames[4].LoseEffect, GridManager.MiniGame.Audio, succeeded);
             }
             
-            
-           BarkManager.Instance.ShowGameBark("Audio Wave", true);
+            BarkManager.Instance.ShowGameBark("Audio Wave", succeeded);
         });
-
     }
     private void CheckingAnimation(int index, int numMiss)
     {
